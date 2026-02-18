@@ -29,11 +29,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Every page displays a branded footer with copyright and placeholder legal links
   4. Header and footer render correctly on mobile devices (hamburger menu, stacked layout)
   5. Contact form on the French page accepts Name/Email/Subject/Message and delivers to info@vectanor.com via SMTP
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md -- Navigation menus (FR/EN/ES) and header template with language switcher
+- [ ] 01-02-PLAN.md -- Footer template with copyright and legal links
+- [ ] 01-03-PLAN.md -- SMTP configuration, contact form creation, and page embedding
 
 ### Phase 2: Translation Content Deployment
 **Goal**: English and Spanish visitors can browse all 8 pages in their language with correct URLs, internal links, and localized contact form labels
@@ -87,7 +88,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Site Chrome and WP Admin Foundation | 0/0 | Not started | - |
+| 1. Site Chrome and WP Admin Foundation | 0/3 | Planned | - |
 | 2. Translation Content Deployment | 0/0 | Not started | - |
 | 3. Legal and SEO | 0/0 | Not started | - |
 | 4. Visual Polish and QA | 0/0 | Not started | - |
