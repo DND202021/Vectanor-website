@@ -34,7 +34,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 Plans:
 - [ ] 01-01-PLAN.md -- Navigation menus (FR/EN/ES) and header template with language switcher
 - [ ] 01-02-PLAN.md -- Footer template with copyright and legal links
-- [ ] 01-03-PLAN.md -- SMTP configuration, contact form creation, and page embedding
+- [~] 01-03-PLAN.md -- SMTP configuration, contact form creation, and page embedding (Task 2 done; paused at checkpoint:human-action for SMTP + WPForms setup)
 
 ### Phase 2: Translation Content Deployment
 **Goal**: English and Spanish visitors can browse all 8 pages in their language with correct URLs, internal links, and localized contact form labels
@@ -88,7 +88,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Site Chrome and WP Admin Foundation | 0/3 | Planned | - |
+| 1. Site Chrome and WP Admin Foundation | 0/3 | In Progress (01-03 paused at checkpoint) | - |
 | 2. Translation Content Deployment | 0/0 | Not started | - |
 | 3. Legal and SEO | 0/0 | Not started | - |
 | 4. Visual Polish and QA | 0/0 | Not started | - |
