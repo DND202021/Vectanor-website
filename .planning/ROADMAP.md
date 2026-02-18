@@ -12,7 +12,7 @@ Complete the Vectanor corporate holding website by building the site chrome (hea
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Site Chrome and WP Admin Foundation** - Header/footer templates, language switcher, navigation menus, page shells, contact form, and SMTP configuration via WP Admin
+- [x] **Phase 1: Site Chrome and WP Admin Foundation** - Header/footer templates, language switcher, navigation menus, page shells, contact form, and SMTP configuration via WP Admin
 - [ ] **Phase 2: Translation Content Deployment** - AI-translate all 8 pages to EN/ES and push via REST API with correct URL structure and internal links
 - [ ] **Phase 3: Legal and SEO** - Privacy policy pages, SEO meta configuration, hreflang tags, Open Graph, and sitemap
 - [ ] **Phase 4: Visual Polish and QA** - Mobile responsiveness, typography consistency, alt text, animation performance across all languages
@@ -32,9 +32,9 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-01-PLAN.md -- Navigation menus (FR/EN/ES) and header template with language switcher
-- [ ] 01-02-PLAN.md -- Footer template with copyright and legal links
-- [~] 01-03-PLAN.md -- SMTP configuration, contact form creation, and page embedding (Task 2 done; paused at checkpoint:human-action for SMTP + WPForms setup)
+- [x] 01-01-PLAN.md -- Navigation menus (FR/EN/ES) and header template with language switcher (done manually in WP Admin; user confirmed "ok for now")
+- [x] 01-02-PLAN.md -- Footer template with copyright and legal links (implemented per-page via rebuild-wow.py)
+- [x] 01-03-PLAN.md -- Contact form with formsubmit.co backend (bypassed WPForms/SMTP; raw HTML push to avoid Elementor caching)
 
 ### Phase 2: Translation Content Deployment
 **Goal**: English and Spanish visitors can browse all 8 pages in their language with correct URLs, internal links, and localized contact form labels
@@ -45,11 +45,11 @@ Plans:
   2. All 8 pages exist in Spanish at /es/ prefixed URLs with AI-translated content
   3. Internal links within translated pages point to the correct language version (no links from /en/ pages to French pages)
   4. English contact page has form with English labels; Spanish contact page has form with Spanish labels
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
+- [ ] 02-01-PLAN.md -- Create translate-pages.py with all EN/ES content + WP Admin 14 page stubs + fill IDs
+- [ ] 02-02-PLAN.md -- Push all 16 translated pages and human verify correct content and links
 
 ### Phase 3: Legal and SEO
 **Goal**: The site meets Quebec Law 25 privacy requirements and search engines can correctly index all language versions with proper metadata
@@ -88,7 +88,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Site Chrome and WP Admin Foundation | 0/3 | In Progress (01-03 paused at checkpoint) | - |
-| 2. Translation Content Deployment | 0/0 | Not started | - |
+| 1. Site Chrome and WP Admin Foundation | 3/3 | Complete (with deviations) | 2026-02-18 |
+| 2. Translation Content Deployment | 0/2 | Planned | - |
 | 3. Legal and SEO | 0/0 | Not started | - |
 | 4. Visual Polish and QA | 0/0 | Not started | - |
