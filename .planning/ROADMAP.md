@@ -13,7 +13,7 @@ Complete the Vectanor corporate holding website by building the site chrome (hea
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Site Chrome and WP Admin Foundation** - Header/footer templates, language switcher, navigation menus, page shells, contact form, and SMTP configuration via WP Admin
-- [ ] **Phase 2: Translation Content Deployment** - AI-translate all 8 pages to EN/ES and push via REST API with correct URL structure and internal links
+- [x] **Phase 2: Translation Content Deployment** - AI-translate all 8 pages to EN/ES and push via REST API with correct URL structure and internal links
 - [ ] **Phase 3: Legal and SEO** - Privacy policy pages, SEO meta configuration, hreflang tags, Open Graph, and sitemap
 - [ ] **Phase 4: Visual Polish and QA** - Mobile responsiveness, typography consistency, alt text, animation performance across all languages
 
@@ -48,8 +48,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md -- Create translate-pages.py with all EN/ES content + WP Admin 14 page stubs + fill IDs
-- [ ] 02-02-PLAN.md -- Push all 16 translated pages and human verify correct content and links
+- [x] 02-01-PLAN.md -- Create translate-pages.py with all EN/ES content + WP Admin 14 page stubs + fill IDs (WP stubs created via REST API; Polylang free slug constraint required language-specific slugs)
+- [x] 02-02-PLAN.md -- Push all 16 translated pages and human verify correct content and links (all 16 pages live and approved)
 
 ### Phase 3: Legal and SEO
 **Goal**: The site meets Quebec Law 25 privacy requirements and search engines can correctly index all language versions with proper metadata
@@ -89,6 +89,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Site Chrome and WP Admin Foundation | 3/3 | Complete (with deviations) | 2026-02-18 |
-| 2. Translation Content Deployment | 0/2 | Planned | - |
+| 2. Translation Content Deployment | 2/2 | Complete | 2026-02-19 |
 | 3. Legal and SEO | 0/0 | Not started | - |
 | 4. Visual Polish and QA | 0/0 | Not started | - |
