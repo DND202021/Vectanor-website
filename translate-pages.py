@@ -74,25 +74,25 @@ AUTH = rebuild_wow.AUTH
 # PAGE ID CONFIG — Fill these in after WP Admin stub creation
 # ═══════════════════════════════════════
 EN_PAGES = {
-    "homepage":  30,    # already exists (page 30)
-    "vision":    None,  # TODO: fill in after WP Admin stub creation
-    "divisions": None,  # TODO
-    "dimonoff":  None,  # TODO
-    "spatium":   None,  # TODO
-    "amotus":    None,  # TODO
-    "contact":   None,  # TODO
-    "vigilia":   None,  # TODO
+    "homepage":  30,    # /en/ (accueil-english)
+    "vision":    42,    # /en/our-vision/
+    "divisions": 43,    # /en/our-divisions/
+    "dimonoff":  44,    # /en/our-divisions/dimonoff/
+    "spatium":   45,    # /en/our-divisions/spatium/
+    "amotus":    46,    # /en/our-divisions/amotus/
+    "contact":   47,    # /en/contact-us/
+    "vigilia":   48,    # /en/our-divisions/vigilia/
 }
 
 ES_PAGES = {
-    "homepage":  31,    # already exists (page 31)
-    "vision":    None,  # TODO: fill in after WP Admin stub creation
-    "divisions": None,  # TODO
-    "dimonoff":  None,  # TODO
-    "spatium":   None,  # TODO
-    "amotus":    None,  # TODO
-    "contact":   None,  # TODO
-    "vigilia":   None,  # TODO
+    "homepage":  31,    # /es/ (accueil-espanol)
+    "vision":    49,    # /es/nuestra-vision/
+    "divisions": 50,    # /es/nuestras-divisiones/
+    "dimonoff":  51,    # /es/nuestras-divisiones/dimonoff/
+    "spatium":   52,    # /es/nuestras-divisiones/spatium/
+    "amotus":    53,    # /es/nuestras-divisiones/amotus/
+    "contact":   54,    # /es/contactenos/
+    "vigilia":   55,    # /es/nuestras-divisiones/vigilia/
 }
 
 # ═══════════════════════════════════════
@@ -119,7 +119,7 @@ EN_CONTACT_FORM_HTML = """
 <form action="https://formsubmit.co/info@vectanor.com" method="POST" style="display:flex;flex-direction:column;gap:14px;">
   <input type="hidden" name="_subject" value="New message via vectanor.com">
   <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://vectanor.com/en/contact/?sent=1">
+  <input type="hidden" name="_next" value="https://vectanor.com/en/contact-us/?sent=1">
   <input type="hidden" name="_template" value="table">
   <input type="text" name="_honey" style="display:none">
   <div>
@@ -173,7 +173,7 @@ ES_CONTACT_FORM_HTML = """
 <form action="https://formsubmit.co/info@vectanor.com" method="POST" style="display:flex;flex-direction:column;gap:14px;">
   <input type="hidden" name="_subject" value="Nuevo mensaje via vectanor.com">
   <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://vectanor.com/es/contact/?sent=1">
+  <input type="hidden" name="_next" value="https://vectanor.com/es/contactenos/?sent=1">
   <input type="hidden" name="_template" value="table">
   <input type="text" name="_honey" style="display:none">
   <div>
@@ -512,7 +512,7 @@ def build_homepage_en():
         "VECTANOR",
         "Sets the direction. Divisions advance. Systems follow.",
         full_height=True, show_bar=True, show_cta=True,
-        cta_text="Discover our divisions", cta_link="/en/divisions/",
+        cta_text="Discover our divisions", cta_link="/en/our-divisions/",
     ))
 
     # VISION BRIEF
@@ -654,25 +654,25 @@ def build_homepage_en():
                     division_card(
                         "Dimonoff",
                         "Smart lighting and connected urban infrastructure.",
-                        AMBER, "/en/divisions/dimonoff/", "dimonoff", 0,
+                        AMBER, "/en/our-divisions/dimonoff/", "dimonoff", 0,
                         external_url="https://dimonoff.com",
                     ),
                     division_card(
                         "Spatium",
                         "Smart mobility and parking.",
-                        GREEN, "/en/divisions/spatium/", "spatium", 100,
+                        GREEN, "/en/our-divisions/spatium/", "spatium", 100,
                         external_url="https://dimonoff.com",
                     ),
                     division_card(
                         "Amotus",
                         "Design House and industrial innovation catalyst.",
-                        PURPLE, "/en/divisions/amotus/", "amotus", 200,
+                        PURPLE, "/en/our-divisions/amotus/", "amotus", 200,
                         external_url="https://amotus.com",
                     ),
                     division_card(
                         "Vigilia",
                         "Critical infrastructure monitoring and surveillance.",
-                        PINK, "/en/divisions/vigilia/", "vigilia", 300,
+                        PINK, "/en/our-divisions/vigilia/", "vigilia", 300,
                     ),
                 ],
             ),
@@ -786,7 +786,7 @@ selector:hover .elementor-icon i {
             }),
             widget("button", {
                 "text": "Contact us",
-                "link": {"url": "/en/contact/", "is_external": False},
+                "link": {"url": "/en/contact-us/", "is_external": False},
                 "align": "center",
                 "background_color": ROYAL_BLUE,
                 "button_text_color": WHITE,
@@ -840,7 +840,7 @@ def build_homepage_es():
         "VECTANOR",
         "Marca la direcci\u00f3n. Las divisiones avanzan. Los sistemas siguen.",
         full_height=True, show_bar=True, show_cta=True,
-        cta_text="Descubrir nuestras divisiones", cta_link="/es/divisions/",
+        cta_text="Descubrir nuestras divisiones", cta_link="/es/nuestras-divisiones/",
     ))
 
     # VISION BRIEF
@@ -983,25 +983,25 @@ def build_homepage_es():
                     division_card(
                         "Dimonoff",
                         "Iluminaci\u00f3n inteligente e infraestructura urbana conectada.",
-                        AMBER, "/es/divisions/dimonoff/", "dimonoff", 0,
+                        AMBER, "/es/nuestras-divisiones/dimonoff/", "dimonoff", 0,
                         external_url="https://dimonoff.com",
                     ),
                     division_card(
                         "Spatium",
                         "Movilidad inteligente y estacionamiento inteligente.",
-                        GREEN, "/es/divisions/spatium/", "spatium", 100,
+                        GREEN, "/es/nuestras-divisiones/spatium/", "spatium", 100,
                         external_url="https://dimonoff.com",
                     ),
                     division_card(
                         "Amotus",
                         "Design House y catalizador de innovaci\u00f3n industrial.",
-                        PURPLE, "/es/divisions/amotus/", "amotus", 200,
+                        PURPLE, "/es/nuestras-divisiones/amotus/", "amotus", 200,
                         external_url="https://amotus.com",
                     ),
                     division_card(
                         "Vigilia",
                         "Monitoreo y vigilancia de infraestructuras cr\u00edticas.",
-                        PINK, "/es/divisions/vigilia/", "vigilia", 300,
+                        PINK, "/es/nuestras-divisiones/vigilia/", "vigilia", 300,
                     ),
                 ],
             ),
@@ -1115,7 +1115,7 @@ selector:hover .elementor-icon i {
             }),
             widget("button", {
                 "text": "Cont\u00e1ctenos",
-                "link": {"url": "/es/contact/", "is_external": False},
+                "link": {"url": "/es/contactenos/", "is_external": False},
                 "align": "center",
                 "background_color": ROYAL_BLUE,
                 "button_text_color": WHITE,
@@ -1409,7 +1409,7 @@ def build_divisions_index_en():
         btn_elems = [
             widget("button", {
                 "text": f"Discover {d['name']} \u2192",
-                "link": {"url": f"/en/divisions/{div_key}/", "is_external": False},
+                "link": {"url": f"/en/our-divisions/{div_key}/", "is_external": False},
                 "button_type": "default",
                 "background_color": d["accent"],
                 "button_text_color": WHITE,
@@ -1527,7 +1527,7 @@ def build_divisions_index_es():
         btn_elems = [
             widget("button", {
                 "text": f"Descubrir {d['name']} \u2192",
-                "link": {"url": f"/es/divisions/{div_key}/", "is_external": False},
+                "link": {"url": f"/es/nuestras-divisiones/{div_key}/", "is_external": False},
                 "button_type": "default",
                 "background_color": d["accent"],
                 "button_text_color": WHITE,
