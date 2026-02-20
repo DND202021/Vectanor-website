@@ -44,6 +44,8 @@ flush_elementor_cache = rebuild_wow.flush_elementor_cache
 
 # New redesign components
 font_loader = rebuild_wow.font_loader
+seo_head = rebuild_wow.seo_head
+seo_head_html = rebuild_wow.seo_head_html
 site_header = rebuild_wow.site_header
 site_footer = rebuild_wow.site_footer
 site_header_html = rebuild_wow.site_header_html
@@ -62,6 +64,7 @@ AMBER = rebuild_wow.AMBER
 GREEN = rebuild_wow.GREEN
 PURPLE = rebuild_wow.PURPLE
 PINK = rebuild_wow.PINK
+MID_DARK = rebuild_wow.MID_DARK
 
 # Logos (same as rebuild-wow.py)
 LOGOS = rebuild_wow.LOGOS
@@ -136,22 +139,22 @@ EN_CONTACT_FORM_HTML = """
   <input type="hidden" name="_template" value="table">
   <input type="text" name="_honey" style="display:none">
   <div>
-    <label style="display:block;font-family:Outfit,sans-serif;font-size:14px;color:#475569;margin-bottom:5px;font-weight:500;">Name <span style="color:#EF4444;">*</span></label>
+    <label style="display:block;font-family:Inter,sans-serif;font-size:14px;color:#CBD5E1;margin-bottom:5px;font-weight:500;">Name <span style="color:#EF4444;">*</span></label>
     <input type="text" name="name" placeholder="Your full name" required
-      style="width:100%;padding:10px 14px;border:1px solid #CBD5E1;border-radius:6px;font-family:Outfit,sans-serif;font-size:14px;color:#0F172A;background:#FFFFFF;outline:none;transition:border-color 0.2s;"
-      onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='#CBD5E1'">
+      style="width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,0.12);border-radius:6px;font-family:Inter,sans-serif;font-size:14px;color:#E2E8F0;background:rgba(255,255,255,0.06);outline:none;transition:border-color 0.2s;"
+      onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
   </div>
   <div>
-    <label style="display:block;font-family:Outfit,sans-serif;font-size:14px;color:#475569;margin-bottom:5px;font-weight:500;">Email <span style="color:#EF4444;">*</span></label>
+    <label style="display:block;font-family:Inter,sans-serif;font-size:14px;color:#CBD5E1;margin-bottom:5px;font-weight:500;">Email <span style="color:#EF4444;">*</span></label>
     <input type="email" name="email" placeholder="your@email.com" required
-      style="width:100%;padding:10px 14px;border:1px solid #CBD5E1;border-radius:6px;font-family:Outfit,sans-serif;font-size:14px;color:#0F172A;background:#FFFFFF;outline:none;transition:border-color 0.2s;"
-      onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='#CBD5E1'">
+      style="width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,0.12);border-radius:6px;font-family:Inter,sans-serif;font-size:14px;color:#E2E8F0;background:rgba(255,255,255,0.06);outline:none;transition:border-color 0.2s;"
+      onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
   </div>
   <div>
-    <label style="display:block;font-family:Outfit,sans-serif;font-size:14px;color:#475569;margin-bottom:5px;font-weight:500;">Subject</label>
+    <label style="display:block;font-family:Inter,sans-serif;font-size:14px;color:#CBD5E1;margin-bottom:5px;font-weight:500;">Subject</label>
     <select name="subject"
-      style="width:100%;padding:10px 14px;border:1px solid #CBD5E1;border-radius:6px;font-family:Outfit,sans-serif;font-size:14px;color:#0F172A;background:#FFFFFF;outline:none;transition:border-color 0.2s;cursor:pointer;"
-      onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='#CBD5E1'">
+      style="width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,0.12);border-radius:6px;font-family:Inter,sans-serif;font-size:14px;color:#E2E8F0;background:rgba(255,255,255,0.06);outline:none;transition:border-color 0.2s;cursor:pointer;"
+      onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
       <option value="General Inquiry">General Inquiry</option>
       <option value="Partnership">Partnership</option>
       <option value="Media">Media</option>
@@ -159,13 +162,13 @@ EN_CONTACT_FORM_HTML = """
     </select>
   </div>
   <div>
-    <label style="display:block;font-family:Outfit,sans-serif;font-size:14px;color:#475569;margin-bottom:5px;font-weight:500;">Message <span style="color:#EF4444;">*</span></label>
+    <label style="display:block;font-family:Inter,sans-serif;font-size:14px;color:#CBD5E1;margin-bottom:5px;font-weight:500;">Message <span style="color:#EF4444;">*</span></label>
     <textarea name="message" placeholder="Your message..." required rows="4"
       style="width:100%;padding:10px 14px;border:1px solid #CBD5E1;border-radius:6px;font-family:Outfit,sans-serif;font-size:14px;color:#0F172A;background:#FFFFFF;outline:none;resize:vertical;transition:border-color 0.2s;"
-      onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='#CBD5E1'"></textarea>
+      onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'"></textarea>
   </div>
   <button type="submit"
-    style="width:100%;padding:14px;background:linear-gradient(135deg,#3B82F6,#0EA5E9);color:#FFFFFF;border:none;border-radius:6px;font-family:Montserrat,sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.3s;letter-spacing:0.5px;"
+    style="width:100%;padding:14px;background:#2563EB;color:#FFFFFF;border:none;border-radius:6px;font-family:Montserrat,sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.3s;letter-spacing:0.5px;"
     onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 25px rgba(59,130,246,0.4)'"
     onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
     Send
@@ -173,7 +176,7 @@ EN_CONTACT_FORM_HTML = """
 </form>
 <script>
 if(new URLSearchParams(window.location.search).get('sent')==='1'){
-  document.querySelector('form[action*="formsubmit"]').innerHTML='<div style="text-align:center;padding:40px 20px;"><div style="font-size:28px;margin-bottom:12px;">&#10003;</div><p style="font-family:Outfit,sans-serif;font-size:16px;color:#0F172A;font-weight:500;">Thank you for your message!</p><p style="font-family:Outfit,sans-serif;font-size:14px;color:#64748B;margin-top:8px;">We will get back to you shortly.</p></div>';
+  document.querySelector('form[action*="formsubmit"]').innerHTML='<div style="text-align:center;padding:40px 20px;"><div style="font-size:28px;margin-bottom:12px;">&#10003;</div><p style="font-family:Outfit,sans-serif;font-size:16px;color:#FFFFFF;font-weight:500;">Thank you for your message!</p><p style="font-family:Outfit,sans-serif;font-size:14px;color:#64748B;margin-top:8px;">We will get back to you shortly.</p></div>';
 }
 </script>
 """
@@ -190,22 +193,22 @@ ES_CONTACT_FORM_HTML = """
   <input type="hidden" name="_template" value="table">
   <input type="text" name="_honey" style="display:none">
   <div>
-    <label style="display:block;font-family:Outfit,sans-serif;font-size:14px;color:#475569;margin-bottom:5px;font-weight:500;">Nombre <span style="color:#EF4444;">*</span></label>
+    <label style="display:block;font-family:Inter,sans-serif;font-size:14px;color:#CBD5E1;margin-bottom:5px;font-weight:500;">Nombre <span style="color:#EF4444;">*</span></label>
     <input type="text" name="name" placeholder="Su nombre completo" required
-      style="width:100%;padding:10px 14px;border:1px solid #CBD5E1;border-radius:6px;font-family:Outfit,sans-serif;font-size:14px;color:#0F172A;background:#FFFFFF;outline:none;transition:border-color 0.2s;"
-      onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='#CBD5E1'">
+      style="width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,0.12);border-radius:6px;font-family:Inter,sans-serif;font-size:14px;color:#E2E8F0;background:rgba(255,255,255,0.06);outline:none;transition:border-color 0.2s;"
+      onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
   </div>
   <div>
-    <label style="display:block;font-family:Outfit,sans-serif;font-size:14px;color:#475569;margin-bottom:5px;font-weight:500;">Correo electr&#243;nico <span style="color:#EF4444;">*</span></label>
+    <label style="display:block;font-family:Inter,sans-serif;font-size:14px;color:#CBD5E1;margin-bottom:5px;font-weight:500;">Correo electr&#243;nico <span style="color:#EF4444;">*</span></label>
     <input type="email" name="email" placeholder="su@correo.com" required
-      style="width:100%;padding:10px 14px;border:1px solid #CBD5E1;border-radius:6px;font-family:Outfit,sans-serif;font-size:14px;color:#0F172A;background:#FFFFFF;outline:none;transition:border-color 0.2s;"
-      onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='#CBD5E1'">
+      style="width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,0.12);border-radius:6px;font-family:Inter,sans-serif;font-size:14px;color:#E2E8F0;background:rgba(255,255,255,0.06);outline:none;transition:border-color 0.2s;"
+      onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
   </div>
   <div>
-    <label style="display:block;font-family:Outfit,sans-serif;font-size:14px;color:#475569;margin-bottom:5px;font-weight:500;">Asunto</label>
+    <label style="display:block;font-family:Inter,sans-serif;font-size:14px;color:#CBD5E1;margin-bottom:5px;font-weight:500;">Asunto</label>
     <select name="subject"
-      style="width:100%;padding:10px 14px;border:1px solid #CBD5E1;border-radius:6px;font-family:Outfit,sans-serif;font-size:14px;color:#0F172A;background:#FFFFFF;outline:none;transition:border-color 0.2s;cursor:pointer;"
-      onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='#CBD5E1'">
+      style="width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,0.12);border-radius:6px;font-family:Inter,sans-serif;font-size:14px;color:#E2E8F0;background:rgba(255,255,255,0.06);outline:none;transition:border-color 0.2s;cursor:pointer;"
+      onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
       <option value="Consulta general">Consulta general</option>
       <option value="Asociaci&#243;n">Asociaci&#243;n</option>
       <option value="Medios">Medios</option>
@@ -213,13 +216,13 @@ ES_CONTACT_FORM_HTML = """
     </select>
   </div>
   <div>
-    <label style="display:block;font-family:Outfit,sans-serif;font-size:14px;color:#475569;margin-bottom:5px;font-weight:500;">Mensaje <span style="color:#EF4444;">*</span></label>
+    <label style="display:block;font-family:Inter,sans-serif;font-size:14px;color:#CBD5E1;margin-bottom:5px;font-weight:500;">Mensaje <span style="color:#EF4444;">*</span></label>
     <textarea name="message" placeholder="Su mensaje..." required rows="4"
       style="width:100%;padding:10px 14px;border:1px solid #CBD5E1;border-radius:6px;font-family:Outfit,sans-serif;font-size:14px;color:#0F172A;background:#FFFFFF;outline:none;resize:vertical;transition:border-color 0.2s;"
-      onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='#CBD5E1'"></textarea>
+      onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'"></textarea>
   </div>
   <button type="submit"
-    style="width:100%;padding:14px;background:linear-gradient(135deg,#3B82F6,#0EA5E9);color:#FFFFFF;border:none;border-radius:6px;font-family:Montserrat,sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.3s;letter-spacing:0.5px;"
+    style="width:100%;padding:14px;background:#2563EB;color:#FFFFFF;border:none;border-radius:6px;font-family:Montserrat,sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.3s;letter-spacing:0.5px;"
     onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 25px rgba(59,130,246,0.4)'"
     onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
     Enviar
@@ -227,7 +230,7 @@ ES_CONTACT_FORM_HTML = """
 </form>
 <script>
 if(new URLSearchParams(window.location.search).get('sent')==='1'){
-  document.querySelector('form[action*="formsubmit"]').innerHTML='<div style="text-align:center;padding:40px 20px;"><div style="font-size:28px;margin-bottom:12px;">&#10003;</div><p style="font-family:Outfit,sans-serif;font-size:16px;color:#0F172A;font-weight:500;">&#161;Gracias por su mensaje!</p><p style="font-family:Outfit,sans-serif;font-size:14px;color:#64748B;margin-top:8px;">Le responderemos a la brevedad.</p></div>';
+  document.querySelector('form[action*="formsubmit"]').innerHTML='<div style="text-align:center;padding:40px 20px;"><div style="font-size:28px;margin-bottom:12px;">&#10003;</div><p style="font-family:Outfit,sans-serif;font-size:16px;color:#FFFFFF;font-weight:500;">&#161;Gracias por su mensaje!</p><p style="font-family:Outfit,sans-serif;font-size:14px;color:#64748B;margin-top:8px;">Le responderemos a la brevedad.</p></div>';
 }
 </script>
 """
@@ -524,8 +527,9 @@ def build_homepage_en():
     elements.append(hero_section(
         "VECTANOR",
         "Sets the direction. Divisions advance. Systems follow.",
-        full_height=True, show_bar=True, show_cta=True,
+        full_height=True, show_cta=True,
         cta_text="Discover our divisions", cta_link="/en/our-divisions/",
+        ghost_cta_text="Our approach \u2192", ghost_cta_link="/en/our-vision/",
     ))
 
     # VISION BRIEF
@@ -533,33 +537,61 @@ def build_homepage_en():
         settings={
             "content_width": "boxed",
             "background_background": "classic",
-            "background_color": WHITE,
+            "background_color": LIGHT_GREY,
             "flex_direction": "column",
             "flex_align_items": "center",
             "padding": {"top": "90", "bottom": "90", "left": "40", "right": "40", "unit": "px"},
             "custom_css": GRID_PATTERN_CSS,
         },
         elements=[
-            *section_heading("Orchestrating Complexity"),
-            widget("text-editor", {
-                "editor": (
-                    '<div style="text-align:center; max-width:800px; margin:0 auto;">'
-                    '<p style="font-size:18px; line-height:1.9; color:#475569; margin-bottom:20px; border-left:3px solid #3B82F6; padding-left:24px; font-family:Outfit,sans-serif;">'
-                    'Cities, infrastructure, and industrial environments have become complex systems, often managed '
-                    'in silos. <strong>Groupe Vectanor</strong> acts as a steering structure capable of aligning '
-                    'specialized expertise toward a common goal: making urban and industrial systems more reliable, '
-                    'more efficient, and more sustainable.'
-                    '</p>'
-                    '<p style="font-size:17px; line-height:1.9; color:#64748B; font-family:Outfit,sans-serif;">'
-                    'From smart lighting to urban mobility, from electronic design to critical infrastructure '
-                    'monitoring \u2014 our divisions cover the entire technology value chain for the cities and '
-                    'industries of tomorrow.'
-                    '</p>'
-                    '</div>'
-                ),
-                "_animation": "fadeInUp",
-                "_animation_delay": 200,
-            }),
+            inner_container(
+                settings={
+                    "flex_direction": "row",
+                    "flex_wrap": "wrap",
+                    "flex_gap": {"size": 40, "unit": "px"},
+                    "flex_justify_content": "center",
+                    "flex_align_items": "flex-start",
+                    "width": {"size": 100, "unit": "%"},
+                    "max_width": {"size": 1100, "unit": "px"},
+                },
+                elements=[
+                    inner_container(
+                        settings={
+                            "width": {"size": 35, "unit": "%"},
+                            "min_width": {"size": 280, "unit": "px"},
+                            "flex_direction": "column",
+                        },
+                        elements=[*section_heading("Orchestrating Complexity")],
+                    ),
+                    inner_container(
+                        settings={
+                            "width": {"size": 58, "unit": "%"},
+                            "min_width": {"size": 300, "unit": "px"},
+                            "flex_direction": "column",
+                        },
+                        elements=[
+                            widget("text-editor", {
+                                "editor": (
+                                    '<div style="max-width:560px;">'
+                                    '<p style="font-size:16px; line-height:1.9; color:#334155; margin-bottom:20px; border-left:6px solid #3B82F6; padding-left:24px; font-family:Inter,sans-serif;">'
+                                    'Cities, infrastructure, and industrial environments have become complex systems, often managed '
+                                    'in silos. <strong>Groupe Vectanor</strong> acts as a steering structure capable of aligning '
+                                    'specialized expertise toward a common goal: making urban and industrial systems more reliable, '
+                                    'more efficient, and more sustainable.'
+                                    '</p>'
+                                    '<p style="font-size:16px; line-height:1.9; color:#334155; font-family:Inter,sans-serif;">'
+                                    'From smart lighting to urban mobility, from electronic design to critical infrastructure '
+                                    'monitoring \u2014 our divisions cover the entire technology value chain for the cities and '
+                                    'industries of tomorrow.'
+                                    '</p>'
+                                    '</div>'
+                                ),
+                                "css_classes": "v-reveal",
+                            }),
+                        ],
+                    ),
+                ],
+            ),
         ],
     ))
 
@@ -570,8 +602,7 @@ def build_homepage_en():
                 "flex_direction": "column",
                 "flex_align_items": "center",
                 "padding": {"top": "24", "bottom": "24", "left": "28", "right": "28", "unit": "px"},
-                "_animation": "fadeInUp",
-                "_animation_delay": delay,
+                "css_classes": "v-reveal",
                 "background_background": "classic",
                 "background_color": "rgba(255,255,255,0.03)",
                 "border_border": "solid",
@@ -582,7 +613,7 @@ def build_homepage_en():
             elements=[
                 widget("heading", {
                     "title": number,
-                    "header_size": "h2",
+                    "header_size": "h3",
                     "align": "center",
                     "title_color": WHITE,
                     "typography_typography": "custom",
@@ -618,7 +649,7 @@ selector .elementor-heading-title {{
             "background_gradient_angle": {"size": 90, "unit": "deg"},
             "flex_direction": "column",
             "flex_align_items": "center",
-            "padding": {"top": "60", "bottom": "60", "left": "40", "right": "40", "unit": "px"},
+            "padding": {"top": "40", "bottom": "40", "left": "40", "right": "40", "unit": "px"},
         },
         elements=[
             inner_container(
@@ -632,25 +663,22 @@ selector .elementor-heading-title {{
                 },
                 elements=[
                     stat_block_en("4", "Specialized divisions", 0),
-                    stat_block_en("10+", "Years of expertise", 100),
-                    stat_block_en("IoT", "Large scale", 200),
-                    stat_block_en("360\u00b0", "Technology coverage", 300),
+                    stat_block_en("18+", "Years of expertise", 100),
+                    stat_block_en("850K+", "Devices deployed", 200),
+                    stat_block_en("15", "Countries", 300),
                 ],
             ),
-            widget("html", {
-                "html": FOUR_COLOR_BAR_HTML,
-                "_margin": {"top": "25", "bottom": "0", "left": "0", "right": "0", "unit": "px"},
-            }),
         ],
     ))
 
     # DIVISIONS — Dark glassmorphism section
-    def division_card(name, desc, color, link, logo_key, delay, external_url=None, highlights=None):
+    def division_card(name, desc, color, link, logo_key, delay, highlights=None):
         card_elems = [
             widget("image", {
                 "image": {"url": LOGOS[logo_key], "id": LOGO_IDS[logo_key]},
                 "image_size": "full",
                 "width": {"size": 140, "unit": "px"},
+                "alt": f"{name} logo",
                 "_margin": {"top": "0", "bottom": "15", "left": "0", "right": "0", "unit": "px"},
                 "custom_css": "selector img { filter: brightness(0) invert(1); transition: filter 0.3s; }",
             }),
@@ -664,13 +692,13 @@ selector .elementor-heading-title {{
                 "typography_font_weight": "700",
             }),
             widget("text-editor", {
-                "editor": f'<p style="font-size:15px; line-height:1.75; color:#94A3B8;">{desc}</p>',
+                "editor": f'<p style="font-size:15px; line-height:1.75; color:#CBD5E1;">{desc}</p>',
             }),
         ]
         if highlights:
             bullets_html = ''.join(
-                f'<li style="font-size:13px;line-height:1.6;color:#CBD5E1;padding:4px 0;">'
-                f'<span style="color:{color};margin-right:8px;">&#9656;</span>{h}</li>'
+                f'<li style="font-size:13px;line-height:1.6;color:#CBD5E1;padding:4px 0;display:flex;align-items:center;">'
+                f'<span style="display:inline-block;width:6px;height:6px;border-right:2px solid {color};border-top:2px solid {color};transform:rotate(45deg);margin-right:10px;flex-shrink:0;"></span>{h}</li>'
                 for h in highlights
             )
             card_elems.append(widget("html", {
@@ -695,20 +723,6 @@ selector .elementor-heading-title {{
                 "custom_css": button_hover_css(color),
             }),
         ]
-        if external_url:
-            btn_elems.append(widget("button", {
-                "text": f"Visit {name.lower()}.com \u2197",
-                "link": {"url": external_url, "is_external": True},
-                "button_type": "default",
-                "background_color": "transparent",
-                "button_text_color": "#64748B",
-                "border_border": "none",
-                "typography_typography": "custom",
-                "typography_font_family": "Outfit",
-                "typography_font_size": {"size": 12, "unit": "px"},
-                "typography_font_weight": "500",
-                "button_padding": {"top": "8", "bottom": "8", "left": "10", "right": "10", "unit": "px"},
-            }))
 
         card_elems.append(inner_container(
             settings={"flex_direction": "row", "flex_gap": {"size": 10, "unit": "px"}, "flex_wrap": "wrap"},
@@ -727,9 +741,7 @@ selector .elementor-heading-title {{
                 "flex_direction": "column",
                 "flex_align_items": "flex-start",
                 "flex_gap": {"size": 14, "unit": "px"},
-                "_animation": "fadeInUp",
-                "_animation_delay": delay,
-                "_animation_duration": "slow",
+                "css_classes": "v-reveal",
                 "custom_css": card_glow_css(color),
             },
             elements=card_elems,
@@ -766,7 +778,6 @@ selector .elementor-heading-title {{
                         "Dimonoff",
                         "Smart lighting and connected urban infrastructure.",
                         AMBER, "/en/our-divisions/dimonoff/", "dimonoff", 0,
-                        external_url="https://dimonoff.com",
                         highlights=[
                             "Large-scale municipal remote management",
                             "Measurable energy reduction",
@@ -777,7 +788,6 @@ selector .elementor-heading-title {{
                         "Spatium",
                         "Smart mobility and parking.",
                         GREEN, "/en/our-divisions/spatium/", "spatium", 100,
-                        external_url="https://dimonoff.com",
                         highlights=[
                             "Real-time detection and guidance",
                             "Low-power IoT sensors",
@@ -788,7 +798,6 @@ selector .elementor-heading-title {{
                         "Amotus",
                         "Design House and industrial innovation catalyst.",
                         PURPLE, "/en/our-divisions/amotus/", "amotus", 200,
-                        external_url="https://amotus.com",
                         highlights=[
                             "Custom electronic design",
                             "From prototype to certification",
@@ -811,65 +820,41 @@ selector .elementor-heading-title {{
     )
     elements.append(divisions_section)
 
-    # APPROACH — Premium cards
-    def value_card_en(icon, title, desc, accent_color, delay=0):
+    # APPROACH — Dark numbered cards
+    def value_card_en(title, desc, accent_color, number, delay_class):
         return inner_container(
             settings={
                 "background_background": "classic",
-                "background_color": WHITE,
+                "background_color": MID_DARK,
                 "border_border": "solid",
-                "border_width": {"top": "3", "bottom": "0", "left": "3", "right": "0", "unit": "px", "isLinked": False},
+                "border_width": {"top": "3", "bottom": "0", "left": "0", "right": "0", "unit": "px", "isLinked": False},
                 "border_color": accent_color,
                 "border_radius": {"top": "12", "bottom": "12", "left": "12", "right": "12", "unit": "px"},
-                "box_shadow_box_shadow_type": "yes",
-                "box_shadow_box_shadow": {"horizontal": 0, "vertical": 4, "blur": 30, "spread": 0, "color": "rgba(0,0,0,0.06)"},
                 "padding": {"top": "40", "bottom": "40", "left": "30", "right": "30", "unit": "px"},
                 "flex_direction": "column",
-                "flex_align_items": "center",
+                "flex_align_items": "flex-start",
                 "flex_gap": {"size": 8, "unit": "px"},
-                "_animation": "fadeInUp",
-                "_animation_delay": delay,
-                "_animation_duration": "slow",
-                "custom_css": f"""
-selector {{
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}}
-selector:hover {{
-    transform: translateY(-8px);
-    box-shadow: 0 20px 60px -15px {accent_color}30, 0 8px 25px rgba(0,0,0,0.08);
-}}
-""",
+                "css_classes": f"v-reveal {delay_class}",
+                "position": "relative",
+                "custom_css": f"""selector {{ transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }}
+selector:hover {{ transform: translateY(-8px); box-shadow: 0 20px 60px -15px {accent_color}30; }}""",
             },
             elements=[
                 widget("html", {
-                    "html": (
-                        f'<div style="width:68px;height:68px;border-radius:50%;'
-                        f'background:linear-gradient(135deg,{accent_color}18,{accent_color}08);'
-                        f'display:flex;align-items:center;justify-content:center;margin:0 auto;">'
-                        f'<i class="{icon}" style="font-size:26px;color:{accent_color};"></i></div>'
-                    ),
+                    "html": f'<span style="font-size:64px;font-weight:800;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,0.06);position:absolute;top:12px;right:20px;font-family:Montserrat,sans-serif;">{number}</span>',
                 }),
                 widget("heading", {
                     "title": title,
                     "header_size": "h4",
-                    "align": "center",
-                    "title_color": NEAR_BLACK,
+                    "title_color": WHITE,
                     "typography_typography": "custom",
                     "typography_font_family": "Montserrat",
                     "typography_font_size": {"size": 22, "unit": "px"},
                     "typography_font_weight": "700",
                     "_margin": {"top": "8", "bottom": "5", "left": "0", "right": "0", "unit": "px"},
                 }),
-                widget("divider", {
-                    "style": "custom",
-                    "color": accent_color,
-                    "weight": {"size": 2, "unit": "px"},
-                    "width": {"size": 40, "unit": "px"},
-                    "align": "center",
-                    "_margin": {"top": "0", "bottom": "5", "left": "0", "right": "0", "unit": "px"},
-                }),
                 widget("text-editor", {
-                    "editor": f'<p style="text-align:center; font-size:15px; line-height:1.8; color:#64748B;">{desc}</p>',
+                    "editor": f'<p style="font-size:15px; line-height:1.8; color:#CBD5E1;">{desc}</p>',
                 }),
             ],
         )
@@ -877,25 +862,17 @@ selector:hover {{
     approach = container(
         settings={
             "content_width": "boxed",
-            "background_background": "classic",
-            "background_color": LIGHT_GREY,
+            "background_background": "gradient",
+            "background_color": NEAR_BLACK,
+            "background_color_b": DARK_NAVY,
+            "background_gradient_angle": {"size": 145, "unit": "deg"},
             "flex_direction": "column",
             "flex_align_items": "center",
             "padding": {"top": "90", "bottom": "90", "left": "40", "right": "40", "unit": "px"},
-            "custom_css": GRID_PATTERN_CSS,
+            "custom_css": GRAIN_OVERLAY_CSS,
         },
         elements=[
-            *section_heading("Our approach"),
-            widget("text-editor", {
-                "editor": (
-                    '<p style="text-align:center; max-width:700px; margin:0 auto 50px; font-size:17px; '
-                    'line-height:1.8; color:#64748B;">'
-                    'We believe technology must serve a clear vision. Every solution deployed by the group '
-                    'rests on three fundamental pillars that guide our technical and strategic decisions.'
-                    '</p>'
-                ),
-                "_animation": "fadeInUp",
-            }),
+            *section_heading("Our approach", dark=True),
             inner_container(
                 settings={
                     "flex_direction": "row",
@@ -907,28 +884,19 @@ selector:hover {{
                 },
                 elements=[
                     value_card_en(
-                        "fas fa-project-diagram",
                         "Interoperability",
-                        "Systems designed to communicate with each other, without dependency on a single vendor. "
-                        "We favor open standards and recognized protocols to ensure investment longevity and "
-                        "freedom of choice for our clients.",
-                        ROYAL_BLUE, 0,
+                        "Systems designed to communicate openly, without vendor lock-in.",
+                        ROYAL_BLUE, "01", "v-reveal",
                     ),
                     value_card_en(
-                        "fas fa-shield-alt",
                         "Reliability",
-                        "Dependable, secure infrastructure built to last. Every component is tested, certified, "
-                        "and deployed following rigorous processes. Robustness is not optional \u2014 it is our "
-                        "baseline standard.",
-                        "#10B981", 100,
+                        "Dependable, secure infrastructure built to last.",
+                        "#10B981", "02", "v-reveal-d1",
                     ),
                     value_card_en(
-                        "fas fa-expand-arrows-alt",
                         "Scalability",
-                        "A modular architecture capable of evolving without disruption and adapting to future needs. "
-                        "Our solutions are designed to grow with our clients\u2019 projects, from a few connected "
-                        "points to city-scale deployments.",
-                        PURPLE, 200,
+                        "Modular architecture that evolves without disruption.",
+                        PURPLE, "03", "v-reveal-d2",
                     ),
                 ],
             ),
@@ -953,23 +921,10 @@ selector:hover {{
             "flex_direction": "column",
             "flex_justify_content": "center",
             "flex_align_items": "center",
-            "padding": {"top": "90", "bottom": "90", "left": "40", "right": "40", "unit": "px"},
-            "custom_css": GRAIN_OVERLAY_CSS,
+            "padding": {"top": "80", "bottom": "80", "left": "40", "right": "40", "unit": "px"},
+            "custom_css": GRID_PATTERN_CSS,
         },
         elements=[
-            widget("heading", {
-                "title": "GROUPE",
-                "header_size": "h6",
-                "align": "center",
-                "title_color": SLATE,
-                "typography_typography": "custom",
-                "typography_font_family": "Montserrat",
-                "typography_font_size": {"size": 12, "unit": "px"},
-                "typography_font_weight": "600",
-                "typography_letter_spacing": {"size": 5, "unit": "px"},
-                "_margin": {"top": "0", "bottom": "12", "left": "0", "right": "0", "unit": "px"},
-                "_animation": "fadeInUp",
-            }),
             widget("heading", {
                 "title": "Ready to shape the future?",
                 "header_size": "h2",
@@ -980,35 +935,68 @@ selector:hover {{
                 "typography_font_size": {"size": 40, "unit": "px"},
                 "typography_font_weight": "700",
                 "_margin": {"top": "0", "bottom": "20", "left": "0", "right": "0", "unit": "px"},
-                "_animation": "fadeInUp",
+                "css_classes": "v-reveal",
             }),
             widget("text-editor", {
                 "editor": (
-                    '<p style="text-align:center; font-size:18px; color:#94A3B8; max-width:600px; margin:0 auto; font-family:Outfit,sans-serif;">'
+                    '<p style="text-align:center; font-size:16px; color:#CBD5E1; max-width:600px; margin:0 auto; font-family:Inter,sans-serif;">'
                     'Contact us to discover how Groupe Vectanor can support your infrastructure and technology '
                     'transformation projects.'
                     '</p>'
                 ),
-                "_animation": "fadeInUp",
-                "_animation_delay": 100,
+                "css_classes": "v-reveal",
             }),
-            widget("html", {
-                "html": FOUR_COLOR_BAR_HTML,
-                "_margin": {"top": "30", "bottom": "30", "left": "0", "right": "0", "unit": "px"},
-            }),
-            widget("button", {
-                "text": "Contact us",
-                "link": {"url": "/en/contact-us/", "is_external": False},
-                "align": "center",
-                "background_color": ROYAL_BLUE,
-                "button_text_color": WHITE,
-                "border_radius": {"top": "6", "bottom": "6", "left": "6", "right": "6", "unit": "px"},
-                "typography_typography": "custom",
-                "typography_font_family": "Montserrat",
-                "typography_font_size": {"size": 14, "unit": "px"},
-                "typography_font_weight": "600",
-                "button_padding": {"top": "18", "bottom": "18", "left": "44", "right": "44", "unit": "px"},
-                "custom_css": CTA_BUTTON_CSS,
+            inner_container(
+                settings={
+                    "flex_direction": "row",
+                    "flex_justify_content": "center",
+                    "flex_align_items": "center",
+                    "flex_gap": {"size": 16, "unit": "px"},
+                    "_margin": {"top": "32", "bottom": "0", "left": "0", "right": "0", "unit": "px"},
+                },
+                elements=[
+                    widget("button", {
+                        "text": "Contact us",
+                        "link": {"url": "/en/contact-us/", "is_external": False},
+                        "align": "center",
+                        "background_color": ROYAL_BLUE,
+                        "button_text_color": WHITE,
+                        "typography_typography": "custom",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {"size": 14, "unit": "px"},
+                        "typography_font_weight": "600",
+                        "button_padding": {"top": "18", "bottom": "18", "left": "44", "right": "44", "unit": "px"},
+                        "custom_css": CTA_BUTTON_CSS,
+                    }),
+                    widget("button", {
+                        "text": "Our divisions \u2192",
+                        "link": {"url": "/en/our-divisions/", "is_external": False},
+                        "align": "center",
+                        "button_text_color": WHITE,
+                        "typography_typography": "custom",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {"size": 14, "unit": "px"},
+                        "typography_font_weight": "600",
+                        "button_padding": {"top": "18", "bottom": "18", "left": "44", "right": "44", "unit": "px"},
+                        "custom_css": """selector .elementor-button {
+    background: transparent !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+}
+selector .elementor-button:hover {
+    border-color: rgba(255,255,255,0.6) !important;
+    background: rgba(255,255,255,0.05) !important;
+}""",
+                    }),
+                ],
+            ),
+            widget("text-editor", {
+                "editor": (
+                    '<p style="text-align:center; font-size:13px; color:#64748B; margin-top:24px; font-family:Inter,sans-serif; letter-spacing:0.5px;">'
+                    'Qu\u00e9bec, Canada \u00b7 18+ years of expertise \u00b7 15 countries'
+                    '</p>'
+                ),
             }),
         ],
     )
@@ -1025,8 +1013,9 @@ def build_homepage_es():
     elements.append(hero_section(
         "VECTANOR",
         "Marca la direcci\u00f3n. Las divisiones avanzan. Los sistemas siguen.",
-        full_height=True, show_bar=True, show_cta=True,
+        full_height=True, show_cta=True,
         cta_text="Descubrir nuestras divisiones", cta_link="/es/nuestras-divisiones/",
+        ghost_cta_text="Nuestro enfoque \u2192", ghost_cta_link="/es/nuestra-vision/",
     ))
 
     # VISION BRIEF
@@ -1034,34 +1023,62 @@ def build_homepage_es():
         settings={
             "content_width": "boxed",
             "background_background": "classic",
-            "background_color": WHITE,
+            "background_color": LIGHT_GREY,
             "flex_direction": "column",
             "flex_align_items": "center",
             "padding": {"top": "90", "bottom": "90", "left": "40", "right": "40", "unit": "px"},
             "custom_css": GRID_PATTERN_CSS,
         },
         elements=[
-            *section_heading("Orquestando la complejidad"),
-            widget("text-editor", {
-                "editor": (
-                    '<div style="text-align:center; max-width:800px; margin:0 auto;">'
-                    '<p style="font-size:18px; line-height:1.9; color:#475569; margin-bottom:20px; border-left:3px solid #3B82F6; padding-left:24px; font-family:Outfit,sans-serif;">'
-                    'Las ciudades, las infraestructuras y los entornos industriales se han convertido en sistemas '
-                    'complejos, a menudo gestionados en silos. <strong>Groupe Vectanor</strong> act\u00faa como una '
-                    'estructura de direcci\u00f3n capaz de alinear experiencias especializadas hacia un objetivo '
-                    'com\u00fan: hacer los sistemas urbanos e industriales m\u00e1s fiables, m\u00e1s eficientes y '
-                    'm\u00e1s sostenibles.'
-                    '</p>'
-                    '<p style="font-size:17px; line-height:1.9; color:#64748B; font-family:Outfit,sans-serif;">'
-                    'Desde la iluminaci\u00f3n inteligente hasta la movilidad urbana, desde el dise\u00f1o '
-                    'electr\u00f3nico hasta el monitoreo de infraestructuras cr\u00edticas \u2014 nuestras divisiones '
-                    'cubren toda la cadena de valor tecnol\u00f3gica de las ciudades e industrias del ma\u00f1ana.'
-                    '</p>'
-                    '</div>'
-                ),
-                "_animation": "fadeInUp",
-                "_animation_delay": 200,
-            }),
+            inner_container(
+                settings={
+                    "flex_direction": "row",
+                    "flex_wrap": "wrap",
+                    "flex_gap": {"size": 40, "unit": "px"},
+                    "flex_justify_content": "center",
+                    "flex_align_items": "flex-start",
+                    "width": {"size": 100, "unit": "%"},
+                    "max_width": {"size": 1100, "unit": "px"},
+                },
+                elements=[
+                    inner_container(
+                        settings={
+                            "width": {"size": 35, "unit": "%"},
+                            "min_width": {"size": 280, "unit": "px"},
+                            "flex_direction": "column",
+                        },
+                        elements=[*section_heading("Orquestando la complejidad")],
+                    ),
+                    inner_container(
+                        settings={
+                            "width": {"size": 58, "unit": "%"},
+                            "min_width": {"size": 300, "unit": "px"},
+                            "flex_direction": "column",
+                        },
+                        elements=[
+                            widget("text-editor", {
+                                "editor": (
+                                    '<div style="max-width:560px;">'
+                                    '<p style="font-size:16px; line-height:1.9; color:#334155; margin-bottom:20px; border-left:6px solid #3B82F6; padding-left:24px; font-family:Inter,sans-serif;">'
+                                    'Las ciudades, las infraestructuras y los entornos industriales se han convertido en sistemas '
+                                    'complejos, a menudo gestionados en silos. <strong>Groupe Vectanor</strong> act\u00faa como una '
+                                    'estructura de direcci\u00f3n capaz de alinear experiencias especializadas hacia un objetivo '
+                                    'com\u00fan: hacer los sistemas urbanos e industriales m\u00e1s fiables, m\u00e1s eficientes y '
+                                    'm\u00e1s sostenibles.'
+                                    '</p>'
+                                    '<p style="font-size:16px; line-height:1.9; color:#334155; font-family:Inter,sans-serif;">'
+                                    'Desde la iluminaci\u00f3n inteligente hasta la movilidad urbana, desde el dise\u00f1o '
+                                    'electr\u00f3nico hasta el monitoreo de infraestructuras cr\u00edticas \u2014 nuestras divisiones '
+                                    'cubren toda la cadena de valor tecnol\u00f3gica de las ciudades e industrias del ma\u00f1ana.'
+                                    '</p>'
+                                    '</div>'
+                                ),
+                                "css_classes": "v-reveal",
+                            }),
+                        ],
+                    ),
+                ],
+            ),
         ],
     ))
 
@@ -1072,8 +1089,7 @@ def build_homepage_es():
                 "flex_direction": "column",
                 "flex_align_items": "center",
                 "padding": {"top": "24", "bottom": "24", "left": "28", "right": "28", "unit": "px"},
-                "_animation": "fadeInUp",
-                "_animation_delay": delay,
+                "css_classes": "v-reveal",
                 "background_background": "classic",
                 "background_color": "rgba(255,255,255,0.03)",
                 "border_border": "solid",
@@ -1084,7 +1100,7 @@ def build_homepage_es():
             elements=[
                 widget("heading", {
                     "title": number,
-                    "header_size": "h2",
+                    "header_size": "h3",
                     "align": "center",
                     "title_color": WHITE,
                     "typography_typography": "custom",
@@ -1120,7 +1136,7 @@ selector .elementor-heading-title {{
             "background_gradient_angle": {"size": 90, "unit": "deg"},
             "flex_direction": "column",
             "flex_align_items": "center",
-            "padding": {"top": "60", "bottom": "60", "left": "40", "right": "40", "unit": "px"},
+            "padding": {"top": "40", "bottom": "40", "left": "40", "right": "40", "unit": "px"},
         },
         elements=[
             inner_container(
@@ -1134,25 +1150,22 @@ selector .elementor-heading-title {{
                 },
                 elements=[
                     stat_block_es("4", "Divisiones especializadas", 0),
-                    stat_block_es("10+", "A\u00f1os de experiencia", 100),
-                    stat_block_es("IoT", "Gran escala", 200),
-                    stat_block_es("360\u00b0", "Cobertura tecnol\u00f3gica", 300),
+                    stat_block_es("18+", "A\u00f1os de experiencia", 100),
+                    stat_block_es("850K+", "Dispositivos desplegados", 200),
+                    stat_block_es("15", "Pa\u00edses", 300),
                 ],
             ),
-            widget("html", {
-                "html": FOUR_COLOR_BAR_HTML,
-                "_margin": {"top": "25", "bottom": "0", "left": "0", "right": "0", "unit": "px"},
-            }),
         ],
     ))
 
     # DIVISIONS
-    def division_card(name, desc, color, link, logo_key, delay, external_url=None, highlights=None):
+    def division_card(name, desc, color, link, logo_key, delay, highlights=None):
         card_elems = [
             widget("image", {
                 "image": {"url": LOGOS[logo_key], "id": LOGO_IDS[logo_key]},
                 "image_size": "full",
                 "width": {"size": 140, "unit": "px"},
+                "alt": f"{name} logo",
                 "_margin": {"top": "0", "bottom": "15", "left": "0", "right": "0", "unit": "px"},
                 "custom_css": "selector img { filter: brightness(0) invert(1); transition: filter 0.3s; }",
             }),
@@ -1166,13 +1179,13 @@ selector .elementor-heading-title {{
                 "typography_font_weight": "700",
             }),
             widget("text-editor", {
-                "editor": f'<p style="font-size:15px; line-height:1.75; color:#94A3B8;">{desc}</p>',
+                "editor": f'<p style="font-size:15px; line-height:1.75; color:#CBD5E1;">{desc}</p>',
             }),
         ]
         if highlights:
             bullets_html = ''.join(
-                f'<li style="font-size:13px;line-height:1.6;color:#CBD5E1;padding:4px 0;">'
-                f'<span style="color:{color};margin-right:8px;">&#9656;</span>{h}</li>'
+                f'<li style="font-size:13px;line-height:1.6;color:#CBD5E1;padding:4px 0;display:flex;align-items:center;">'
+                f'<span style="display:inline-block;width:6px;height:6px;border-right:2px solid {color};border-top:2px solid {color};transform:rotate(45deg);margin-right:10px;flex-shrink:0;"></span>{h}</li>'
                 for h in highlights
             )
             card_elems.append(widget("html", {
@@ -1197,20 +1210,6 @@ selector .elementor-heading-title {{
                 "custom_css": button_hover_css(color),
             }),
         ]
-        if external_url:
-            btn_elems.append(widget("button", {
-                "text": f"Visitar {name.lower()}.com \u2197",
-                "link": {"url": external_url, "is_external": True},
-                "button_type": "default",
-                "background_color": "transparent",
-                "button_text_color": "#64748B",
-                "border_border": "none",
-                "typography_typography": "custom",
-                "typography_font_family": "Outfit",
-                "typography_font_size": {"size": 12, "unit": "px"},
-                "typography_font_weight": "500",
-                "button_padding": {"top": "8", "bottom": "8", "left": "10", "right": "10", "unit": "px"},
-            }))
 
         card_elems.append(inner_container(
             settings={"flex_direction": "row", "flex_gap": {"size": 10, "unit": "px"}, "flex_wrap": "wrap"},
@@ -1229,9 +1228,7 @@ selector .elementor-heading-title {{
                 "flex_direction": "column",
                 "flex_align_items": "flex-start",
                 "flex_gap": {"size": 14, "unit": "px"},
-                "_animation": "fadeInUp",
-                "_animation_delay": delay,
-                "_animation_duration": "slow",
+                "css_classes": "v-reveal",
                 "custom_css": card_glow_css(color),
             },
             elements=card_elems,
@@ -1268,7 +1265,6 @@ selector .elementor-heading-title {{
                         "Dimonoff",
                         "Iluminaci\u00f3n inteligente e infraestructura urbana conectada.",
                         AMBER, "/es/nuestras-divisiones/dimonoff/", "dimonoff", 0,
-                        external_url="https://dimonoff.com",
                         highlights=[
                             "Telegesti\u00f3n municipal a gran escala",
                             "Reducci\u00f3n energ\u00e9tica medible",
@@ -1279,7 +1275,6 @@ selector .elementor-heading-title {{
                         "Spatium",
                         "Movilidad inteligente y estacionamiento inteligente.",
                         GREEN, "/es/nuestras-divisiones/spatium/", "spatium", 100,
-                        external_url="https://dimonoff.com",
                         highlights=[
                             "Detecci\u00f3n y orientaci\u00f3n en tiempo real",
                             "Sensores IoT de bajo consumo",
@@ -1290,7 +1285,6 @@ selector .elementor-heading-title {{
                         "Amotus",
                         "Design House y catalizador de innovaci\u00f3n industrial.",
                         PURPLE, "/es/nuestras-divisiones/amotus/", "amotus", 200,
-                        external_url="https://amotus.com",
                         highlights=[
                             "Dise\u00f1o electr\u00f3nico a medida",
                             "Del prototipo a la certificaci\u00f3n",
@@ -1313,65 +1307,41 @@ selector .elementor-heading-title {{
     )
     elements.append(divisions_section)
 
-    # APPROACH — Premium cards
-    def value_card_es(icon, title, desc, accent_color, delay=0):
+    # APPROACH — Dark numbered cards
+    def value_card_es(title, desc, accent_color, number, delay_class):
         return inner_container(
             settings={
                 "background_background": "classic",
-                "background_color": WHITE,
+                "background_color": MID_DARK,
                 "border_border": "solid",
-                "border_width": {"top": "3", "bottom": "0", "left": "3", "right": "0", "unit": "px", "isLinked": False},
+                "border_width": {"top": "3", "bottom": "0", "left": "0", "right": "0", "unit": "px", "isLinked": False},
                 "border_color": accent_color,
                 "border_radius": {"top": "12", "bottom": "12", "left": "12", "right": "12", "unit": "px"},
-                "box_shadow_box_shadow_type": "yes",
-                "box_shadow_box_shadow": {"horizontal": 0, "vertical": 4, "blur": 30, "spread": 0, "color": "rgba(0,0,0,0.06)"},
                 "padding": {"top": "40", "bottom": "40", "left": "30", "right": "30", "unit": "px"},
                 "flex_direction": "column",
-                "flex_align_items": "center",
+                "flex_align_items": "flex-start",
                 "flex_gap": {"size": 8, "unit": "px"},
-                "_animation": "fadeInUp",
-                "_animation_delay": delay,
-                "_animation_duration": "slow",
-                "custom_css": f"""
-selector {{
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}}
-selector:hover {{
-    transform: translateY(-8px);
-    box-shadow: 0 20px 60px -15px {accent_color}30, 0 8px 25px rgba(0,0,0,0.08);
-}}
-""",
+                "css_classes": f"v-reveal {delay_class}",
+                "position": "relative",
+                "custom_css": f"""selector {{ transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }}
+selector:hover {{ transform: translateY(-8px); box-shadow: 0 20px 60px -15px {accent_color}30; }}""",
             },
             elements=[
                 widget("html", {
-                    "html": (
-                        f'<div style="width:68px;height:68px;border-radius:50%;'
-                        f'background:linear-gradient(135deg,{accent_color}18,{accent_color}08);'
-                        f'display:flex;align-items:center;justify-content:center;margin:0 auto;">'
-                        f'<i class="{icon}" style="font-size:26px;color:{accent_color};"></i></div>'
-                    ),
+                    "html": f'<span style="font-size:64px;font-weight:800;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,0.06);position:absolute;top:12px;right:20px;font-family:Montserrat,sans-serif;">{number}</span>',
                 }),
                 widget("heading", {
                     "title": title,
                     "header_size": "h4",
-                    "align": "center",
-                    "title_color": NEAR_BLACK,
+                    "title_color": WHITE,
                     "typography_typography": "custom",
                     "typography_font_family": "Montserrat",
                     "typography_font_size": {"size": 22, "unit": "px"},
                     "typography_font_weight": "700",
                     "_margin": {"top": "8", "bottom": "5", "left": "0", "right": "0", "unit": "px"},
                 }),
-                widget("divider", {
-                    "style": "custom",
-                    "color": accent_color,
-                    "weight": {"size": 2, "unit": "px"},
-                    "width": {"size": 40, "unit": "px"},
-                    "align": "center",
-                    "_margin": {"top": "0", "bottom": "5", "left": "0", "right": "0", "unit": "px"},
-                }),
                 widget("text-editor", {
-                    "editor": f'<p style="text-align:center; font-size:15px; line-height:1.8; color:#64748B;">{desc}</p>',
+                    "editor": f'<p style="font-size:15px; line-height:1.8; color:#CBD5E1;">{desc}</p>',
                 }),
             ],
         )
@@ -1379,26 +1349,17 @@ selector:hover {{
     approach = container(
         settings={
             "content_width": "boxed",
-            "background_background": "classic",
-            "background_color": LIGHT_GREY,
+            "background_background": "gradient",
+            "background_color": NEAR_BLACK,
+            "background_color_b": DARK_NAVY,
+            "background_gradient_angle": {"size": 145, "unit": "deg"},
             "flex_direction": "column",
             "flex_align_items": "center",
             "padding": {"top": "90", "bottom": "90", "left": "40", "right": "40", "unit": "px"},
-            "custom_css": GRID_PATTERN_CSS,
+            "custom_css": GRAIN_OVERLAY_CSS,
         },
         elements=[
-            *section_heading("Nuestro enfoque"),
-            widget("text-editor", {
-                "editor": (
-                    '<p style="text-align:center; max-width:700px; margin:0 auto 50px; font-size:17px; '
-                    'line-height:1.8; color:#64748B;">'
-                    'Creemos que la tecnolog\u00eda debe servir una visi\u00f3n clara. Cada soluci\u00f3n '
-                    'desplegada por el grupo se basa en tres pilares fundamentales que gu\u00edan nuestras '
-                    'decisiones t\u00e9cnicas y estrat\u00e9gicas.'
-                    '</p>'
-                ),
-                "_animation": "fadeInUp",
-            }),
+            *section_heading("Nuestro enfoque", dark=True),
             inner_container(
                 settings={
                     "flex_direction": "row",
@@ -1410,30 +1371,19 @@ selector:hover {{
                 },
                 elements=[
                     value_card_es(
-                        "fas fa-project-diagram",
                         "Interoperabilidad",
-                        "Sistemas dise\u00f1ados para comunicarse entre s\u00ed, sin dependencia de un \u00fanico "
-                        "proveedor. Privilegiamos los est\u00e1ndares abiertos y los protocolos reconocidos para "
-                        "garantizar la sostenibilidad de las inversiones y la libertad de elecci\u00f3n de nuestros "
-                        "clientes.",
-                        ROYAL_BLUE, 0,
+                        "Sistemas dise\u00f1ados para comunicarse abiertamente, sin dependencia de un proveedor.",
+                        ROYAL_BLUE, "01", "v-reveal",
                     ),
                     value_card_es(
-                        "fas fa-shield-alt",
                         "Confiabilidad",
-                        "Infraestructura confiable, segura y construida para durar. Cada componente es probado, "
-                        "certificado y desplegado siguiendo procesos rigurosos. La robustez no es opcional \u2014 "
-                        "es nuestro est\u00e1ndar de referencia.",
-                        "#10B981", 100,
+                        "Infraestructura confiable y segura, construida para durar.",
+                        "#10B981", "02", "v-reveal-d1",
                     ),
                     value_card_es(
-                        "fas fa-expand-arrows-alt",
                         "Escalabilidad",
-                        "Una arquitectura modular capaz de evolucionar sin interrupciones y adaptarse a las "
-                        "necesidades futuras. Nuestras soluciones est\u00e1n dise\u00f1adas para crecer con los "
-                        "proyectos de nuestros clientes, desde unos pocos puntos conectados hasta despliegues a "
-                        "escala de ciudad.",
-                        PURPLE, 200,
+                        "Arquitectura modular que evoluciona sin interrupciones.",
+                        PURPLE, "03", "v-reveal-d2",
                     ),
                 ],
             ),
@@ -1458,23 +1408,10 @@ selector:hover {{
             "flex_direction": "column",
             "flex_justify_content": "center",
             "flex_align_items": "center",
-            "padding": {"top": "90", "bottom": "90", "left": "40", "right": "40", "unit": "px"},
-            "custom_css": GRAIN_OVERLAY_CSS,
+            "padding": {"top": "80", "bottom": "80", "left": "40", "right": "40", "unit": "px"},
+            "custom_css": GRID_PATTERN_CSS,
         },
         elements=[
-            widget("heading", {
-                "title": "GROUPE",
-                "header_size": "h6",
-                "align": "center",
-                "title_color": SLATE,
-                "typography_typography": "custom",
-                "typography_font_family": "Montserrat",
-                "typography_font_size": {"size": 12, "unit": "px"},
-                "typography_font_weight": "600",
-                "typography_letter_spacing": {"size": 5, "unit": "px"},
-                "_margin": {"top": "0", "bottom": "12", "left": "0", "right": "0", "unit": "px"},
-                "_animation": "fadeInUp",
-            }),
             widget("heading", {
                 "title": "\u00bfListo para estructurar el futuro?",
                 "header_size": "h2",
@@ -1485,35 +1422,68 @@ selector:hover {{
                 "typography_font_size": {"size": 40, "unit": "px"},
                 "typography_font_weight": "700",
                 "_margin": {"top": "0", "bottom": "20", "left": "0", "right": "0", "unit": "px"},
-                "_animation": "fadeInUp",
+                "css_classes": "v-reveal",
             }),
             widget("text-editor", {
                 "editor": (
-                    '<p style="text-align:center; font-size:18px; color:#94A3B8; max-width:600px; margin:0 auto; font-family:Outfit,sans-serif;">'
+                    '<p style="text-align:center; font-size:16px; color:#CBD5E1; max-width:600px; margin:0 auto; font-family:Inter,sans-serif;">'
                     'Cont\u00e1ctenos para descubrir c\u00f3mo Groupe Vectanor puede acompa\u00f1ar sus proyectos '
                     'de infraestructura y transformaci\u00f3n tecnol\u00f3gica.'
                     '</p>'
                 ),
-                "_animation": "fadeInUp",
-                "_animation_delay": 100,
+                "css_classes": "v-reveal",
             }),
-            widget("html", {
-                "html": FOUR_COLOR_BAR_HTML,
-                "_margin": {"top": "30", "bottom": "30", "left": "0", "right": "0", "unit": "px"},
-            }),
-            widget("button", {
-                "text": "Cont\u00e1ctenos",
-                "link": {"url": "/es/contactenos/", "is_external": False},
-                "align": "center",
-                "background_color": ROYAL_BLUE,
-                "button_text_color": WHITE,
-                "border_radius": {"top": "6", "bottom": "6", "left": "6", "right": "6", "unit": "px"},
-                "typography_typography": "custom",
-                "typography_font_family": "Montserrat",
-                "typography_font_size": {"size": 14, "unit": "px"},
-                "typography_font_weight": "600",
-                "button_padding": {"top": "18", "bottom": "18", "left": "44", "right": "44", "unit": "px"},
-                "custom_css": CTA_BUTTON_CSS,
+            inner_container(
+                settings={
+                    "flex_direction": "row",
+                    "flex_justify_content": "center",
+                    "flex_align_items": "center",
+                    "flex_gap": {"size": 16, "unit": "px"},
+                    "_margin": {"top": "32", "bottom": "0", "left": "0", "right": "0", "unit": "px"},
+                },
+                elements=[
+                    widget("button", {
+                        "text": "Cont\u00e1ctenos",
+                        "link": {"url": "/es/contactenos/", "is_external": False},
+                        "align": "center",
+                        "background_color": ROYAL_BLUE,
+                        "button_text_color": WHITE,
+                        "typography_typography": "custom",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {"size": 14, "unit": "px"},
+                        "typography_font_weight": "600",
+                        "button_padding": {"top": "18", "bottom": "18", "left": "44", "right": "44", "unit": "px"},
+                        "custom_css": CTA_BUTTON_CSS,
+                    }),
+                    widget("button", {
+                        "text": "Nuestras divisiones \u2192",
+                        "link": {"url": "/es/nuestras-divisiones/", "is_external": False},
+                        "align": "center",
+                        "button_text_color": WHITE,
+                        "typography_typography": "custom",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {"size": 14, "unit": "px"},
+                        "typography_font_weight": "600",
+                        "button_padding": {"top": "18", "bottom": "18", "left": "44", "right": "44", "unit": "px"},
+                        "custom_css": """selector .elementor-button {
+    background: transparent !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+}
+selector .elementor-button:hover {
+    border-color: rgba(255,255,255,0.6) !important;
+    background: rgba(255,255,255,0.05) !important;
+}""",
+                    }),
+                ],
+            ),
+            widget("text-editor", {
+                "editor": (
+                    '<p style="text-align:center; font-size:13px; color:#64748B; margin-top:24px; font-family:Inter,sans-serif; letter-spacing:0.5px;">'
+                    'Qu\u00e9bec, Canad\u00e1 \u00b7 18+ a\u00f1os de experiencia \u00b7 15 pa\u00edses'
+                    '</p>'
+                ),
             }),
         ],
     )
@@ -1533,7 +1503,7 @@ def build_vision_page_en():
     elements.append(hero_section(
         "Our vision",
         "Giving direction to complex systems",
-        full_height=False, show_bar=False,
+        full_height=False,
     ))
 
     # Story
@@ -1561,7 +1531,7 @@ def build_vision_page_en():
                     'provide tools, but give direction.</p>'
                     '</div>'
                 ),
-                "_animation": "fadeInUp",
+                "css_classes": "v-reveal",
             }),
         ],
     ))
@@ -1591,7 +1561,7 @@ def build_vision_page_en():
                     'understanding of operational constraints in the field.</p>'
                     '</div>'
                 ),
-                "_animation": "fadeInUp",
+                "css_classes": "v-reveal",
             }),
         ],
     ))
@@ -1616,12 +1586,7 @@ def build_vision_page_en():
                     'dependency.\u00a0\u00bb</p>'
                     '</blockquote>'
                 ),
-                "_animation": "fadeIn",
-                "_animation_duration": "slow",
-            }),
-            widget("html", {
-                "html": FOUR_COLOR_BAR_HTML,
-                "_margin": {"top": "20", "bottom": "0", "left": "0", "right": "0", "unit": "px"},
+                "css_classes": "v-reveal",
             }),
         ],
     ))
@@ -1636,7 +1601,7 @@ def build_vision_page_es():
     elements.append(hero_section(
         "Nuestra visi\u00f3n",
         "Dar direcci\u00f3n a los sistemas complejos",
-        full_height=False, show_bar=False,
+        full_height=False,
     ))
 
     # Story
@@ -1665,7 +1630,7 @@ def build_vision_page_es():
                     'tecnol\u00f3gico no debe solo proporcionar herramientas, sino dar direcci\u00f3n.</p>'
                     '</div>'
                 ),
-                "_animation": "fadeInUp",
+                "css_classes": "v-reveal",
             }),
         ],
     ))
@@ -1696,7 +1661,7 @@ def build_vision_page_es():
                     'controlada y una comprensi\u00f3n profunda de las restricciones operativas en el campo.</p>'
                     '</div>'
                 ),
-                "_animation": "fadeInUp",
+                "css_classes": "v-reveal",
             }),
         ],
     ))
@@ -1721,12 +1686,7 @@ def build_vision_page_es():
                     'innecesarias.\u00a0\u00bb</p>'
                     '</blockquote>'
                 ),
-                "_animation": "fadeIn",
-                "_animation_duration": "slow",
-            }),
-            widget("html", {
-                "html": FOUR_COLOR_BAR_HTML,
-                "_margin": {"top": "20", "bottom": "0", "left": "0", "right": "0", "unit": "px"},
+                "css_classes": "v-reveal",
             }),
         ],
     ))
@@ -1745,7 +1705,7 @@ def build_divisions_index_en():
     elements.append(hero_section(
         "Our divisions",
         "An ecosystem of aligned expertise",
-        full_height=False, show_bar=True,
+        full_height=False,
     ))
 
     def large_card(div_key, delay=0):
@@ -1755,6 +1715,7 @@ def build_divisions_index_en():
                 "image": {"url": LOGOS[d["logo_key"]], "id": LOGO_IDS[d["logo_key"]]},
                 "image_size": "full",
                 "width": {"size": 160, "unit": "px"},
+                "alt": f"{d['name']} logo",
                 "_margin": {"top": "0", "bottom": "15", "left": "0", "right": "0", "unit": "px"},
             }),
             widget("heading", {
@@ -1823,9 +1784,7 @@ def build_divisions_index_en():
                 "flex_direction": "column",
                 "flex_align_items": "flex-start",
                 "flex_gap": {"size": 8, "unit": "px"},
-                "_animation": "fadeInUp",
-                "_animation_delay": delay,
-                "_animation_duration": "slow",
+                "css_classes": "v-reveal",
                 "custom_css": card_light_glow_css(d["accent"]),
             },
             elements=card_elems,
@@ -1864,7 +1823,7 @@ def build_divisions_index_es():
     elements.append(hero_section(
         "Nuestras divisiones",
         "Un ecosistema de experiencias alineadas",
-        full_height=False, show_bar=True,
+        full_height=False,
     ))
 
     def large_card(div_key, delay=0):
@@ -1874,6 +1833,7 @@ def build_divisions_index_es():
                 "image": {"url": LOGOS[d["logo_key"]], "id": LOGO_IDS[d["logo_key"]]},
                 "image_size": "full",
                 "width": {"size": 160, "unit": "px"},
+                "alt": f"{d['name']} logo",
                 "_margin": {"top": "0", "bottom": "15", "left": "0", "right": "0", "unit": "px"},
             }),
             widget("heading", {
@@ -1942,9 +1902,7 @@ def build_divisions_index_es():
                 "flex_direction": "column",
                 "flex_align_items": "flex-start",
                 "flex_gap": {"size": 8, "unit": "px"},
-                "_animation": "fadeInUp",
-                "_animation_delay": delay,
-                "_animation_duration": "slow",
+                "css_classes": "v-reveal",
                 "custom_css": card_light_glow_css(d["accent"]),
             },
             elements=card_elems,
@@ -1991,10 +1949,10 @@ def build_division_page_en(name, accent, tagline, description, features, logo_ke
             "image_size": "full",
             "width": {"size": 180, "unit": "px"},
             "align": "center",
+            "alt": f"{name} logo",
             "_margin": {"top": "0", "bottom": "25", "left": "0", "right": "0", "unit": "px"},
             "custom_css": "selector img { filter: brightness(0) invert(1); }",
-            "_animation": "fadeInDown",
-            "_animation_duration": "slow",
+            "css_classes": "v-reveal",
         }),
         widget("divider", {
             "style": "custom", "color": accent,
@@ -2012,8 +1970,7 @@ def build_division_page_en(name, accent, tagline, description, features, logo_ke
             "typography_font_size": {"size": 22, "unit": "px"},
             "typography_font_weight": "400",
             "typography_line_height": {"size": 1.6, "unit": "em"},
-            "_animation": "fadeInUp",
-            "_animation_duration": "slow",
+            "css_classes": "v-reveal",
         }),
     ]
     if external_url:
@@ -2072,7 +2029,7 @@ def build_division_page_en(name, accent, tagline, description, features, logo_ke
             *section_heading(f"About {name}"),
             widget("text-editor", {
                 "editor": f'<p style="text-align:center; max-width:800px; margin:0 auto; font-size:18px; line-height:1.9; color:#475569; font-family:Outfit,sans-serif;">{description}</p>',
-                "_animation": "fadeInUp",
+                "css_classes": "v-reveal",
             }),
         ],
     ))
@@ -2092,9 +2049,7 @@ def build_division_page_en(name, accent, tagline, description, features, logo_ke
                 "flex_direction": "column",
                 "flex_align_items": "flex-start",
                 "flex_gap": {"size": 10, "unit": "px"},
-                "_animation": "fadeInUp",
-                "_animation_delay": i * 100,
-                "_animation_duration": "slow",
+                "css_classes": f"v-reveal v-reveal-d{i+1}" if i < 3 else "v-reveal",
                 "custom_css": card_glow_css(accent),
             },
             elements=[
@@ -2160,10 +2115,10 @@ def build_division_page_es(name, accent, tagline, description, features, logo_ke
             "image_size": "full",
             "width": {"size": 180, "unit": "px"},
             "align": "center",
+            "alt": f"{name} logo",
             "_margin": {"top": "0", "bottom": "25", "left": "0", "right": "0", "unit": "px"},
             "custom_css": "selector img { filter: brightness(0) invert(1); }",
-            "_animation": "fadeInDown",
-            "_animation_duration": "slow",
+            "css_classes": "v-reveal",
         }),
         widget("divider", {
             "style": "custom", "color": accent,
@@ -2181,8 +2136,7 @@ def build_division_page_es(name, accent, tagline, description, features, logo_ke
             "typography_font_size": {"size": 22, "unit": "px"},
             "typography_font_weight": "400",
             "typography_line_height": {"size": 1.6, "unit": "em"},
-            "_animation": "fadeInUp",
-            "_animation_duration": "slow",
+            "css_classes": "v-reveal",
         }),
     ]
     if external_url:
@@ -2241,7 +2195,7 @@ def build_division_page_es(name, accent, tagline, description, features, logo_ke
             *section_heading(f"Acerca de {name}"),
             widget("text-editor", {
                 "editor": f'<p style="text-align:center; max-width:800px; margin:0 auto; font-size:18px; line-height:1.9; color:#475569; font-family:Outfit,sans-serif;">{description}</p>',
-                "_animation": "fadeInUp",
+                "css_classes": "v-reveal",
             }),
         ],
     ))
@@ -2261,9 +2215,7 @@ def build_division_page_es(name, accent, tagline, description, features, logo_ke
                 "flex_direction": "column",
                 "flex_align_items": "flex-start",
                 "flex_gap": {"size": 10, "unit": "px"},
-                "_animation": "fadeInUp",
-                "_animation_delay": i * 100,
-                "_animation_duration": "slow",
+                "css_classes": f"v-reveal v-reveal-d{i+1}" if i < 3 else "v-reveal",
                 "custom_css": card_glow_css(accent),
             },
             elements=[
@@ -2325,34 +2277,38 @@ def build_division_page_es(name, accent, tagline, description, features, logo_ke
 def build_contact_page_en():
     """English contact page — returns full raw HTML string (not Elementor elements)."""
     return f"""
-<div style="background:#FFFFFF; min-height:400px; padding:80px 40px; box-sizing:border-box;">
+<div style="background:{NEAR_BLACK}; min-height:400px; padding:80px 40px; box-sizing:border-box;">
   <div style="max-width:900px; margin:0 auto; display:flex; flex-wrap:wrap; gap:60px; justify-content:center;">
 
     <!-- Left panel -->
     <div style="flex:0 0 350px; display:flex; flex-direction:column; gap:25px; animation:fadeInLeft 0.8s ease both;">
       <img src="{LOGOS['vectanor']}" alt="Groupe Vectanor" style="width:180px; margin-bottom:10px;">
       <div>
-        <h2 style="font-family:Montserrat,sans-serif; font-size:24px; font-weight:700; color:{NEAR_BLACK}; margin:0 0 8px 0;">Contact us</h2>
-        <p style="font-family:Outfit,sans-serif; font-size:16px; color:#475569; margin:0;">Our team is here to answer your questions.</p>
+        <h2 style="font-family:Montserrat,sans-serif; font-size:24px; font-weight:700; color:{WHITE}; margin:0 0 8px 0;">Contact us</h2>
+        <p style="font-family:Inter,sans-serif; font-size:16px; color:#CBD5E1; margin:0;">Our team is here to answer your questions.</p>
       </div>
       <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px;">
-        <li style="display:flex; align-items:center; gap:12px; font-family:Outfit,sans-serif; font-size:16px; color:#475569;">
+        <li style="display:flex; align-items:center; gap:12px; font-family:Inter,sans-serif; font-size:16px; color:#CBD5E1;">
           <i class="fas fa-map-marker-alt" style="color:{ROYAL_BLUE}; width:20px;"></i>
-          Montr&eacute;al, Qu&eacute;bec, Canada
+          410-1015 Wilfrid Pelletier, Qu&eacute;bec, QC, Canada G1W 0C4
         </li>
-        <li style="display:flex; align-items:center; gap:12px; font-family:Outfit,sans-serif; font-size:16px; color:#475569;">
+        <li style="display:flex; align-items:center; gap:12px; font-family:Inter,sans-serif; font-size:16px; color:#CBD5E1;">
+          <i class="fas fa-phone" style="color:{ROYAL_BLUE}; width:20px;"></i>
+          <a href="tel:4186823636" style="color:#CBD5E1; text-decoration:none;">418-682-3636</a>
+        </li>
+        <li style="display:flex; align-items:center; gap:12px; font-family:Inter,sans-serif; font-size:16px; color:#CBD5E1;">
           <i class="fas fa-envelope" style="color:{ROYAL_BLUE}; width:20px;"></i>
-          <a href="mailto:info@vectanor.com" style="color:#475569; text-decoration:none;">info@vectanor.com</a>
+          <a href="mailto:info@vectanor.com" style="color:#CBD5E1; text-decoration:none;">info@vectanor.com</a>
         </li>
       </ul>
-      <p style="font-family:Outfit,sans-serif; font-size:16px; line-height:1.8; color:#475569; margin:0;">
+      <p style="font-family:Inter,sans-serif; font-size:16px; line-height:1.8; color:#CBD5E1; margin:0;">
         For inquiries related to a specific division, feel free to contact us. We will direct you to the appropriate team.
       </p>
     </div>
 
     <!-- Right panel: form -->
-    <div style="flex:0 0 450px; background:{LIGHT_GREY}; border-radius:12px; padding:35px; box-sizing:border-box; animation:fadeInRight 0.8s ease both;">
-      <h4 style="font-family:Montserrat,sans-serif; font-size:20px; font-weight:600; color:{NEAR_BLACK}; margin:0 0 20px 0;">Send us a message</h4>
+    <div style="flex:0 0 450px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:35px; box-sizing:border-box; animation:fadeInRight 0.8s ease both;">
+      <h4 style="font-family:Montserrat,sans-serif; font-size:20px; font-weight:600; color:{WHITE}; margin:0 0 20px 0;">Send us a message</h4>
       {EN_CONTACT_FORM_HTML}
     </div>
 
@@ -2374,34 +2330,38 @@ def build_contact_page_en():
 def build_contact_page_es():
     """Spanish contact page — returns full raw HTML string (not Elementor elements)."""
     return f"""
-<div style="background:#FFFFFF; min-height:400px; padding:80px 40px; box-sizing:border-box;">
+<div style="background:{NEAR_BLACK}; min-height:400px; padding:80px 40px; box-sizing:border-box;">
   <div style="max-width:900px; margin:0 auto; display:flex; flex-wrap:wrap; gap:60px; justify-content:center;">
 
     <!-- Left panel -->
     <div style="flex:0 0 350px; display:flex; flex-direction:column; gap:25px; animation:fadeInLeft 0.8s ease both;">
       <img src="{LOGOS['vectanor']}" alt="Groupe Vectanor" style="width:180px; margin-bottom:10px;">
       <div>
-        <h2 style="font-family:Montserrat,sans-serif; font-size:24px; font-weight:700; color:{NEAR_BLACK}; margin:0 0 8px 0;">Cont&aacute;ctenos</h2>
-        <p style="font-family:Outfit,sans-serif; font-size:16px; color:#475569; margin:0;">Nuestro equipo est&aacute; aqu&iacute; para responder sus preguntas.</p>
+        <h2 style="font-family:Montserrat,sans-serif; font-size:24px; font-weight:700; color:{WHITE}; margin:0 0 8px 0;">Cont&aacute;ctenos</h2>
+        <p style="font-family:Inter,sans-serif; font-size:16px; color:#CBD5E1; margin:0;">Nuestro equipo est&aacute; aqu&iacute; para responder sus preguntas.</p>
       </div>
       <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px;">
-        <li style="display:flex; align-items:center; gap:12px; font-family:Outfit,sans-serif; font-size:16px; color:#475569;">
+        <li style="display:flex; align-items:center; gap:12px; font-family:Inter,sans-serif; font-size:16px; color:#CBD5E1;">
           <i class="fas fa-map-marker-alt" style="color:{ROYAL_BLUE}; width:20px;"></i>
-          Montr&eacute;al, Qu&eacute;bec, Canad&aacute;
+          410-1015 Wilfrid Pelletier, Qu&eacute;bec, QC, Canad&aacute; G1W 0C4
         </li>
-        <li style="display:flex; align-items:center; gap:12px; font-family:Outfit,sans-serif; font-size:16px; color:#475569;">
+        <li style="display:flex; align-items:center; gap:12px; font-family:Inter,sans-serif; font-size:16px; color:#CBD5E1;">
+          <i class="fas fa-phone" style="color:{ROYAL_BLUE}; width:20px;"></i>
+          <a href="tel:4186823636" style="color:#CBD5E1; text-decoration:none;">418-682-3636</a>
+        </li>
+        <li style="display:flex; align-items:center; gap:12px; font-family:Inter,sans-serif; font-size:16px; color:#CBD5E1;">
           <i class="fas fa-envelope" style="color:{ROYAL_BLUE}; width:20px;"></i>
-          <a href="mailto:info@vectanor.com" style="color:#475569; text-decoration:none;">info@vectanor.com</a>
+          <a href="mailto:info@vectanor.com" style="color:#CBD5E1; text-decoration:none;">info@vectanor.com</a>
         </li>
       </ul>
-      <p style="font-family:Outfit,sans-serif; font-size:16px; line-height:1.8; color:#475569; margin:0;">
+      <p style="font-family:Inter,sans-serif; font-size:16px; line-height:1.8; color:#CBD5E1; margin:0;">
         Para consultas relacionadas con una divisi&oacute;n espec&iacute;fica, no dude en contactarnos. Lo dirigiremos al equipo adecuado.
       </p>
     </div>
 
     <!-- Right panel: form -->
-    <div style="flex:0 0 450px; background:{LIGHT_GREY}; border-radius:12px; padding:35px; box-sizing:border-box; animation:fadeInRight 0.8s ease both;">
-      <h4 style="font-family:Montserrat,sans-serif; font-size:20px; font-weight:600; color:{NEAR_BLACK}; margin:0 0 20px 0;">Env&iacute;enos un mensaje</h4>
+    <div style="flex:0 0 450px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:35px; box-sizing:border-box; animation:fadeInRight 0.8s ease both;">
+      <h4 style="font-family:Montserrat,sans-serif; font-size:20px; font-weight:600; color:{WHITE}; margin:0 0 20px 0;">Env&iacute;enos un mensaje</h4>
       {ES_CONTACT_FORM_HTML}
     </div>
 
@@ -2447,8 +2407,9 @@ if __name__ == "__main__":
             sys.exit(1)
 
     def wrap_page(lang_code, page_key, page_id, elements):
-        """Wrap page elements with font loader, header, and footer."""
+        """Wrap page elements with font loader, SEO meta, header, and footer."""
         elements.insert(0, site_header(lang_code, page_key))
+        elements.insert(0, seo_head(page_key, lang_code))
         elements.insert(0, font_loader())
         elements.append(site_footer(lang_code))
         push_page(page_id, elements)

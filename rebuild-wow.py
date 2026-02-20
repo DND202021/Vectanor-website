@@ -22,10 +22,11 @@ AUTH = ("dnoiseux", "RcF2 FMi0 wjwu QlJV bNEo pPs5")
 NAVY = "#1E3A8A"
 ROYAL_BLUE = "#3B82F6"
 SKY_BLUE = "#0EA5E9"
-NEAR_BLACK = "#0F172A"
-DARK_NAVY = "#0F1E4A"
+NEAR_BLACK = "#060E1F"
+DARK_NAVY = "#0B1628"
 SLATE = "#94A3B8"
-LIGHT_GREY = "#F1F5F9"
+LIGHT_GREY = "#F0F4F8"
+MID_DARK = "#112240"
 WHITE = "#FFFFFF"
 AMBER = "#F59E0B"
 GREEN = "#10B981"
@@ -89,6 +90,42 @@ LANG_URLS = {
 
 LANG_LABELS = {"fr": "FR", "en": "EN", "es": "ES"}
 
+# ═══════════════════════════════════════
+# SEO META — per-page meta descriptions, OG tags
+# ═══════════════════════════════════════
+_OG_IMAGE = "https://vectanor.com/wp-content/uploads/2026/02/vectanor_logo_concept_3.svg"
+SEO_META = {
+    "fr": {
+        "homepage": {"title": "Groupe Vectanor — Holding technologique canadienne", "description": "Groupe Vectanor : éclairage intelligent, mobilité urbaine, conception IoT et monitoring d'infrastructures. 4 divisions, 18+ ans d'expertise, 15 pays. Québec, Canada.", "url": "https://vectanor.com/", "og_image": _OG_IMAGE},
+        "vision": {"title": "Notre vision — Groupe Vectanor", "description": "Notre vision : orchestrer la complexité technologique des villes et industries modernes. Découvrez l'approche de Groupe Vectanor, holding technologique canadienne.", "url": "https://vectanor.com/vision/", "og_image": _OG_IMAGE},
+        "divisions": {"title": "Nos divisions — Groupe Vectanor", "description": "4 divisions spécialisées : Dimonoff (éclairage), Spatium (mobilité), Amotus (électronique), Vigilia (monitoring). Un écosystème technologique intégré.", "url": "https://vectanor.com/divisions/", "og_image": _OG_IMAGE},
+        "dimonoff": {"title": "Dimonoff — Éclairage intelligent | Groupe Vectanor", "description": "Dimonoff : télégestion d'éclairage intelligent et infrastructures urbaines connectées. 850K+ appareils déployés dans 15 pays. Solutions SaaS pour municipalités.", "url": "https://vectanor.com/divisions/dimonoff/", "og_image": _OG_IMAGE},
+        "spatium": {"title": "Spatium — Mobilité intelligente | Groupe Vectanor", "description": "Spatium : stationnement intelligent et gestion dynamique des flux de mobilité urbaine. Capteurs IoT, analytique avancée, intégration multi-plateformes.", "url": "https://vectanor.com/divisions/spatium/", "og_image": _OG_IMAGE},
+        "amotus": {"title": "Amotus — Design House électronique | Groupe Vectanor", "description": "Amotus : conception électronique sur mesure, systèmes embarqués et intégration industrielle. Du prototype à la certification (CE, UL, CSA). Québec, Canada.", "url": "https://vectanor.com/divisions/amotus/", "og_image": _OG_IMAGE},
+        "vigilia": {"title": "Vigilia — Monitoring d'infrastructures | Groupe Vectanor", "description": "Vigilia : surveillance et monitoring d'infrastructures critiques en temps réel. Capteurs intelligents, MQTT, analyse prédictive par IA. Continuité opérationnelle.", "url": "https://vectanor.com/divisions/vigilia/", "og_image": _OG_IMAGE},
+        "contact": {"title": "Contactez-nous — Groupe Vectanor", "description": "Contactez Groupe Vectanor pour vos projets d'infrastructure et de transformation technologique. Holding technologique canadienne basée à Québec.", "url": "https://vectanor.com/contact/", "og_image": _OG_IMAGE},
+    },
+    "en": {
+        "homepage": {"title": "Groupe Vectanor — Canadian Technology Holding", "description": "Groupe Vectanor: smart lighting, urban mobility, IoT design, and infrastructure monitoring. 4 divisions, 18+ years of expertise, 15 countries. Québec, Canada.", "url": "https://vectanor.com/en/", "og_image": _OG_IMAGE},
+        "vision": {"title": "Our Vision — Groupe Vectanor", "description": "Our vision: orchestrating technological complexity for modern cities and industries. Discover Groupe Vectanor's approach as a Canadian technology holding company.", "url": "https://vectanor.com/en/our-vision/", "og_image": _OG_IMAGE},
+        "divisions": {"title": "Our Divisions — Groupe Vectanor", "description": "4 specialized divisions: Dimonoff (lighting), Spatium (mobility), Amotus (electronics), Vigilia (monitoring). An integrated technology ecosystem.", "url": "https://vectanor.com/en/our-divisions/", "og_image": _OG_IMAGE},
+        "dimonoff": {"title": "Dimonoff — Smart Lighting | Groupe Vectanor", "description": "Dimonoff: smart lighting remote management and connected urban infrastructure. 850K+ devices deployed across 15 countries. SaaS solutions for municipalities.", "url": "https://vectanor.com/en/our-divisions/dimonoff/", "og_image": _OG_IMAGE},
+        "spatium": {"title": "Spatium — Smart Mobility | Groupe Vectanor", "description": "Spatium: smart parking and dynamic urban mobility flow management. IoT sensors, advanced analytics, multi-platform integration.", "url": "https://vectanor.com/en/our-divisions/spatium/", "og_image": _OG_IMAGE},
+        "amotus": {"title": "Amotus — Electronic Design House | Groupe Vectanor", "description": "Amotus: custom electronic design, embedded systems, and industrial integration. From prototype to certification (CE, UL, CSA). Québec, Canada.", "url": "https://vectanor.com/en/our-divisions/amotus/", "og_image": _OG_IMAGE},
+        "vigilia": {"title": "Vigilia — Infrastructure Monitoring | Groupe Vectanor", "description": "Vigilia: real-time critical infrastructure monitoring and surveillance. Smart sensors, MQTT, AI-powered predictive analytics. Operational continuity.", "url": "https://vectanor.com/en/our-divisions/vigilia/", "og_image": _OG_IMAGE},
+        "contact": {"title": "Contact Us — Groupe Vectanor", "description": "Contact Groupe Vectanor for your infrastructure and technology transformation projects. Canadian technology holding company based in Québec.", "url": "https://vectanor.com/en/contact-us/", "og_image": _OG_IMAGE},
+    },
+    "es": {
+        "homepage": {"title": "Groupe Vectanor — Holding tecnológica canadiense", "description": "Groupe Vectanor: iluminación inteligente, movilidad urbana, diseño IoT y monitoreo de infraestructuras. 4 divisiones, 18+ años de experiencia, 15 países. Québec, Canadá.", "url": "https://vectanor.com/es/", "og_image": _OG_IMAGE},
+        "vision": {"title": "Nuestra Visión — Groupe Vectanor", "description": "Nuestra visión: orquestar la complejidad tecnológica de ciudades e industrias modernas. Descubra el enfoque de Groupe Vectanor, holding tecnológica canadiense.", "url": "https://vectanor.com/es/nuestra-vision/", "og_image": _OG_IMAGE},
+        "divisions": {"title": "Nuestras Divisiones — Groupe Vectanor", "description": "4 divisiones especializadas: Dimonoff (iluminación), Spatium (movilidad), Amotus (electrónica), Vigilia (monitoreo). Un ecosistema tecnológico integrado.", "url": "https://vectanor.com/es/nuestras-divisiones/", "og_image": _OG_IMAGE},
+        "dimonoff": {"title": "Dimonoff — Iluminación inteligente | Groupe Vectanor", "description": "Dimonoff: gestión remota de iluminación inteligente e infraestructura urbana conectada. 850K+ dispositivos desplegados en 15 países. Soluciones SaaS para municipios.", "url": "https://vectanor.com/es/nuestras-divisiones/dimonoff/", "og_image": _OG_IMAGE},
+        "spatium": {"title": "Spatium — Movilidad inteligente | Groupe Vectanor", "description": "Spatium: estacionamiento inteligente y gestión dinámica de flujos de movilidad urbana. Sensores IoT, analítica avanzada, integración multiplataforma.", "url": "https://vectanor.com/es/nuestras-divisiones/spatium/", "og_image": _OG_IMAGE},
+        "amotus": {"title": "Amotus — Design House electrónica | Groupe Vectanor", "description": "Amotus: diseño electrónico a medida, sistemas embebidos e integración industrial. Del prototipo a la certificación (CE, UL, CSA). Québec, Canadá.", "url": "https://vectanor.com/es/nuestras-divisiones/amotus/", "og_image": _OG_IMAGE},
+        "vigilia": {"title": "Vigilia — Monitoreo de infraestructuras | Groupe Vectanor", "description": "Vigilia: monitoreo y vigilancia de infraestructuras críticas en tiempo real. Sensores inteligentes, MQTT, análisis predictivo con IA. Continuidad operacional.", "url": "https://vectanor.com/es/nuestras-divisiones/vigilia/", "og_image": _OG_IMAGE},
+        "contact": {"title": "Contáctenos — Groupe Vectanor", "description": "Contacte a Groupe Vectanor para sus proyectos de infraestructura y transformación tecnológica. Holding tecnológica canadiense con sede en Québec.", "url": "https://vectanor.com/es/contactenos/", "og_image": _OG_IMAGE},
+    },
+}
 
 # Navigation labels per language
 NAV_LABELS = {
@@ -104,7 +141,8 @@ FOOTER_TEXT = {
         "divisions_label": "DIVISIONS",
         "links_label": "LIENS RAPIDES",
         "contact_label": "CONTACT",
-        "location": "Québec, Canada",
+        "location": "410-1015 Wilfrid Pelletier, Québec, QC, Canada G1W 0C4",
+        "phone": "418-682-3636",
         "copyright": "© 2026 Groupe Vectanor. Tous droits réservés.",
     },
     "en": {
@@ -112,7 +150,8 @@ FOOTER_TEXT = {
         "divisions_label": "DIVISIONS",
         "links_label": "QUICK LINKS",
         "contact_label": "CONTACT",
-        "location": "Québec, Canada",
+        "location": "410-1015 Wilfrid Pelletier, Québec, QC, Canada G1W 0C4",
+        "phone": "418-682-3636",
         "copyright": "© 2026 Groupe Vectanor. All rights reserved.",
     },
     "es": {
@@ -120,7 +159,8 @@ FOOTER_TEXT = {
         "divisions_label": "DIVISIONES",
         "links_label": "ENLACES RÁPIDOS",
         "contact_label": "CONTACTO",
-        "location": "Québec, Canadá",
+        "location": "410-1015 Wilfrid Pelletier, Québec, QC, Canadá G1W 0C4",
+        "phone": "418-682-3636",
         "copyright": "© 2026 Groupe Vectanor. Todos los derechos reservados.",
     },
 }
@@ -138,17 +178,16 @@ def site_header(current_lang, page_key):
         is_current = (key == page_key)
         if is_current:
             nav_items.append(
-                f'<a href="{url}" style="color:#FFFFFF;font-family:Montserrat,sans-serif;font-size:14px;'
-                f'font-weight:600;text-decoration:none;letter-spacing:0.5px;border-bottom:2px solid {ROYAL_BLUE};'
-                f'padding-bottom:4px;">{label}</a>'
+                f'<a href="{url}" class="v-nav-link v-nav-link--active" style="color:#FFFFFF;font-family:Montserrat,sans-serif;font-size:14px;'
+                f'font-weight:600;text-decoration:none;letter-spacing:0.5px;padding-bottom:4px;">{label}</a>'
             )
         else:
             nav_items.append(
-                f'<a href="{url}" style="color:{SLATE};font-family:Montserrat,sans-serif;font-size:14px;'
+                f'<a href="{url}" class="v-nav-link" style="color:{SLATE};font-family:Montserrat,sans-serif;font-size:14px;'
                 f'font-weight:600;text-decoration:none;letter-spacing:0.5px;padding-bottom:4px;'
-                f'border-bottom:2px solid transparent;transition:all 0.25s ease;"'
-                f' onmouseover="this.style.color=\'#FFFFFF\';this.style.borderBottomColor=\'{ROYAL_BLUE}\'"'
-                f' onmouseout="this.style.color=\'{SLATE}\';this.style.borderBottomColor=\'transparent\'">{label}</a>'
+                f'transition:color 0.25s ease;"'
+                f' onmouseover="this.style.color=\'#FFFFFF\'"'
+                f' onmouseout="this.style.color=\'{SLATE}\'">{label}</a>'
             )
     nav_html = '  '.join(nav_items)
 
@@ -165,7 +204,7 @@ def site_header(current_lang, page_key):
                 f'transition:color 0.2s;" onmouseover="this.style.color=\'#FFFFFF\'"'
                 f' onmouseout="this.style.color=\'{SLATE}\'">{label}</a>'
             )
-    lang_html = ' <span style="color:#334155;font-size:12px;">|</span> '.join(lang_links)
+    lang_html = ' <span style="color:#334155;font-size:12px;">&middot;</span> '.join(lang_links)
 
     # 4-color accent bar (bottom of header)
     bar_html = (
@@ -213,7 +252,7 @@ def site_footer(current_lang):
 
     # 4-color top bar
     bar = (
-        f'<div style="height:3px;display:flex;margin-bottom:50px;">'
+        f'<div style="height:4px;display:flex;margin-bottom:50px;">'
         f'<div style="flex:1;background:{AMBER};"></div>'
         f'<div style="flex:1;background:{GREEN};"></div>'
         f'<div style="flex:1;background:{PURPLE};"></div>'
@@ -248,13 +287,18 @@ def site_footer(current_lang):
     )
     col3 = f'<div style="flex:0.8;min-width:140px;"><p style="{label_style}">{txt["links_label"]}</p>{quick_links}</div>'
 
-    # Column 4: Contact
+    # Column 4: Contact with icons
     col4 = (
         f'<div style="flex:0.8;min-width:140px;">'
         f'<p style="{label_style}">{txt["contact_label"]}</p>'
-        f'<p style="font-family:Outfit,sans-serif;font-size:14px;color:{SLATE};margin:0 0 10px 0;">{txt["location"]}</p>'
+        f'<p style="font-family:Inter,sans-serif;font-size:14px;color:{SLATE};margin:0 0 10px 0;">'
+        f'<i class="fas fa-map-marker-alt" style="color:{ROYAL_BLUE};margin-right:8px;"></i>{txt["location"]}</p>'
+        f'<a href="tel:{txt["phone"].replace("-", "")}" style="{link_style}" '
+        f'onmouseover="this.style.color=\'#FFFFFF\'" onmouseout="this.style.color=\'{SLATE}\'">'
+        f'<i class="fas fa-phone" style="color:{ROYAL_BLUE};margin-right:8px;"></i>{txt["phone"]}</a>'
         f'<a href="mailto:info@vectanor.com" style="{link_style}" '
-        f'onmouseover="this.style.color=\'#FFFFFF\'" onmouseout="this.style.color=\'{SLATE}\'">info@vectanor.com</a>'
+        f'onmouseover="this.style.color=\'#FFFFFF\'" onmouseout="this.style.color=\'{SLATE}\'">'
+        f'<i class="fas fa-envelope" style="color:{ROYAL_BLUE};margin-right:8px;"></i>info@vectanor.com</a>'
         f'</div>'
     )
 
@@ -270,7 +314,7 @@ def site_footer(current_lang):
                 f'<a href="{url}" style="color:#64748B;font-size:12px;text-decoration:none;transition:color 0.2s;"'
                 f' onmouseover="this.style.color=\'#FFFFFF\'" onmouseout="this.style.color=\'#64748B\'">{lbl}</a>'
             )
-    lang_sw = ' <span style="color:#334155;font-size:12px;">|</span> '.join(lang_links)
+    lang_sw = ' <span style="color:#334155;font-size:12px;">&middot;</span> '.join(lang_links)
 
     bottom = (
         f'<div style="display:flex;justify-content:space-between;align-items:center;'
@@ -282,7 +326,7 @@ def site_footer(current_lang):
 
     footer_html = (
         f'{bar}'
-        f'<div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:40px;">'
+        f'<div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:48px;">'
         f'{col1}{col2}{col3}{col4}'
         f'</div>'
         f'{bottom}'
@@ -301,6 +345,54 @@ def site_footer(current_lang):
     )
 
 
+def seo_head_html(page_key, lang):
+    """Raw HTML SEO injection for contact pages (non-Elementor)."""
+    meta = SEO_META.get(lang, {}).get(page_key, {})
+    if not meta:
+        return ""
+    org_jsonld = json.dumps({
+        "@context": "https://schema.org", "@type": "Organization",
+        "name": "Groupe Vectanor", "url": "https://vectanor.com", "logo": LOGOS["vectanor"],
+        "description": "Canadian technology holding company — smart lighting, urban mobility, IoT design, infrastructure monitoring.",
+        "address": {"@type": "PostalAddress", "streetAddress": "410-1015 Wilfrid Pelletier", "addressLocality": "Québec", "addressRegion": "QC", "postalCode": "G1W 0C4", "addressCountry": "CA"},
+        "telephone": "+1-418-682-3636",
+        "contactPoint": {"@type": "ContactPoint", "email": "info@vectanor.com"},
+        "subOrganization": [
+            {"@type": "Organization", "name": "Dimonoff", "url": "https://dimonoff.com"},
+            {"@type": "Organization", "name": "Spatium"},
+            {"@type": "Organization", "name": "Amotus", "url": "https://amotus.com"},
+            {"@type": "Organization", "name": "Vigilia"},
+        ],
+    })
+    desc_escaped = meta["description"].replace('"', '&quot;')
+    title_escaped = meta["title"].replace('"', '&quot;')
+    return (
+        '<style>'
+        'header.site-header,.site-branding,.main-navigation,'
+        'footer.site-footer,.site-info{display:none!important;}'
+        'body{margin-top:0!important;}'
+        '#v-progress{position:fixed;top:0;left:0;height:3px;z-index:10000;'
+        'background:linear-gradient(90deg,#F59E0B,#10B981,#8B5CF6,#EC4899);width:0%;}'
+        '</style>'
+        '<script>'
+        'document.head.insertAdjacentHTML("beforeend",'
+        f'"<meta name=\\"description\\" content=\\"{desc_escaped}\\">"+'
+        f'"<meta property=\\"og:title\\" content=\\"{title_escaped}\\">"+'
+        f'"<meta property=\\"og:description\\" content=\\"{desc_escaped}\\">"+'
+        '"<meta property=\\"og:type\\" content=\\"website\\">"+'
+        f'"<meta property=\\"og:url\\" content=\\"{meta["url"]}\\">"+'
+        f'"<meta property=\\"og:image\\" content=\\"{meta["og_image"]}\\">"+'
+        '"<meta name=\\"twitter:card\\" content=\\"summary_large_image\\">"'
+        ');'
+        'var bar=document.createElement("div");bar.id="v-progress";document.body.prepend(bar);'
+        'window.addEventListener("scroll",function(){'
+        'bar.style.width=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100)+"%";'
+        '});'
+        '</script>'
+        f'<script type="application/ld+json">{org_jsonld}</script>'
+    )
+
+
 def site_header_html(current_lang, page_key):
     """Raw HTML header for non-Elementor pages (contact pages)."""
     urls = LANG_URLS[current_lang]
@@ -312,17 +404,16 @@ def site_header_html(current_lang, page_key):
         is_current = (key == page_key)
         if is_current:
             nav_items.append(
-                f'<a href="{url}" style="color:#FFFFFF;font-family:Montserrat,sans-serif;font-size:14px;'
-                f'font-weight:600;text-decoration:none;letter-spacing:0.5px;border-bottom:2px solid {ROYAL_BLUE};'
-                f'padding-bottom:4px;">{label}</a>'
+                f'<a href="{url}" class="v-nav-link v-nav-link--active" style="color:#FFFFFF;font-family:Montserrat,sans-serif;font-size:14px;'
+                f'font-weight:600;text-decoration:none;letter-spacing:0.5px;padding-bottom:4px;">{label}</a>'
             )
         else:
             nav_items.append(
-                f'<a href="{url}" style="color:{SLATE};font-family:Montserrat,sans-serif;font-size:14px;'
+                f'<a href="{url}" class="v-nav-link" style="color:{SLATE};font-family:Montserrat,sans-serif;font-size:14px;'
                 f'font-weight:600;text-decoration:none;letter-spacing:0.5px;padding-bottom:4px;'
-                f'border-bottom:2px solid transparent;transition:all 0.25s ease;"'
-                f' onmouseover="this.style.color=\'#FFFFFF\';this.style.borderBottomColor=\'{ROYAL_BLUE}\'"'
-                f' onmouseout="this.style.color=\'{SLATE}\';this.style.borderBottomColor=\'transparent\'">{label}</a>'
+                f'transition:color 0.25s ease;"'
+                f' onmouseover="this.style.color=\'#FFFFFF\'"'
+                f' onmouseout="this.style.color=\'{SLATE}\'">{label}</a>'
             )
     nav_html = '  '.join(nav_items)
 
@@ -338,7 +429,7 @@ def site_header_html(current_lang, page_key):
                 f'transition:color 0.2s;" onmouseover="this.style.color=\'#FFFFFF\'"'
                 f' onmouseout="this.style.color=\'{SLATE}\'">{label}</a>'
             )
-    lang_html = ' <span style="color:#334155;font-size:12px;">|</span> '.join(lang_links)
+    lang_html = ' <span style="color:#334155;font-size:12px;">&middot;</span> '.join(lang_links)
 
     bar_html = (
         '<div style="position:absolute;bottom:0;left:0;right:0;height:2px;display:flex;">'
@@ -350,7 +441,8 @@ def site_header_html(current_lang, page_key):
     )
 
     return (
-        f'<div style="position:sticky;top:0;z-index:999;background:rgba(15,23,42,0.92);'
+        seo_head_html(page_key, current_lang)
+        + f'<div style="position:sticky;top:0;z-index:999;background:rgba(15,23,42,0.92);'
         f'backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:0 30px;">'
         f'<div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;'
         f'justify-content:space-between;height:60px;">'
@@ -375,7 +467,7 @@ def site_footer_html(current_lang):
     link_style = f"display:block;font-family:Outfit,sans-serif;font-size:14px;color:{SLATE};text-decoration:none;margin-bottom:10px;transition:color 0.2s;"
 
     bar = (
-        f'<div style="height:3px;display:flex;margin-bottom:50px;">'
+        f'<div style="height:4px;display:flex;margin-bottom:50px;">'
         f'<div style="flex:1;background:{AMBER};"></div>'
         f'<div style="flex:1;background:{GREEN};"></div>'
         f'<div style="flex:1;background:{PURPLE};"></div>'
@@ -407,9 +499,14 @@ def site_footer_html(current_lang):
     col4 = (
         f'<div style="flex:0.8;min-width:140px;">'
         f'<p style="{label_style}">{txt["contact_label"]}</p>'
-        f'<p style="font-family:Outfit,sans-serif;font-size:14px;color:{SLATE};margin:0 0 10px 0;">{txt["location"]}</p>'
+        f'<p style="font-family:Inter,sans-serif;font-size:14px;color:{SLATE};margin:0 0 10px 0;">'
+        f'<i class="fas fa-map-marker-alt" style="color:{ROYAL_BLUE};margin-right:8px;"></i>{txt["location"]}</p>'
+        f'<a href="tel:{txt["phone"].replace("-", "")}" style="{link_style}"'
+        f' onmouseover="this.style.color=\'#FFFFFF\'" onmouseout="this.style.color=\'{SLATE}\'">'
+        f'<i class="fas fa-phone" style="color:{ROYAL_BLUE};margin-right:8px;"></i>{txt["phone"]}</a>'
         f'<a href="mailto:info@vectanor.com" style="{link_style}"'
-        f' onmouseover="this.style.color=\'#FFFFFF\'" onmouseout="this.style.color=\'{SLATE}\'">info@vectanor.com</a>'
+        f' onmouseover="this.style.color=\'#FFFFFF\'" onmouseout="this.style.color=\'{SLATE}\'">'
+        f'<i class="fas fa-envelope" style="color:{ROYAL_BLUE};margin-right:8px;"></i>info@vectanor.com</a>'
         f'</div>'
     )
 
@@ -424,12 +521,12 @@ def site_footer_html(current_lang):
                 f'<a href="{url}" style="color:#64748B;font-size:12px;text-decoration:none;transition:color 0.2s;"'
                 f' onmouseover="this.style.color=\'#FFFFFF\'" onmouseout="this.style.color=\'#64748B\'">{lbl}</a>'
             )
-    lang_sw = ' <span style="color:#334155;font-size:12px;">|</span> '.join(lang_links)
+    lang_sw = ' <span style="color:#334155;font-size:12px;">&middot;</span> '.join(lang_links)
 
     return (
         f'<div style="background:linear-gradient(180deg,{NEAR_BLACK},{DARK_NAVY});padding:60px 40px 40px;">'
         f'{bar}'
-        f'<div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:40px;">'
+        f'<div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:48px;">'
         f'{col1}{col2}{col3}{col4}'
         f'</div>'
         f'<div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;'
@@ -446,14 +543,93 @@ def site_footer_html(current_lang):
 # ═══════════════════════════════════════
 
 def font_loader():
-    """Elementor HTML widget that loads Google Fonts. Inject as first element of every page."""
+    """Elementor HTML widget that loads Google Fonts, hides WP theme chrome, and adds global UI enhancements."""
     return widget("html", {
         "html": (
             '<link rel="preconnect" href="https://fonts.googleapis.com">'
             '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
             '<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Outfit:wght@300;400;500&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">'
+            '<style>'
+            # Hide WP theme header/footer
+            'header.site-header,.site-branding,.main-navigation,'
+            'footer.site-footer,.site-info{display:none!important;}'
+            'body{margin-top:0!important;}'
+            # Scroll-reveal system
+            '.v-reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}'
+            '.v-reveal.v-visible{opacity:1;transform:translateY(0);}'
+            '.v-reveal-d1{transition-delay:0.1s;}'
+            '.v-reveal-d2{transition-delay:0.2s;}'
+            '.v-reveal-d3{transition-delay:0.3s;}'
+            # Nav link hover animation
+            '.v-nav-link{position:relative;}'
+            '.v-nav-link::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:2px;'
+            'background:#3B82F6;transition:width 0.3s ease;}'
+            '.v-nav-link:hover::after,.v-nav-link--active::after{width:100%;}'
+            # Scroll progress bar
+            '#v-progress{position:fixed;top:0;left:0;height:3px;z-index:10000;'
+            'background:linear-gradient(90deg,#F59E0B,#10B981,#8B5CF6,#EC4899);width:0%;}'
+            # Button shimmer on hover
+            '.elementor-button{position:relative;overflow:hidden;}'
+            '.elementor-button::before{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;'
+            'background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);transition:left 0.5s;}'
+            '.elementor-button:hover::before{left:100%;}'
+            '</style>'
+            '<script>'
+            # IntersectionObserver for .v-reveal
+            'document.addEventListener("DOMContentLoaded",function(){'
+            'var obs=new IntersectionObserver(function(entries){'
+            'entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("v-visible");obs.unobserve(e.target);}});'
+            '},{threshold:0.15});'
+            'document.querySelectorAll(".v-reveal").forEach(function(el){obs.observe(el);});'
+            # Scroll progress bar JS
+            'var bar=document.createElement("div");bar.id="v-progress";document.body.prepend(bar);'
+            'window.addEventListener("scroll",function(){'
+            'bar.style.width=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100)+"%";'
+            '});'
+            '});'
+            '</script>'
         ),
     })
+
+
+def seo_head(page_key, lang):
+    """Inject meta description, OG tags, and JSON-LD Organization schema via JS."""
+    meta = SEO_META.get(lang, {}).get(page_key, {})
+    if not meta:
+        return widget("html", {"html": ""})
+    org_jsonld = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Groupe Vectanor",
+        "url": "https://vectanor.com",
+        "logo": LOGOS["vectanor"],
+        "description": "Canadian technology holding company — smart lighting, urban mobility, IoT design, infrastructure monitoring.",
+        "address": {"@type": "PostalAddress", "streetAddress": "410-1015 Wilfrid Pelletier", "addressLocality": "Québec", "addressRegion": "QC", "postalCode": "G1W 0C4", "addressCountry": "CA"},
+        "telephone": "+1-418-682-3636",
+        "contactPoint": {"@type": "ContactPoint", "email": "info@vectanor.com"},
+        "subOrganization": [
+            {"@type": "Organization", "name": "Dimonoff", "url": "https://dimonoff.com"},
+            {"@type": "Organization", "name": "Spatium"},
+            {"@type": "Organization", "name": "Amotus", "url": "https://amotus.com"},
+            {"@type": "Organization", "name": "Vigilia"},
+        ],
+    })
+    desc_escaped = meta["description"].replace('"', '&quot;')
+    title_escaped = meta["title"].replace('"', '&quot;')
+    return widget("html", {"html": (
+        '<script>'
+        'document.head.insertAdjacentHTML("beforeend",'
+        f'"<meta name=\\"description\\" content=\\"{desc_escaped}\\">"+'
+        f'"<meta property=\\"og:title\\" content=\\"{title_escaped}\\">"+'
+        f'"<meta property=\\"og:description\\" content=\\"{desc_escaped}\\">"+'
+        '"<meta property=\\"og:type\\" content=\\"website\\">"+'
+        f'"<meta property=\\"og:url\\" content=\\"{meta["url"]}\\">"+'
+        f'"<meta property=\\"og:image\\" content=\\"{meta["og_image"]}\\">"+'
+        '"<meta name=\\"twitter:card\\" content=\\"summary_large_image\\">"'
+        ');'
+        '</script>'
+        f'<script type="application/ld+json">{org_jsonld}</script>'
+    )})
 
 
 # ═══════════════════════════════════════
@@ -574,16 +750,17 @@ selector {
 
 CTA_BUTTON_CSS = """
 selector .elementor-button {
-    background: linear-gradient(135deg, #3B82F6, #0EA5E9) !important;
+    background: #2563EB !important;
     border: none !important;
+    border-radius: 8px !important;
     position: relative;
     overflow: hidden;
     transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both;
 }
 selector .elementor-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(59,130,246,0.45);
+    box-shadow: 0 12px 40px rgba(37,99,235,0.45);
+    background: #1D4ED8 !important;
 }
 """
 
@@ -741,7 +918,7 @@ def flush_elementor_cache():
 # REUSABLE COMPONENTS
 # ═══════════════════════════════════════
 
-def hero_section(title, subtitle, full_height=True, show_logo=False, show_bar=True, show_cta=False, cta_text="", cta_link="/"):
+def hero_section(title, subtitle, full_height=True, show_logo=False, show_cta=False, cta_text="", cta_link="/", ghost_cta_text="", ghost_cta_link="/", **kwargs):
     """Premium hero with gradient overlay, grain texture, orbital rings, animations."""
     elems = []
 
@@ -755,6 +932,7 @@ def hero_section(title, subtitle, full_height=True, show_logo=False, show_bar=Tr
         elems.append(widget("image", {
             "image": {"url": LOGOS["vectanor"], "id": LOGO_IDS["vectanor"]},
             "image_size": "full",
+            "alt": "Groupe Vectanor logo",
             "width": {"size": 200, "unit": "px"},
             "align": "center",
             "_margin": {"top": "0", "bottom": "30", "left": "0", "right": "0", "unit": "px"},
@@ -792,22 +970,15 @@ def hero_section(title, subtitle, full_height=True, show_logo=False, show_bar=Tr
     if title == "VECTANOR":
         title_settings["custom_css"] = HERO_TITLE_CSS
     else:
-        title_settings["_animation"] = "fadeInUp"
-        title_settings["_animation_duration"] = "slow"
+        title_settings["css_classes"] = "v-reveal"
     elems.append(widget("heading", title_settings))
-
-    if show_bar:
-        elems.append(widget("html", {
-            "html": FOUR_COLOR_BAR_HTML,
-            "_margin": {"top": "0", "bottom": "32", "left": "0", "right": "0", "unit": "px"},
-        }))
 
     # Subtitle
     elems.append(widget("heading", {
         "title": subtitle,
         "header_size": "h3",
         "align": "center",
-        "title_color": "#94A3B8",
+        "title_color": "#CBD5E1",
         "typography_typography": "custom",
         "typography_font_family": "Sora",
         "typography_font_size": {"size": 21, "unit": "px"},
@@ -818,22 +989,45 @@ def hero_section(title, subtitle, full_height=True, show_logo=False, show_bar=Tr
     }))
 
     if show_cta:
-        elems.append(widget("button", {
-            "text": cta_text,
-            "link": {"url": cta_link, "is_external": False},
-            "align": "center",
-            "button_type": "default",
-            "background_color": ROYAL_BLUE,
-            "button_text_color": WHITE,
-            "border_radius": {"top": "6", "bottom": "6", "left": "6", "right": "6", "unit": "px"},
-            "typography_typography": "custom",
-            "typography_font_family": "Montserrat",
-            "typography_font_size": {"size": 14, "unit": "px"},
-            "typography_font_weight": "600",
-            "typography_letter_spacing": {"size": 1, "unit": "px"},
-            "button_padding": {"top": "18", "bottom": "18", "left": "44", "right": "44", "unit": "px"},
-            "custom_css": CTA_BUTTON_CSS,
-        }))
+        cta_row = [
+            widget("button", {
+                "text": cta_text,
+                "link": {"url": cta_link, "is_external": False},
+                "align": "center",
+                "button_type": "default",
+                "background_color": ROYAL_BLUE,
+                "button_text_color": WHITE,
+                "border_radius": {"top": "8", "bottom": "8", "left": "8", "right": "8", "unit": "px"},
+                "typography_typography": "custom",
+                "typography_font_family": "Montserrat",
+                "typography_font_size": {"size": 14, "unit": "px"},
+                "typography_font_weight": "600",
+                "typography_letter_spacing": {"size": 1, "unit": "px"},
+                "button_padding": {"top": "18", "bottom": "18", "left": "44", "right": "44", "unit": "px"},
+                "custom_css": CTA_BUTTON_CSS,
+            }),
+        ]
+        if ghost_cta_text:
+            cta_row.append(widget("button", {
+                "text": ghost_cta_text,
+                "link": {"url": ghost_cta_link, "is_external": False},
+                "align": "center",
+                "background_color": "transparent",
+                "button_text_color": WHITE,
+                "border_border": "solid",
+                "border_width": {"top": "1", "bottom": "1", "left": "1", "right": "1", "unit": "px"},
+                "border_color": "rgba(255,255,255,0.3)",
+                "border_radius": {"top": "8", "bottom": "8", "left": "8", "right": "8", "unit": "px"},
+                "typography_typography": "custom",
+                "typography_font_family": "Montserrat",
+                "typography_font_size": {"size": 14, "unit": "px"},
+                "typography_font_weight": "600",
+                "button_padding": {"top": "18", "bottom": "18", "left": "36", "right": "36", "unit": "px"},
+            }))
+        elems.append(inner_container(
+            settings={"flex_direction": "row", "flex_gap": {"size": 16, "unit": "px"}, "flex_justify_content": "center", "flex_wrap": "wrap"},
+            elements=cta_row,
+        ))
 
     hero_css = GRAIN_OVERLAY_CSS + HERO_GLOW_CSS if full_height else GRAIN_OVERLAY_CSS
 
@@ -873,8 +1067,7 @@ def section_heading(title, subtitle=None, dark=False):
             "typography_font_size": {"size": 42, "unit": "px"},
             "typography_font_weight": "700",
             "_margin": {"top": "0", "bottom": "15", "left": "0", "right": "0", "unit": "px"},
-            "_animation": "fadeInUp",
-            "_animation_duration": "slow",
+            "css_classes": "v-reveal",
         }),
         widget("divider", {
             "style": "custom",
@@ -911,6 +1104,7 @@ def back_to_group_cta():
             widget("image", {
                 "image": {"url": LOGOS["vectanor"], "id": LOGO_IDS["vectanor"]},
                 "image_size": "full",
+                "alt": "Groupe Vectanor logo",
                 "width": {"size": 140, "unit": "px"},
                 "align": "center",
                 "_margin": {"top": "0", "bottom": "20", "left": "0", "right": "0", "unit": "px"},
@@ -959,48 +1153,95 @@ def build_homepage():
     elements.append(hero_section(
         "VECTANOR",
         "Trace la direction. Les divisions avancent. Les syst\u00e8mes suivent.",
-        full_height=True, show_bar=True, show_cta=True,
+        full_height=True, show_cta=True,
         cta_text="D\u00e9couvrir nos divisions", cta_link="/divisions/",
+        ghost_cta_text="Notre approche \u2192", ghost_cta_link="/vision/",
     ))
 
-    # VISION BRIEF — with grid pattern texture
+    # VISION BRIEF — two-column layout
     elements.append(container(
         settings={
             "content_width": "boxed",
             "background_background": "classic",
-            "background_color": WHITE,
+            "background_color": LIGHT_GREY,
             "flex_direction": "column",
             "flex_align_items": "center",
             "padding": {"top": "90", "bottom": "90", "left": "40", "right": "40", "unit": "px"},
             "custom_css": GRID_PATTERN_CSS,
         },
         elements=[
-            *section_heading("Orchestrer la complexit\u00e9"),
-            widget("text-editor", {
-                "editor": (
-                    '<div style="text-align:center; max-width:800px; margin:0 auto; border-left:3px solid ' + ROYAL_BLUE + '; padding-left:24px;">'
-                    '<p style="font-size:18px; line-height:1.9; color:#475569; font-family:Outfit,sans-serif; margin-bottom:20px;">'
-                    'Les villes, les infrastructures et les environnements industriels sont devenus des '
-                    'syst\u00e8mes complexes, souvent g\u00e9r\u00e9s en silos. <strong>Groupe Vectanor</strong> '
-                    'agit comme une structure de pilotage capable d\u2019aligner des expertises sp\u00e9cialis\u00e9es '
-                    'vers un objectif commun\u00a0: rendre les syst\u00e8mes urbains et industriels plus fiables, '
-                    'plus efficients et plus durables.'
-                    '</p>'
-                    '<p style="font-size:17px; line-height:1.9; color:#64748B; font-family:Outfit,sans-serif;">'
-                    'De l\u2019\u00e9clairage intelligent \u00e0 la mobilit\u00e9 urbaine, de la conception '
-                    '\u00e9lectronique au monitoring d\u2019infrastructures critiques \u2014 nos divisions couvrent '
-                    'l\u2019ensemble de la cha\u00eene de valeur technologique des villes et industries de demain.'
-                    '</p>'
-                    '</div>'
-                ),
-                "_animation": "fadeInUp",
-                "_animation_delay": 200,
-            }),
+            inner_container(
+                settings={
+                    "flex_direction": "row",
+                    "flex_wrap": "wrap",
+                    "flex_gap": {"size": 48, "unit": "px"},
+                    "flex_align_items": "center",
+                    "width": {"size": 100, "unit": "%"},
+                    "max_width": {"size": 960, "unit": "px"},
+                    "css_classes": "v-reveal",
+                },
+                elements=[
+                    # Left column — heading
+                    inner_container(
+                        settings={
+                            "flex_direction": "column",
+                            "width": {"size": 35, "unit": "%"},
+                            "min_width": {"size": 260, "unit": "px"},
+                        },
+                        elements=[
+                            widget("heading", {
+                                "title": "Orchestrer la complexit\u00e9",
+                                "header_size": "h2",
+                                "align": "left",
+                                "title_color": NEAR_BLACK,
+                                "typography_typography": "custom",
+                                "typography_font_family": "Montserrat",
+                                "typography_font_size": {"size": 38, "unit": "px"},
+                                "typography_font_weight": "700",
+                                "_margin": {"top": "0", "bottom": "15", "left": "0", "right": "0", "unit": "px"},
+                            }),
+                            widget("divider", {
+                                "style": "custom", "color": ROYAL_BLUE,
+                                "weight": {"size": 3, "unit": "px"}, "width": {"size": 80, "unit": "px"},
+                                "align": "left",
+                            }),
+                        ],
+                    ),
+                    # Right column — body text
+                    inner_container(
+                        settings={
+                            "flex_direction": "column",
+                            "width": {"size": 58, "unit": "%"},
+                            "min_width": {"size": 300, "unit": "px"},
+                        },
+                        elements=[
+                            widget("text-editor", {
+                                "editor": (
+                                    '<div style="border-left:6px solid ' + ROYAL_BLUE + '; padding-left:24px; max-width:560px;">'
+                                    '<p style="font-size:16px; line-height:1.9; color:#334155; font-family:Outfit,sans-serif; margin-bottom:20px;">'
+                                    'Les villes, les infrastructures et les environnements industriels sont devenus des '
+                                    'syst\u00e8mes complexes, souvent g\u00e9r\u00e9s en silos. <strong>Groupe Vectanor</strong> '
+                                    'agit comme une structure de pilotage capable d\u2019aligner des expertises sp\u00e9cialis\u00e9es '
+                                    'vers un objectif commun\u00a0: rendre les syst\u00e8mes urbains et industriels plus fiables, '
+                                    'plus efficients et plus durables.'
+                                    '</p>'
+                                    '<p style="font-size:16px; line-height:1.9; color:#334155; font-family:Outfit,sans-serif;">'
+                                    'De l\u2019\u00e9clairage intelligent \u00e0 la mobilit\u00e9 urbaine, de la conception '
+                                    '\u00e9lectronique au monitoring d\u2019infrastructures critiques \u2014 nos divisions couvrent '
+                                    'l\u2019ensemble de la cha\u00eene de valeur technologique des villes et industries de demain.'
+                                    '</p>'
+                                    '</div>'
+                                ),
+                            }),
+                        ],
+                    ),
+                ],
+            ),
         ],
     ))
 
     # KEY FIGURES — glass stat cards
-    def stat_block(number, label, delay=0):
+    def stat_block(number, label, delay_class=""):
         return inner_container(
             settings={
                 "flex_direction": "column",
@@ -1012,13 +1253,12 @@ def build_homepage():
                 "border_color": "rgba(255,255,255,0.06)",
                 "border_radius": {"top": "12", "bottom": "12", "left": "12", "right": "12", "unit": "px"},
                 "padding": {"top": "24", "bottom": "24", "left": "28", "right": "28", "unit": "px"},
-                "_animation": "fadeInUp",
-                "_animation_delay": delay,
+                "css_classes": f"v-reveal {delay_class}".strip(),
             },
             elements=[
                 widget("heading", {
                     "title": number,
-                    "header_size": "h2",
+                    "header_size": "h3",
                     "align": "center",
                     "title_color": WHITE,
                     "typography_typography": "custom",
@@ -1054,7 +1294,7 @@ selector .elementor-heading-title {{
             "background_gradient_angle": {"size": 90, "unit": "deg"},
             "flex_direction": "column",
             "flex_align_items": "center",
-            "padding": {"top": "60", "bottom": "60", "left": "40", "right": "40", "unit": "px"},
+            "padding": {"top": "40", "bottom": "40", "left": "40", "right": "40", "unit": "px"},
         },
         elements=[
             inner_container(
@@ -1067,22 +1307,22 @@ selector .elementor-heading-title {{
                     "max_width": {"size": 900, "unit": "px"},
                 },
                 elements=[
-                    stat_block("4", "Divisions sp\u00e9cialis\u00e9es", 0),
-                    stat_block("10+", "Ann\u00e9es d\u2019expertise", 100),
-                    stat_block("IoT", "Grande \u00e9chelle", 200),
-                    stat_block("360\u00b0", "Couverture technologique", 300),
+                    stat_block("4", "Divisions sp\u00e9cialis\u00e9es"),
+                    stat_block("18+", "Ann\u00e9es d\u2019expertise", "v-reveal-d1"),
+                    stat_block("850K+", "Appareils d\u00e9ploy\u00e9s", "v-reveal-d2"),
+                    stat_block("15", "Pays", "v-reveal-d3"),
                 ],
             ),
-            widget("html", {
-                "html": FOUR_COLOR_BAR_HTML,
-                "_margin": {"top": "25", "bottom": "0", "left": "0", "right": "0", "unit": "px"},
-            }),
         ],
     )
     elements.append(stats)
 
     # DIVISIONS — Dark glassmorphism section
-    def division_card(name, desc, color, link, logo_key, delay, external_url=None, highlights=None):
+    def division_card(name, desc, color, link, logo_key, delay_class="", highlights=None):
+        chevron = lambda c: (
+            f'<span style="display:inline-block;width:6px;height:6px;border-right:2px solid {c};'
+            f'border-top:2px solid {c};transform:rotate(45deg);margin-right:10px;flex-shrink:0;"></span>'
+        )
         card_elems = [
             widget("image", {
                 "image": {"url": LOGOS[logo_key], "id": LOGO_IDS[logo_key]},
@@ -1090,6 +1330,7 @@ selector .elementor-heading-title {{
                 "width": {"size": 140, "unit": "px"},
                 "_margin": {"top": "0", "bottom": "15", "left": "0", "right": "0", "unit": "px"},
                 "custom_css": "selector img { filter: brightness(0) invert(1); transition: filter 0.3s; }",
+                "alt": f"{name} logo",
             }),
             widget("heading", {
                 "title": name,
@@ -1101,57 +1342,35 @@ selector .elementor-heading-title {{
                 "typography_font_weight": "700",
             }),
             widget("text-editor", {
-                "editor": f'<p style="font-size:15px; line-height:1.75; color:#94A3B8;">{desc}</p>',
+                "editor": f'<p style="font-size:16px; line-height:1.75; color:#CBD5E1;">{desc}</p>',
             }),
         ]
         if highlights:
             bullets_html = ''.join(
-                f'<li style="font-size:13px;line-height:1.6;color:#CBD5E1;padding:4px 0;">'
-                f'<span style="color:{color};margin-right:8px;">&#9656;</span>{h}</li>'
+                f'<li style="font-size:13px;line-height:1.6;color:#CBD5E1;padding:4px 0;display:flex;align-items:center;">'
+                f'{chevron(color)}{h}</li>'
                 for h in highlights
             )
             card_elems.append(widget("html", {
                 "html": f'<ul style="list-style:none;padding:0;margin:8px 0 4px;">{bullets_html}</ul>',
             }))
-        # Buttons row
-        btn_elems = [
-            widget("button", {
-                "text": "En savoir plus",
-                "link": {"url": link, "is_external": False},
-                "button_type": "default",
-                "background_color": "transparent",
-                "button_text_color": color,
-                "border_border": "solid",
-                "border_width": {"top": "1", "bottom": "1", "left": "1", "right": "1", "unit": "px"},
-                "border_color": color,
-                "border_radius": {"top": "4", "bottom": "4", "left": "4", "right": "4", "unit": "px"},
-                "typography_typography": "custom",
-                "typography_font_family": "Montserrat",
-                "typography_font_size": {"size": 12, "unit": "px"},
-                "typography_font_weight": "600",
-                "button_padding": {"top": "8", "bottom": "8", "left": "20", "right": "20", "unit": "px"},
-                "custom_css": button_hover_css(color),
-            }),
-        ]
-        if external_url:
-            btn_elems.append(widget("button", {
-                "text": f"Visiter {name.lower()}.com \u2197",
-                "link": {"url": external_url, "is_external": True},
-                "button_type": "default",
-                "background_color": "transparent",
-                "button_text_color": "#64748B",
-                "border_border": "none",
-                "typography_typography": "custom",
-                "typography_font_family": "Outfit",
-                "typography_font_size": {"size": 12, "unit": "px"},
-                "typography_font_weight": "500",
-                "button_padding": {"top": "8", "bottom": "8", "left": "10", "right": "10", "unit": "px"},
-            }))
-
-        card_elems.append(inner_container(
-            settings={"flex_direction": "row", "flex_gap": {"size": 10, "unit": "px"}, "flex_wrap": "wrap"},
-            elements=btn_elems,
-        ))
+        card_elems.append(widget("button", {
+            "text": "En savoir plus",
+            "link": {"url": link, "is_external": False},
+            "button_type": "default",
+            "background_color": "transparent",
+            "button_text_color": color,
+            "border_border": "solid",
+            "border_width": {"top": "1", "bottom": "1", "left": "1", "right": "1", "unit": "px"},
+            "border_color": color,
+            "border_radius": {"top": "4", "bottom": "4", "left": "4", "right": "4", "unit": "px"},
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {"size": 12, "unit": "px"},
+            "typography_font_weight": "600",
+            "button_padding": {"top": "8", "bottom": "8", "left": "20", "right": "20", "unit": "px"},
+            "custom_css": button_hover_css(color),
+        }))
 
         return inner_container(
             settings={
@@ -1165,9 +1384,7 @@ selector .elementor-heading-title {{
                 "flex_direction": "column",
                 "flex_align_items": "flex-start",
                 "flex_gap": {"size": 14, "unit": "px"},
-                "_animation": "fadeInUp",
-                "_animation_delay": delay,
-                "_animation_duration": "slow",
+                "css_classes": f"v-reveal {delay_class}".strip(),
                 "custom_css": card_glow_css(color),
             },
             elements=card_elems,
@@ -1203,8 +1420,7 @@ selector .elementor-heading-title {{
                     division_card(
                         "Dimonoff",
                         "\u00c9clairage intelligent et infrastructures urbaines connect\u00e9es.",
-                        AMBER, "/divisions/dimonoff/", "dimonoff", 0,
-                        external_url="https://dimonoff.com",
+                        AMBER, "/divisions/dimonoff/", "dimonoff",
                         highlights=[
                             "T\u00e9l\u00e9gestion municipale \u00e0 grande \u00e9chelle",
                             "R\u00e9duction \u00e9nerg\u00e9tique mesurable",
@@ -1214,8 +1430,7 @@ selector .elementor-heading-title {{
                     division_card(
                         "Spatium",
                         "Mobilit\u00e9 et stationnement intelligent.",
-                        GREEN, "/divisions/spatium/", "spatium", 100,
-                        external_url="https://dimonoff.com",
+                        GREEN, "/divisions/spatium/", "spatium", "v-reveal-d1",
                         highlights=[
                             "D\u00e9tection et guidage en temps r\u00e9el",
                             "Capteurs IoT basse consommation",
@@ -1225,8 +1440,7 @@ selector .elementor-heading-title {{
                     division_card(
                         "Amotus",
                         "Design House et catalyseur d\u2019innovation industrielle.",
-                        PURPLE, "/divisions/amotus/", "amotus", 200,
-                        external_url="https://amotus.com",
+                        PURPLE, "/divisions/amotus/", "amotus", "v-reveal-d2",
                         highlights=[
                             "Conception \u00e9lectronique sur mesure",
                             "Du prototype \u00e0 la certification",
@@ -1236,7 +1450,7 @@ selector .elementor-heading-title {{
                     division_card(
                         "Vigilia",
                         "Surveillance et monitoring d\u2019infrastructures critiques.",
-                        PINK, "/divisions/vigilia/", "vigilia", 300,
+                        PINK, "/divisions/vigilia/", "vigilia", "v-reveal-d3",
                         highlights=[
                             "Monitoring 24/7 d\u2019infrastructures",
                             "Alertes pr\u00e9dictives par IA",
@@ -1249,49 +1463,50 @@ selector .elementor-heading-title {{
     )
     elements.append(divisions_section)
 
-    # APPROACH — Premium cards with left accent + top accent
-    def value_card(icon, title, desc, accent_color, delay=0):
+    # APPROACH — Dark section with numbered cards
+    def value_card(icon, title, desc, accent_color, number="01", delay_class=""):
         return inner_container(
             settings={
                 "background_background": "classic",
-                "background_color": WHITE,
+                "background_color": MID_DARK,
                 "border_border": "solid",
-                "border_width": {"top": "3", "bottom": "0", "left": "3", "right": "0", "unit": "px", "isLinked": False},
+                "border_width": {"top": "3", "bottom": "0", "left": "0", "right": "0", "unit": "px", "isLinked": False},
                 "border_color": accent_color,
                 "border_radius": {"top": "12", "bottom": "12", "left": "12", "right": "12", "unit": "px"},
-                "box_shadow_box_shadow_type": "yes",
-                "box_shadow_box_shadow": {"horizontal": 0, "vertical": 4, "blur": 30, "spread": 0, "color": "rgba(0,0,0,0.06)"},
                 "padding": {"top": "40", "bottom": "40", "left": "30", "right": "30", "unit": "px"},
                 "flex_direction": "column",
                 "flex_align_items": "center",
                 "flex_gap": {"size": 8, "unit": "px"},
-                "_animation": "fadeInUp",
-                "_animation_delay": delay,
-                "_animation_duration": "slow",
+                "css_classes": f"v-reveal {delay_class}".strip(),
                 "custom_css": f"""
 selector {{
+    position: relative;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }}
 selector:hover {{
     transform: translateY(-8px);
-    box-shadow: 0 20px 60px -15px {accent_color}30, 0 8px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 20px 60px -15px {accent_color}30, 0 8px 25px rgba(0,0,0,0.2);
 }}
 """,
             },
             elements=[
                 widget("html", {
                     "html": (
+                        f'<div style="position:relative;width:100%;text-align:center;">'
+                        f'<span style="font-size:64px;font-weight:800;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,0.06);'
+                        f'position:absolute;top:-10px;right:10px;line-height:1;">{number}</span>'
                         f'<div style="width:68px;height:68px;border-radius:50%;'
                         f'background:linear-gradient(135deg,{accent_color}18,{accent_color}08);'
                         f'display:flex;align-items:center;justify-content:center;margin:0 auto;">'
                         f'<i class="{icon}" style="font-size:26px;color:{accent_color};"></i></div>'
+                        f'</div>'
                     ),
                 }),
                 widget("heading", {
                     "title": title,
                     "header_size": "h4",
                     "align": "center",
-                    "title_color": NEAR_BLACK,
+                    "title_color": WHITE,
                     "typography_typography": "custom",
                     "typography_font_family": "Montserrat",
                     "typography_font_size": {"size": 22, "unit": "px"},
@@ -1307,7 +1522,7 @@ selector:hover {{
                     "_margin": {"top": "0", "bottom": "5", "left": "0", "right": "0", "unit": "px"},
                 }),
                 widget("text-editor", {
-                    "editor": f'<p style="text-align:center; font-size:15px; line-height:1.8; color:#64748B;">{desc}</p>',
+                    "editor": f'<p style="text-align:center; font-size:16px; line-height:1.8; color:#CBD5E1;">{desc}</p>',
                 }),
             ],
         )
@@ -1315,25 +1530,26 @@ selector:hover {{
     approach = container(
         settings={
             "content_width": "boxed",
-            "background_background": "classic",
-            "background_color": LIGHT_GREY,
+            "background_background": "gradient",
+            "background_color": NEAR_BLACK,
+            "background_color_b": DARK_NAVY,
+            "background_gradient_angle": {"size": 145, "unit": "deg"},
             "flex_direction": "column",
             "flex_align_items": "center",
             "padding": {"top": "90", "bottom": "90", "left": "40", "right": "40", "unit": "px"},
-            "custom_css": GRID_PATTERN_CSS,
+            "custom_css": GRAIN_OVERLAY_CSS,
         },
         elements=[
-            *section_heading("Notre approche"),
+            *section_heading("Notre approche", dark=True),
             widget("text-editor", {
                 "editor": (
-                    '<p style="text-align:center; max-width:700px; margin:0 auto 50px; font-size:17px; '
-                    'line-height:1.8; color:#64748B;">'
-                    'Nous croyons que la technologie doit servir une vision claire. Chaque solution d\u00e9ploy\u00e9e '
-                    'par le groupe repose sur trois piliers fondamentaux qui guident nos d\u00e9cisions techniques '
-                    'et strat\u00e9giques.'
+                    '<p style="text-align:center; max-width:700px; margin:0 auto 50px; font-size:16px; '
+                    'line-height:1.8; color:#CBD5E1;">'
+                    'La technologie doit servir une vision claire. Chaque solution d\u00e9ploy\u00e9e '
+                    'repose sur trois piliers fondamentaux.'
                     '</p>'
                 ),
-                "_animation": "fadeInUp",
+                "css_classes": "v-reveal",
             }),
             inner_container(
                 settings={
@@ -1348,31 +1564,23 @@ selector:hover {{
                     value_card(
                         "fas fa-project-diagram",
                         "Interop\u00e9rabilit\u00e9",
-                        "Des syst\u00e8mes con\u00e7us pour communiquer entre eux, sans d\u00e9pendance \u00e0 un "
-                        "fournisseur unique. Nous privil\u00e9gions les standards ouverts et les protocoles "
-                        "reconnus pour garantir la p\u00e9rennit\u00e9 des investissements et la libert\u00e9 "
-                        "de choix de nos clients.",
-                        ROYAL_BLUE,
-                        0,
+                        "Standards ouverts et protocoles reconnus pour garantir la p\u00e9rennit\u00e9 "
+                        "des investissements et la libert\u00e9 de choix.",
+                        ROYAL_BLUE, "01",
                     ),
                     value_card(
                         "fas fa-shield-alt",
                         "Confiance",
-                        "Des infrastructures fiables, s\u00e9curis\u00e9es et construites pour durer. Chaque composant "
-                        "est test\u00e9, certifi\u00e9 et d\u00e9ploy\u00e9 selon des processus rigoureux. "
-                        "La robustesse n\u2019est pas une option\u00a0: c\u2019est notre standard de r\u00e9f\u00e9rence.",
-                        "#10B981",
-                        100,
+                        "Chaque composant est test\u00e9, certifi\u00e9 et d\u00e9ploy\u00e9 selon des processus rigoureux. "
+                        "La robustesse est notre standard.",
+                        "#10B981", "02", "v-reveal-d1",
                     ),
                     value_card(
                         "fas fa-expand-arrows-alt",
                         "\u00c9volutivit\u00e9",
-                        "Une architecture modulaire capable d\u2019\u00e9voluer sans rupture et de s\u2019adapter "
-                        "aux besoins futurs. Nos solutions sont pens\u00e9es pour grandir avec les projets de "
-                        "nos clients, de quelques points connect\u00e9s \u00e0 des d\u00e9ploiements \u00e0 "
-                        "l\u2019\u00e9chelle d\u2019une ville.",
-                        PURPLE,
-                        200,
+                        "Architecture modulaire qui \u00e9volue sans rupture, de quelques points connect\u00e9s "
+                        "\u00e0 l\u2019\u00e9chelle d\u2019une ville.",
+                        PURPLE, "03", "v-reveal-d2",
                     ),
                 ],
             ),
@@ -1380,7 +1588,7 @@ selector:hover {{
     )
     elements.append(approach)
 
-    # CTA SECTION — grain overlay
+    # CTA SECTION — grid overlay
     cta = container(
         settings={
             "content_width": "full",
@@ -1397,23 +1605,10 @@ selector:hover {{
             "flex_direction": "column",
             "flex_justify_content": "center",
             "flex_align_items": "center",
-            "padding": {"top": "90", "bottom": "90", "left": "40", "right": "40", "unit": "px"},
-            "custom_css": GRAIN_OVERLAY_CSS,
+            "padding": {"top": "80", "bottom": "80", "left": "40", "right": "40", "unit": "px"},
+            "custom_css": GRID_PATTERN_CSS,
         },
         elements=[
-            widget("heading", {
-                "title": "GROUPE",
-                "header_size": "h6",
-                "align": "center",
-                "title_color": SLATE,
-                "typography_typography": "custom",
-                "typography_font_family": "Montserrat",
-                "typography_font_size": {"size": 12, "unit": "px"},
-                "typography_font_weight": "600",
-                "typography_letter_spacing": {"size": 5, "unit": "px"},
-                "_margin": {"top": "0", "bottom": "12", "left": "0", "right": "0", "unit": "px"},
-                "_animation": "fadeInUp",
-            }),
             widget("heading", {
                 "title": "Pr\u00eat \u00e0 structurer l\u2019avenir\u00a0?",
                 "header_size": "h2",
@@ -1424,35 +1619,68 @@ selector:hover {{
                 "typography_font_size": {"size": 40, "unit": "px"},
                 "typography_font_weight": "700",
                 "_margin": {"top": "0", "bottom": "20", "left": "0", "right": "0", "unit": "px"},
-                "_animation": "fadeInUp",
+                "css_classes": "v-reveal",
             }),
             widget("text-editor", {
                 "editor": (
-                    '<p style="text-align:center; font-size:18px; color:#94A3B8; max-width:600px; margin:0 auto; font-family:Outfit,sans-serif;">'
+                    '<p style="text-align:center; font-size:16px; color:#CBD5E1; max-width:600px; margin:0 auto; font-family:Inter,sans-serif;">'
                     'Contactez-nous pour d\u00e9couvrir comment Groupe Vectanor peut accompagner vos projets '
                     'd\u2019infrastructure et de transformation technologique.'
                     '</p>'
                 ),
-                "_animation": "fadeInUp",
-                "_animation_delay": 100,
+                "css_classes": "v-reveal",
             }),
-            widget("html", {
-                "html": FOUR_COLOR_BAR_HTML,
-                "_margin": {"top": "30", "bottom": "30", "left": "0", "right": "0", "unit": "px"},
-            }),
-            widget("button", {
-                "text": "Nous contacter",
-                "link": {"url": "/contact/", "is_external": False},
-                "align": "center",
-                "background_color": ROYAL_BLUE,
-                "button_text_color": WHITE,
-                "border_radius": {"top": "6", "bottom": "6", "left": "6", "right": "6", "unit": "px"},
-                "typography_typography": "custom",
-                "typography_font_family": "Montserrat",
-                "typography_font_size": {"size": 14, "unit": "px"},
-                "typography_font_weight": "600",
-                "button_padding": {"top": "18", "bottom": "18", "left": "44", "right": "44", "unit": "px"},
-                "custom_css": CTA_BUTTON_CSS,
+            inner_container(
+                settings={
+                    "flex_direction": "row",
+                    "flex_justify_content": "center",
+                    "flex_align_items": "center",
+                    "flex_gap": {"size": 16, "unit": "px"},
+                    "_margin": {"top": "32", "bottom": "0", "left": "0", "right": "0", "unit": "px"},
+                },
+                elements=[
+                    widget("button", {
+                        "text": "Nous contacter",
+                        "link": {"url": "/contact/", "is_external": False},
+                        "align": "center",
+                        "background_color": ROYAL_BLUE,
+                        "button_text_color": WHITE,
+                        "typography_typography": "custom",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {"size": 14, "unit": "px"},
+                        "typography_font_weight": "600",
+                        "button_padding": {"top": "18", "bottom": "18", "left": "44", "right": "44", "unit": "px"},
+                        "custom_css": CTA_BUTTON_CSS,
+                    }),
+                    widget("button", {
+                        "text": "Nos divisions \u2192",
+                        "link": {"url": "/divisions/", "is_external": False},
+                        "align": "center",
+                        "button_text_color": WHITE,
+                        "typography_typography": "custom",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {"size": 14, "unit": "px"},
+                        "typography_font_weight": "600",
+                        "button_padding": {"top": "18", "bottom": "18", "left": "44", "right": "44", "unit": "px"},
+                        "custom_css": """selector .elementor-button {
+    background: transparent !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+}
+selector .elementor-button:hover {
+    border-color: rgba(255,255,255,0.6) !important;
+    background: rgba(255,255,255,0.05) !important;
+}""",
+                    }),
+                ],
+            ),
+            widget("text-editor", {
+                "editor": (
+                    '<p style="text-align:center; font-size:13px; color:#64748B; margin-top:24px; font-family:Inter,sans-serif; letter-spacing:0.5px;">'
+                    'Qu\u00e9bec, Canada \u00b7 18+ ans d\u2019expertise \u00b7 15 pays'
+                    '</p>'
+                ),
             }),
         ],
     )
@@ -1473,12 +1701,12 @@ def build_division_page(name, accent, tagline, description, features, logo_key, 
         widget("image", {
             "image": {"url": LOGOS[logo_key], "id": LOGO_IDS[logo_key]},
             "image_size": "full",
+            "alt": f"{name} logo",
             "width": {"size": 180, "unit": "px"},
             "align": "center",
             "_margin": {"top": "0", "bottom": "25", "left": "0", "right": "0", "unit": "px"},
             "custom_css": "selector img { filter: brightness(0) invert(1); }",
-            "_animation": "fadeInDown",
-            "_animation_duration": "slow",
+            "css_classes": "v-reveal",
         }),
         widget("divider", {
             "style": "custom", "color": accent,
@@ -1496,8 +1724,7 @@ def build_division_page(name, accent, tagline, description, features, logo_key, 
             "typography_font_size": {"size": 22, "unit": "px"},
             "typography_font_weight": "400",
             "typography_line_height": {"size": 1.6, "unit": "em"},
-            "_animation": "fadeInUp",
-            "_animation_duration": "slow",
+            "css_classes": "v-reveal",
         }),
     ]
     if external_url:
@@ -1556,7 +1783,7 @@ def build_division_page(name, accent, tagline, description, features, logo_key, 
             *section_heading(f"\u00c0 propos de {name}"),
             widget("text-editor", {
                 "editor": f'<p style="text-align:center; max-width:800px; margin:0 auto; font-size:18px; line-height:1.9; color:#475569; font-family:Outfit,sans-serif;">{description}</p>',
-                "_animation": "fadeInUp",
+                "css_classes": "v-reveal",
             }),
         ],
     ))
@@ -1576,9 +1803,7 @@ def build_division_page(name, accent, tagline, description, features, logo_key, 
                 "flex_direction": "column",
                 "flex_align_items": "flex-start",
                 "flex_gap": {"size": 10, "unit": "px"},
-                "_animation": "fadeInUp",
-                "_animation_delay": i * 100,
-                "_animation_duration": "slow",
+                "css_classes": f"v-reveal v-reveal-d{i+1}" if i < 3 else "v-reveal",
                 "custom_css": card_glow_css(accent),
             },
             elements=[
@@ -1730,7 +1955,7 @@ def build_vision_page():
     elements.append(hero_section(
         "Notre vision",
         "Donner une trajectoire aux syst\u00e8mes complexes",
-        full_height=False, show_bar=False,
+        full_height=False,
     ))
 
     # Story + Philosophy combined for tighter layout
@@ -1759,7 +1984,7 @@ def build_vision_page():
                     'technologique ne doit pas seulement fournir des outils, mais donner une trajectoire.</p>'
                     '</div>'
                 ),
-                "_animation": "fadeInUp",
+                "css_classes": "v-reveal",
             }),
         ],
     ))
@@ -1791,7 +2016,7 @@ def build_vision_page():
                     'op\u00e9rationnelles sur le terrain.</p>'
                     '</div>'
                 ),
-                "_animation": "fadeInUp",
+                "css_classes": "v-reveal",
             }),
         ],
     ))
@@ -1816,12 +2041,7 @@ def build_vision_page():
                     'et sans d\u00e9pendance inutile.\u00a0\u00bb</p>'
                     '</blockquote>'
                 ),
-                "_animation": "fadeIn",
-                "_animation_duration": "slow",
-            }),
-            widget("html", {
-                "html": FOUR_COLOR_BAR_HTML,
-                "_margin": {"top": "20", "bottom": "0", "left": "0", "right": "0", "unit": "px"},
+                "css_classes": "v-reveal",
             }),
         ],
     ))
@@ -1839,7 +2059,7 @@ def build_divisions_index():
     elements.append(hero_section(
         "Nos divisions",
         "Un \u00e9cosyst\u00e8me d\u2019expertises align\u00e9es",
-        full_height=False, show_bar=True,
+        full_height=False,
     ))
 
     # Large cards
@@ -1849,6 +2069,7 @@ def build_divisions_index():
             widget("image", {
                 "image": {"url": LOGOS[d["logo_key"]], "id": LOGO_IDS[d["logo_key"]]},
                 "image_size": "full",
+                "alt": f"{d['name']} logo",
                 "width": {"size": 160, "unit": "px"},
                 "_margin": {"top": "0", "bottom": "15", "left": "0", "right": "0", "unit": "px"},
             }),
@@ -1919,9 +2140,7 @@ def build_divisions_index():
                 "flex_direction": "column",
                 "flex_align_items": "flex-start",
                 "flex_gap": {"size": 8, "unit": "px"},
-                "_animation": "fadeInUp",
-                "_animation_delay": delay,
-                "_animation_duration": "slow",
+                "css_classes": "v-reveal",
                 "custom_css": card_light_glow_css(d["accent"]),
             },
             elements=card_elems,
@@ -1963,7 +2182,7 @@ def build_contact_page():
     elements.append(hero_section(
         "Contactez-nous",
         "Parlons de vos projets d\u2019infrastructure",
-        full_height=False, show_bar=False,
+        full_height=False,
     ))
 
     elements.append(container(
@@ -1992,18 +2211,20 @@ def build_contact_page():
                             "flex_direction": "column",
                             "flex_gap": {"size": 25, "unit": "px"},
                             "width": {"size": 350, "unit": "px"},
-                            "_animation": "fadeInLeft",
+                            "css_classes": "v-reveal",
                         },
                         elements=[
                             widget("image", {
                                 "image": {"url": LOGOS["vectanor"], "id": LOGO_IDS["vectanor"]},
                                 "image_size": "full",
+                                "alt": "Groupe Vectanor logo",
                                 "width": {"size": 180, "unit": "px"},
                                 "_margin": {"top": "0", "bottom": "10", "left": "0", "right": "0", "unit": "px"},
                             }),
                             widget("icon-list", {
                                 "icon_list": [
-                                    {"_id": eid(), "text": "Qu\u00e9bec, Canada", "selected_icon": {"value": "fas fa-map-marker-alt", "library": "fa-solid"}, "link": {"url": ""}},
+                                    {"_id": eid(), "text": "410-1015 Wilfrid Pelletier, Qu\u00e9bec, QC, Canada G1W 0C4", "selected_icon": {"value": "fas fa-map-marker-alt", "library": "fa-solid"}, "link": {"url": ""}},
+                                    {"_id": eid(), "text": "418-682-3636", "selected_icon": {"value": "fas fa-phone", "library": "fa-solid"}, "link": {"url": "tel:4186823636"}},
                                     {"_id": eid(), "text": "info@vectanor.com", "selected_icon": {"value": "fas fa-envelope", "library": "fa-solid"}, "link": {"url": "mailto:info@vectanor.com"}},
                                 ],
                                 "icon_color": ROYAL_BLUE,
@@ -2026,7 +2247,7 @@ def build_contact_page():
                             "background_color": LIGHT_GREY,
                             "border_radius": {"top": "12", "bottom": "12", "left": "12", "right": "12", "unit": "px"},
                             "padding": {"top": "35", "bottom": "35", "left": "35", "right": "35", "unit": "px"},
-                            "_animation": "fadeInRight",
+                            "css_classes": "v-reveal",
                         },
                         elements=[
                             widget("heading", {
@@ -2063,8 +2284,9 @@ if __name__ == "__main__":
     targets = [a.lower() for a in sys.argv[1:]] if len(sys.argv) > 1 else []
 
     def wrap_page(page_key, page_id, elements):
-        """Wrap page elements with font loader, header, and footer."""
+        """Wrap page elements with font loader, SEO head, header, and footer."""
         elements.insert(0, site_header("fr", page_key))
+        elements.insert(0, seo_head(page_key, "fr"))
         elements.insert(0, font_loader())
         elements.append(site_footer("fr"))
         push_page(page_id, elements)
