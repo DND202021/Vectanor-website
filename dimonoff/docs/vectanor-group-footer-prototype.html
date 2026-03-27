@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vectanor Group Footer Block — Prototype</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     VECTANOR GROUP FOOTER BLOCK — PROTOTYPE
+
+     This block is designed to be inserted into the footer of
+     each division website (dimonoff.com, spatium-iot.com, amotus.com).
+
+     It shows the parent group (Vectanor) and links to all
+     sister divisions. The "current site" card is highlighted.
+
+     Two variants are shown below:
+       1. Dark variant (for dark footers like dimonoff.com)
+       2. Light variant (for lighter sections or standalone use)
+     ============================================================ */
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+  }
+
+  .prototype-label {
+    text-align: center;
+    padding: 40px 20px 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #666;
+  }
+  .prototype-label span {
+    display: block;
+    font-size: 22px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #ccc;
+    margin-top: 8px;
+  }
+
+  /* ===========================================
+     VECTANOR GROUP BLOCK — CORE STYLES
+     =========================================== */
+  .vectanor-group-block {
+    --vg-bg: #1e1e1e;
+    --vg-border: rgba(255,255,255,0.08);
+    --vg-text: #b0b0b0;
+    --vg-text-light: #888;
+    --vg-heading: #ffffff;
+    --vg-accent: #4ea8de;
+    --vg-card-bg: rgba(255,255,255,0.03);
+    --vg-card-hover: rgba(255,255,255,0.07);
+    --vg-card-active-bg: rgba(78, 168, 222, 0.08);
+    --vg-card-active-border: rgba(78, 168, 222, 0.3);
+
+    background: var(--vg-bg);
+    border-top: 1px solid var(--vg-border);
+    padding: 48px 0 36px;
+    width: 100%;
+  }
+
+  .vectanor-group-block .vg-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header row: Vectanor logo + tagline */
+  .vectanor-group-block .vg-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .vectanor-group-block .vg-logo-mark {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #4ea8de 0%, #2d7db3 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    flex-shrink: 0;
+    letter-spacing: -0.5px;
+  }
+
+  .vectanor-group-block .vg-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .vectanor-group-block .vg-header-text a {
+    text-decoration: none;
+  }
+
+  .vectanor-group-block .vg-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--vg-heading);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .vectanor-group-block .vg-subtitle {
+    font-size: 12px;
+    color: var(--vg-text-light);
+    letter-spacing: 0.3px;
+  }
+
+  /* Division cards grid */
+  .vectanor-group-block .vg-divisions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .vectanor-group-block .vg-card {
+    background: var(--vg-card-bg);
+    border: 1px solid var(--vg-border);
+    border-radius: 10px;
+    padding: 20px 18px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vectanor-group-block .vg-card:hover {
+    background: var(--vg-card-hover);
+    border-color: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+  }
+
+  /* Active state — the current site */
+  .vectanor-group-block .vg-card.vg-active {
+    background: var(--vg-card-active-bg);
+    border-color: var(--vg-card-active-border);
+  }
+  .vectanor-group-block .vg-card.vg-active::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--vg-accent), transparent);
+  }
+
+  .vectanor-group-block .vg-card-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--vg-heading);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .vectanor-group-block .vg-card-name .vg-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .vectanor-group-block .vg-card-desc {
+    font-size: 12.5px;
+    color: var(--vg-text-light);
+    line-height: 1.5;
+  }
+
+  .vectanor-group-block .vg-card-arrow {
+    font-size: 12px;
+    color: var(--vg-text-light);
+    margin-top: auto;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all 0.25s ease;
+  }
+  .vectanor-group-block .vg-card:hover .vg-card-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .vectanor-group-block .vg-card.vg-active .vg-card-arrow {
+    opacity: 0.5;
+  }
+  .vectanor-group-block .vg-card.vg-active .vg-card-arrow span {
+    display: none;
+  }
+  .vectanor-group-block .vg-card.vg-active .vg-card-arrow::after {
+    content: 'You are here';
+    font-style: italic;
+  }
+
+  /* Division brand colors */
+  .vg-dot-dimonoff { background: #00a651; }
+  .vg-dot-spatium { background: #4ea8de; }
+  .vg-dot-amotus { background: #f7941d; }
+  .vg-dot-vigilia { background: #c0392b; }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 900px) {
+    .vectanor-group-block .vg-divisions {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 520px) {
+    .vectanor-group-block .vg-divisions {
+      grid-template-columns: 1fr;
+    }
+    .vectanor-group-block {
+      padding: 36px 0 28px;
+    }
+  }
+
+  /* ===========================================
+     VARIANT 2: SIMPLIFIED HORIZONTAL BAR
+     (alternative, lighter weight)
+     =========================================== */
+  .vectanor-bar {
+    background: var(--vg-bg);
+    border-top: 1px solid var(--vg-border);
+    padding: 20px 0;
+    width: 100%;
+    --vg-bg: #1e1e1e;
+    --vg-border: rgba(255,255,255,0.08);
+    --vg-text-light: #888;
+    --vg-heading: #fff;
+    --vg-accent: #4ea8de;
+  }
+  .vectanor-bar .vb-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .vectanor-bar .vb-label {
+    font-size: 12px;
+    color: var(--vg-text-light);
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .vectanor-bar .vb-label a {
+    color: var(--vg-heading);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .vectanor-bar .vb-label a:hover { color: var(--vg-accent); }
+  .vectanor-bar .vb-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+  }
+  .vectanor-bar .vb-links a {
+    color: var(--vg-text-light);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .vectanor-bar .vb-links a:hover { color: var(--vg-heading); }
+  .vectanor-bar .vb-links .vb-active a { color: var(--vg-accent); }
+  .vectanor-bar .vb-links .vb-dot {
+    width: 6px; height: 6px; border-radius: 50%; display: inline-block;
+  }
+
+  /* Divider */
+  .demo-divider {
+    border: none;
+    border-top: 1px dashed #333;
+    margin: 60px auto;
+    max-width: 600px;
+  }
+  .variant-note {
+    text-align: center;
+    color: #555;
+    font-size: 13px;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<!-- ====================================
+     PROTOTYPE INTRO
+     ==================================== -->
+<div class="prototype-label">
+  Prototype — Vectanor Group Footer Block
+  <span>Two layout options for your review</span>
+</div>
+
+<hr class="demo-divider" style="margin-top: 30px;">
+
+<!-- ====================================
+     OPTION A: CARD GRID LAYOUT
+     Best for: footer section, about pages
+     Shows more detail about each division
+     ==================================== -->
+<p class="variant-note">Option A — Card grid (more detailed, best for about pages &amp; footer sections)</p>
+
+<!-- Example: as seen on dimonoff.com (Dimonoff is the active card) -->
+<div class="vectanor-group-block">
+  <div class="vg-container">
+    <div class="vg-header">
+      <div class="vg-logo-mark">V</div>
+      <div class="vg-header-text">
+        <a href="https://vectanor.com/" target="_blank" rel="noopener">
+          <div class="vg-title">Groupe Vectanor</div>
+        </a>
+        <div class="vg-subtitle">Canadian technology holding — Lighting, Mobility, Electronics, Monitoring</div>
+      </div>
+    </div>
+    <div class="vg-divisions">
+
+      <!-- Dimonoff — ACTIVE on dimonoff.com -->
+      <a href="https://dimonoff.com/" class="vg-card vg-active">
+        <div class="vg-card-name">
+          <span class="vg-dot vg-dot-dimonoff"></span>
+          Dimonoff
+        </div>
+        <div class="vg-card-desc">Smart lighting &amp; IoT solutions for cities and connected asset management.</div>
+        <div class="vg-card-arrow"><span>→ Visit</span></div>
+      </a>
+
+      <!-- Spatium -->
+      <a href="https://spatium-iot.com/" class="vg-card" target="_blank" rel="noopener">
+        <div class="vg-card-name">
+          <span class="vg-dot vg-dot-spatium"></span>
+          Spatium
+        </div>
+        <div class="vg-card-desc">Intelligent parking management platform — real-time occupancy &amp; analytics.</div>
+        <div class="vg-card-arrow"><span>→ Visit</span></div>
+      </a>
+
+      <!-- Amotus -->
+      <a href="https://amotus.com/" class="vg-card" target="_blank" rel="noopener">
+        <div class="vg-card-name">
+          <span class="vg-dot vg-dot-amotus"></span>
+          Amotus
+        </div>
+        <div class="vg-card-desc">IoT engineering services — electronics, firmware, cloud, and platform as a service.</div>
+        <div class="vg-card-arrow"><span>→ Visit</span></div>
+      </a>
+
+      <!-- Vigilia -->
+      <a href="https://vectanor.com/divisions/vigilia/" class="vg-card" target="_blank" rel="noopener">
+        <div class="vg-card-name">
+          <span class="vg-dot vg-dot-vigilia"></span>
+          Vigilia
+        </div>
+        <div class="vg-card-desc">Critical infrastructure monitoring — structural health and safety systems.</div>
+        <div class="vg-card-arrow"><span>→ Visit</span></div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<hr class="demo-divider">
+
+<!-- ====================================
+     OPTION B: HORIZONTAL BAR
+     Best for: slim footer bottom bar
+     Minimal footprint, just links
+     ==================================== -->
+<p class="variant-note">Option B — Horizontal bar (minimal, best for footer bottom strip)</p>
+
+<!-- Example: as seen on spatium-iot.com (Spatium is active) -->
+<div class="vectanor-bar">
+  <div class="vb-container">
+    <div class="vb-label">
+      A division of <a href="https://vectanor.com/" target="_blank" rel="noopener">Groupe Vectanor</a>
+    </div>
+    <ul class="vb-links">
+      <li>
+        <a href="https://dimonoff.com/" target="_blank" rel="noopener">
+          <span class="vb-dot vg-dot-dimonoff"></span> Dimonoff
+        </a>
+      </li>
+      <li class="vb-active">
+        <a href="https://spatium-iot.com/">
+          <span class="vb-dot vg-dot-spatium"></span> Spatium
+        </a>
+      </li>
+      <li>
+        <a href="https://amotus.com/" target="_blank" rel="noopener">
+          <span class="vb-dot vg-dot-amotus"></span> Amotus
+        </a>
+      </li>
+      <li>
+        <a href="https://vectanor.com/divisions/vigilia/" target="_blank" rel="noopener">
+          <span class="vb-dot vg-dot-vigilia"></span> Vigilia
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<hr class="demo-divider">
+
+<!-- ====================================
+     COMBINED EXAMPLE: how it would look
+     on a real site footer
+     ==================================== -->
+<p class="variant-note">Combined example — simulating a full Dimonoff footer bottom with both elements</p>
+
+<div style="background: rgb(48,48,48); padding: 40px 0 0;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px 30px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; color: #aaa; font-size: 13px; line-height: 1.7;">
+      <div>
+        <div style="font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 8px;">Dimonoff</div>
+        <p>Dimonoff provides innovative IoT-based solutions for smart cities through remote control and management of connected assets.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div>
+          <div style="font-weight: 600; color: #ccc; margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Quick Links</div>
+          <div><a href="#" style="color: #aaa; text-decoration: none;">Products</a></div>
+          <div><a href="#" style="color: #aaa; text-decoration: none;">Resources</a></div>
+          <div><a href="#" style="color: #aaa; text-decoration: none;">Contact</a></div>
+        </div>
+        <div>
+          <div style="font-weight: 600; color: #ccc; margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Legal</div>
+          <div><a href="#" style="color: #aaa; text-decoration: none;">Terms &amp; Conditions</a></div>
+          <div><a href="#" style="color: #aaa; text-decoration: none;">Privacy Policy</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vectanor group bar sits at the very bottom -->
+  <div class="vectanor-bar" style="--vg-bg: rgba(0,0,0,0.2); --vg-border: rgba(255,255,255,0.06);">
+    <div class="vb-container">
+      <div class="vb-label">
+        A division of <a href="https://vectanor.com/" target="_blank" rel="noopener">Groupe Vectanor</a>
+      </div>
+      <ul class="vb-links">
+        <li class="vb-active">
+          <a href="https://dimonoff.com/">
+            <span class="vb-dot vg-dot-dimonoff"></span> Dimonoff
+          </a>
+        </li>
+        <li>
+          <a href="https://spatium-iot.com/" target="_blank" rel="noopener">
+            <span class="vb-dot vg-dot-spatium"></span> Spatium
+          </a>
+        </li>
+        <li>
+          <a href="https://amotus.com/" target="_blank" rel="noopener">
+            <span class="vb-dot vg-dot-amotus"></span> Amotus
+          </a>
+        </li>
+        <li>
+          <a href="https://vectanor.com/divisions/vigilia/" target="_blank" rel="noopener">
+            <span class="vb-dot vg-dot-vigilia"></span> Vigilia
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

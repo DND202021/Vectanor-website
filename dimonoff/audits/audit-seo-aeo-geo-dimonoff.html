@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audit SEO · AEO · GEO — dimonoff.com</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0c0f14;
+  --surface: #151920;
+  --surface2: #1c2029;
+  --border: #2a2f3a;
+  --text: #e4e6eb;
+  --text-dim: #8b92a0;
+  --accent: #4ea8de;
+  --accent-glow: rgba(78,168,222,.15);
+  --green: #34d399;
+  --yellow: #fbbf24;
+  --orange: #f97316;
+  --red: #ef4444;
+  --purple: #a78bfa;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; font-size:15px; line-height:1.65; }
+.container { max-width:1100px; margin:0 auto; padding:0 28px; }
+
+/* Header */
+header { padding:48px 0 32px; border-bottom:1px solid var(--border); }
+header .tag { display:inline-block; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); background:var(--accent-glow); padding:5px 14px; border-radius:20px; margin-bottom:18px; }
+header h1 { font-size:32px; font-weight:700; letter-spacing:-.5px; margin-bottom:6px; }
+header h1 span { color:var(--accent); }
+header .subtitle { color:var(--text-dim); font-size:15px; }
+
+/* Score cards */
+.scores { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin:36px 0; }
+.score-card { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:28px; text-align:center; position:relative; overflow:hidden; }
+.score-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+.score-card.seo::before { background:linear-gradient(90deg,var(--accent),var(--purple)); }
+.score-card.aeo::before { background:linear-gradient(90deg,var(--yellow),var(--orange)); }
+.score-card.geo::before { background:linear-gradient(90deg,var(--green),var(--accent)); }
+.score-card .label { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--text-dim); margin-bottom:12px; }
+.score-card .value { font-size:52px; font-weight:700; letter-spacing:-2px; line-height:1; }
+.score-card .max { font-size:20px; color:var(--text-dim); font-weight:300; }
+.score-card .verdict { font-size:13px; color:var(--text-dim); margin-top:10px; }
+.score-card.seo .value { color:var(--accent); }
+.score-card.aeo .value { color:var(--yellow); }
+.score-card.geo .value { color:var(--green); }
+
+/* Gauge ring */
+.gauge { width:120px; height:120px; margin:0 auto 14px; position:relative; }
+.gauge svg { transform:rotate(-90deg); }
+.gauge circle { fill:none; stroke-width:8; }
+.gauge .bg { stroke:var(--surface2); }
+.gauge .fill { stroke-linecap:round; transition:stroke-dashoffset .8s ease; }
+.gauge .score-text { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:28px; font-weight:700; }
+
+/* Sections */
+section { margin:40px 0; }
+section h2 { font-size:22px; font-weight:700; margin-bottom:6px; display:flex; align-items:center; gap:10px; }
+section h2 .badge { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; padding:3px 10px; border-radius:10px; }
+section h2 .badge.seo { background:rgba(78,168,222,.15); color:var(--accent); }
+section h2 .badge.aeo { background:rgba(251,191,36,.15); color:var(--yellow); }
+section h2 .badge.geo { background:rgba(52,211,153,.15); color:var(--green); }
+section p.desc { color:var(--text-dim); margin-bottom:20px; font-size:14px; }
+
+/* Audit grid */
+.audit-grid { display:grid; gap:12px; }
+.audit-item { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px 22px; display:grid; grid-template-columns:36px 1fr auto; align-items:center; gap:14px; }
+.audit-item .icon { width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:16px; }
+.audit-item .icon.pass { background:rgba(52,211,153,.12); color:var(--green); }
+.audit-item .icon.warn { background:rgba(251,191,36,.12); color:var(--yellow); }
+.audit-item .icon.fail { background:rgba(239,68,68,.12); color:var(--red); }
+.audit-item .icon.info { background:rgba(78,168,222,.12); color:var(--accent); }
+.audit-item .label { font-weight:500; font-size:14px; }
+.audit-item .detail { font-size:12px; color:var(--text-dim); margin-top:2px; }
+.audit-item .tag-val { font-family:'JetBrains Mono',monospace; font-size:12px; padding:4px 10px; border-radius:6px; background:var(--surface2); white-space:nowrap; }
+
+/* Recommendations */
+.reco-table { width:100%; border-collapse:separate; border-spacing:0; margin-top:16px; }
+.reco-table th { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-dim); text-align:left; padding:10px 14px; border-bottom:1px solid var(--border); }
+.reco-table td { padding:14px; border-bottom:1px solid var(--border); font-size:14px; vertical-align:top; }
+.reco-table tr:last-child td { border-bottom:none; }
+.reco-table .pri { font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; padding:3px 8px; border-radius:6px; }
+.pri.p1 { background:rgba(239,68,68,.15); color:var(--red); }
+.pri.p2 { background:rgba(251,191,36,.15); color:var(--yellow); }
+.pri.p3 { background:rgba(78,168,222,.15); color:var(--accent); }
+.impact { font-size:12px; color:var(--text-dim); }
+.impact .bar { display:inline-block; height:6px; border-radius:3px; vertical-align:middle; margin-right:6px; }
+.impact .bar.high { width:48px; background:var(--green); }
+.impact .bar.med { width:32px; background:var(--yellow); }
+.impact .bar.low { width:18px; background:var(--text-dim); }
+.type-badges span { font-size:10px; font-family:'JetBrains Mono',monospace; padding:2px 7px; border-radius:4px; margin-right:4px; letter-spacing:.5px; }
+.type-badges .t-seo { background:rgba(78,168,222,.12); color:var(--accent); }
+.type-badges .t-aeo { background:rgba(251,191,36,.12); color:var(--yellow); }
+.type-badges .t-geo { background:rgba(52,211,153,.12); color:var(--green); }
+
+/* Footer */
+footer { margin:48px 0 32px; padding-top:24px; border-top:1px solid var(--border); text-align:center; color:var(--text-dim); font-size:12px; }
+footer .mono { font-family:'JetBrains Mono',monospace; }
+
+/* Responsive */
+@media (max-width:768px) {
+  .scores { grid-template-columns:1fr; }
+  .audit-item { grid-template-columns:28px 1fr; }
+  .audit-item .tag-val { grid-column:1/-1; }
+  header h1 { font-size:24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+  <div class="tag">Rapport d'audit — 26 mars 2026</div>
+  <h1>Audit <span>SEO</span> · <span>AEO</span> · <span>GEO</span></h1>
+  <div class="subtitle">dimonoff.com — Page analysée : Smart Lighting Control (EN/FR/ES)</div>
+</header>
+
+<!-- ========== SCORES ========== -->
+<div class="scores">
+  <div class="score-card seo">
+    <div class="label">SEO</div>
+    <div class="gauge">
+      <svg width="120" height="120" viewBox="0 0 120 120">
+        <circle class="bg" cx="60" cy="60" r="52"/>
+        <circle class="fill" cx="60" cy="60" r="52" stroke="var(--accent)" stroke-dasharray="327" stroke-dashoffset="62"/>
+      </svg>
+      <div class="score-text" style="color:var(--accent)">81</div>
+    </div>
+    <div class="verdict">Bon — quelques lacunes techniques</div>
+  </div>
+  <div class="score-card aeo">
+    <div class="label">AEO</div>
+    <div class="gauge">
+      <svg width="120" height="120" viewBox="0 0 120 120">
+        <circle class="bg" cx="60" cy="60" r="52"/>
+        <circle class="fill" cx="60" cy="60" r="52" stroke="var(--yellow)" stroke-dasharray="327" stroke-dashoffset="157"/>
+      </svg>
+      <div class="score-text" style="color:var(--yellow)">52</div>
+    </div>
+    <div class="verdict">Faible — opportunités majeures</div>
+  </div>
+  <div class="score-card geo">
+    <div class="label">GEO</div>
+    <div class="gauge">
+      <svg width="120" height="120" viewBox="0 0 120 120">
+        <circle class="bg" cx="60" cy="60" r="52"/>
+        <circle class="fill" cx="60" cy="60" r="52" stroke="var(--green)" stroke-dasharray="327" stroke-dashoffset="101"/>
+      </svg>
+      <div class="score-text" style="color:var(--green)">69</div>
+    </div>
+    <div class="verdict">Moyen — bonnes bases, manques clés</div>
+  </div>
+</div>
+
+<!-- ========== SEO SECTION ========== -->
+<section>
+  <h2><span class="badge seo">SEO</span> Search Engine Optimization — 81/100</h2>
+  <p class="desc">Optimisation pour les moteurs de recherche traditionnels (Google, Bing).</p>
+  <div class="audit-grid">
+
+    <div class="audit-item"><div class="icon pass">✓</div><div><div class="label">Title tag</div><div class="detail">"Smart Street Lighting | Dimonoff" — 32 car., inclut mot-clé principal</div></div><div class="tag-val">32 car.</div></div>
+
+    <div class="audit-item"><div class="icon pass">✓</div><div><div class="label">Meta description</div><div class="detail">Inclut Sourcewell, SCMS, municipalités — 155 car.</div></div><div class="tag-val">155 car.</div></div>
+
+    <div class="audit-item"><div class="icon pass">✓</div><div><div class="label">H1 unique</div><div class="detail">"Smart Lighting Control Solution" — clair, pertinent</div></div><div class="tag-val">1 H1</div></div>
+
+    <div class="audit-item"><div class="icon pass">✓</div><div><div class="label">Canonical + Hreflang</div><div class="detail">Canonical correct, hreflang EN/FR/ES présents</div></div><div class="tag-val">3 lang.</div></div>
+
+    <div class="audit-item"><div class="icon pass">✓</div><div><div class="label">Open Graph / Twitter Card</div><div class="detail">og:title, og:description, og:image, og:type tous présents</div></div><div class="tag-val">OK</div></div>
+
+    <div class="audit-item"><div class="icon pass">✓</div><div><div class="label">HTTPS</div><div class="detail">Site entièrement en HTTPS avec certificat valide</div></div><div class="tag-val">OK</div></div>
+
+    <div class="audit-item"><div class="icon pass">✓</div><div><div class="label">Sitemap XML</div><div class="detail">Sitemap index présent, 658 bytes</div></div><div class="tag-val">200 OK</div></div>
+
+    <div class="audit-item"><div class="icon warn">⚠</div><div><div class="label">Alt text images</div><div class="detail">38 images sur 59 sans alt text descriptif (3 sans attribut alt, 35 alt vide non-décoratif)</div></div><div class="tag-val">38/59</div></div>
+
+    <div class="audit-item"><div class="icon warn">⚠</div><div><div class="label">Headings H2/H3 dupliqués</div><div class="detail">12 headings dupliqués dans le DOM — causé par le carrousel The7 qui clone les éléments</div></div><div class="tag-val">12 dupes</div></div>
+
+    <div class="audit-item"><div class="icon warn">⚠</div><div><div class="label">Lazy loading images</div><div class="detail">59 images sans loading="lazy" explicite — impacte LCP et performance</div></div><div class="tag-val">0/59</div></div>
+
+    <div class="audit-item"><div class="icon warn">⚠</div><div><div class="label">Vitesse de chargement (TTFB)</div><div class="detail">Time to First Byte ~4200ms — lent, idéal &lt; 800ms. Cache serveur + CDN à optimiser</div></div><div class="tag-val">4.2s</div></div>
+
+    <div class="audit-item"><div class="icon info">ℹ</div><div><div class="label">Poids DOM</div><div class="detail">2458 éléments, 129 scripts, 11 feuilles de style — modérément lourd</div></div><div class="tag-val">2458 el.</div></div>
+
+    <div class="audit-item"><div class="icon info">ℹ</div><div><div class="label">Sitemap dans robots.txt</div><div class="detail">Le robots.txt ne référence pas le sitemap — les crawlers pourraient le manquer</div></div><div class="tag-val">Absent</div></div>
+
+  </div>
+</section>
+
+<!-- ========== AEO SECTION ========== -->
+<section>
+  <h2><span class="badge aeo">AEO</span> Answer Engine Optimization — 52/100</h2>
+  <p class="desc">Optimisation pour les réponses directes : featured snippets Google, People Also Ask, recherche vocale.</p>
+  <div class="audit-grid">
+
+    <div class="audit-item"><div class="icon fail">✗</div><div><div class="label">FAQ Schema (FAQPage)</div><div class="detail">Aucun schema FAQPage sur la page Smart Lighting — pas de chance d'apparaître dans les featured snippets FAQ</div></div><div class="tag-val">Absent</div></div>
+
+    <div class="audit-item"><div class="icon fail">✗</div><div><div class="label">HowTo Schema</div><div class="detail">Aucun schema HowTo — la section "How to Turn Lighting Smart?" pourrait en bénéficier</div></div><div class="tag-val">Absent</div></div>
+
+    <div class="audit-item"><div class="icon fail">✗</div><div><div class="label">Headings en format question</div><div class="detail">1 seul heading en format question sur la page. Les moteurs cherchent des Q&A pour People Also Ask</div></div><div class="tag-val">1 seul</div></div>
+
+    <div class="audit-item"><div class="icon fail">✗</div><div><div class="label">Contenu "definition snippet"</div><div class="detail">Pas de paragraphe clair "SCMS is..." ou "Smart lighting control is..." — les moteurs ne peuvent pas extraire de définition</div></div><div class="tag-val">Absent</div></div>
+
+    <div class="audit-item"><div class="icon warn">⚠</div><div><div class="label">Tableaux comparatifs</div><div class="detail">Aucun tableau HTML sur la page — les tableaux sont privilégiés pour les featured snippets comparatifs</div></div><div class="tag-val">0</div></div>
+
+    <div class="audit-item"><div class="icon pass">✓</div><div><div class="label">Listes structurées</div><div class="detail">67 listes présentes (produits, bénéfices) — bon pour les list snippets</div></div><div class="tag-val">67</div></div>
+
+    <div class="audit-item"><div class="icon pass">✓</div><div><div class="label">Glossaire avec DefinedTerm Schema</div><div class="detail">Le glossaire IoT/Smart Cities a un schema DefinedTerm — ~40 termes indexés</div></div><div class="tag-val">40 termes</div></div>
+
+    <div class="audit-item"><div class="icon pass">✓</div><div><div class="label">Schema Offer (Sourcewell)</div><div class="detail">Schema Offer avec offeredBy/seller/itemOffered — structure riche pour la relation contractuelle</div></div><div class="tag-val">Présent</div></div>
+
+    <div class="audit-item"><div class="icon warn">⚠</div><div><div class="label">Product Schema</div><div class="detail">Pas de schema Product pour les produits (RME, RTM, G3+, DOO Express) — ils ne ressortent pas dans les résultats enrichis</div></div><div class="tag-val">Absent</div></div>
+
+  </div>
+</section>
+
+<!-- ========== GEO SECTION ========== -->
+<section>
+  <h2><span class="badge geo">GEO</span> Generative Engine Optimization — 69/100</h2>
+  <p class="desc">Optimisation pour les moteurs génératifs : ChatGPT, Perplexity, Google AI Overviews, Claude.</p>
+  <div class="audit-grid">
+
+    <div class="audit-item"><div class="icon pass">✓</div><div><div class="label">llms.txt</div><div class="detail">Fichier llms.txt présent (généré par Yoast v27.2) — 16 pages listées, 2621 bytes</div></div><div class="tag-val">200 OK</div></div>
+
+    <div class="audit-item"><div class="icon warn">⚠</div><div><div class="label">llms.txt — couverture incomplète</div><div class="detail">La page Smart Lighting Control n'est PAS listée. Aucune mention de Sourcewell, RME, RTM, SCMS. Le fichier manque les pages produit clés</div></div><div class="tag-val">Incomplet</div></div>
+
+    <div class="audit-item"><div class="icon pass">✓</div><div><div class="label">AI crawlers non bloqués</div><div class="detail">robots.txt générique (User-agent: *) — GPTBot, ClaudeBot, PerplexityBot, Google-Extended tous autorisés</div></div><div class="tag-val">Ouverts</div></div>
+
+    <div class="audit-item"><div class="icon pass">✓</div><div><div class="label">Schema.org JSON-LD riche</div><div class="detail">4 blocs JSON-LD : LocalBusiness, Organization, BreadcrumbList, Offer. Bonne base pour extraction AI</div></div><div class="tag-val">4 blocs</div></div>
+
+    <div class="audit-item"><div class="icon pass">✓</div><div><div class="label">sameAs / liens sociaux</div><div class="detail">10 liens sameAs (LinkedIn, Facebook, X, Instagram, YouTube, Vectanor, Spatium, Amotus, Sourcewell)</div></div><div class="tag-val">10 liens</div></div>
+
+    <div class="audit-item"><div class="icon pass">✓</div><div><div class="label">Entités nommées (brand)</div><div class="detail">20 mentions "Dimonoff", 3 "Sourcewell", produits référencés — bon signal d'entité</div></div><div class="tag-val">20+ ent.</div></div>
+
+    <div class="audit-item"><div class="icon warn">⚠</div><div><div class="label">Contenu citable / authoritative statements</div><div class="detail">Le contenu est surtout marketing. Peu de faits vérifiables, statistiques ou citations que les LLM pourraient reprendre avec confiance</div></div><div class="tag-val">Faible</div></div>
+
+    <div class="audit-item"><div class="icon warn">⚠</div><div><div class="label">Freshness signals</div><div class="detail">Pas de date article:published_time ni article:modified_time — les AI ne savent pas si le contenu est à jour</div></div><div class="tag-val">Absent</div></div>
+
+    <div class="audit-item"><div class="icon fail">✗</div><div><div class="label">ai-plugin.json</div><div class="detail">Pas de fichier .well-known/ai-plugin.json — opportunité manquée pour l'intégration IA avancée</div></div><div class="tag-val">404</div></div>
+
+    <div class="audit-item"><div class="icon fail">✗</div><div><div class="label">Contenu structuré pour LLM</div><div class="detail">Pas de paragraphe d'introduction "entity-first" (ex: "Dimonoff is a Canadian IoT company that..."). Les LLM ont besoin de phrases d'ancrage claires</div></div><div class="tag-val">Absent</div></div>
+
+    <div class="audit-item"><div class="icon warn">⚠</div><div><div class="label">Profondeur de contenu</div><div class="detail">~1510 mots — suffisant mais manque de profondeur technique. Les LLM favorisent le contenu détaillé et factuel</div></div><div class="tag-val">1510 mots</div></div>
+
+  </div>
+</section>
+
+<!-- ========== RECOMMENDATIONS ========== -->
+<section>
+  <h2>Plan d'action — Recommandations priorisées</h2>
+  <p class="desc">13 recommandations classées par impact et effort. Les priorités P1 ont le meilleur ratio impact/effort.</p>
+
+  <table class="reco-table">
+    <thead>
+      <tr><th>#</th><th>Recommandation</th><th>Type</th><th>Impact</th><th>Effort</th><th>Priorité</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><strong>Ajouter FAQ Schema + contenu Q&A</strong><br><span style="color:var(--text-dim);font-size:13px">Créer 5-8 questions/réponses sur la page (ex: "What is smart lighting control?", "How does SCMS work?"). Ajouter le schema FAQPage. Cible directement les featured snippets et People Also Ask.</span></td>
+        <td><div class="type-badges"><span class="t-aeo">AEO</span><span class="t-geo">GEO</span></div></td>
+        <td><div class="impact"><span class="bar high"></span>Élevé</div></td>
+        <td>Moyen</td>
+        <td><span class="pri p1">P1</span></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><strong>Enrichir llms.txt avec les pages produit</strong><br><span style="color:var(--text-dim);font-size:13px">Ajouter Smart Lighting Control, pages produit (RME, RTM, G3+, DOO Express), Sourcewell, case studies au llms.txt. Le fichier actuel ne couvre que 16 pages génériques.</span></td>
+        <td><div class="type-badges"><span class="t-geo">GEO</span></div></td>
+        <td><div class="impact"><span class="bar high"></span>Élevé</div></td>
+        <td>Faible</td>
+        <td><span class="pri p1">P1</span></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><strong>Ajouter paragraphe d'ancrage "entity-first"</strong><br><span style="color:var(--text-dim);font-size:13px">En haut de page, ajouter un paragraphe clair : "Dimonoff is a Canadian IoT company specializing in smart city infrastructure. Its SCMS platform manages street lighting for over X municipalities...". Les LLM utilisent ces phrases comme source de citation.</span></td>
+        <td><div class="type-badges"><span class="t-aeo">AEO</span><span class="t-geo">GEO</span></div></td>
+        <td><div class="impact"><span class="bar high"></span>Élevé</div></td>
+        <td>Faible</td>
+        <td><span class="pri p1">P1</span></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><strong>Corriger les alt text manquants (38 images)</strong><br><span style="color:var(--text-dim);font-size:13px">38 images sans alt text descriptif. Impacte le SEO images, l'accessibilité, et la compréhension du contenu par les AI. Prioriser les images produit (RME, RTM, SCMS, DOO Express).</span></td>
+        <td><div class="type-badges"><span class="t-seo">SEO</span></div></td>
+        <td><div class="impact"><span class="bar high"></span>Élevé</div></td>
+        <td>Moyen</td>
+        <td><span class="pri p1">P1</span></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><strong>Ajouter le schema Product pour chaque produit</strong><br><span style="color:var(--text-dim);font-size:13px">Créer des schemas Product/Service pour SCMS, RME, RTM, G3+, DOO Express, CitySafe avec description, image, brand, category. Active les résultats enrichis produit dans Google.</span></td>
+        <td><div class="type-badges"><span class="t-seo">SEO</span><span class="t-aeo">AEO</span><span class="t-geo">GEO</span></div></td>
+        <td><div class="impact"><span class="bar high"></span>Élevé</div></td>
+        <td>Moyen</td>
+        <td><span class="pri p1">P1</span></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><strong>Optimiser le TTFB (Time to First Byte)</strong><br><span style="color:var(--text-dim);font-size:13px">TTFB à 4.2s — très lent. Vérifier le cache page Hummingbird/Endurance, activer le page caching agressif côté HostGator, optimiser les plugins lourds. Cible : &lt; 1s.</span></td>
+        <td><div class="type-badges"><span class="t-seo">SEO</span></div></td>
+        <td><div class="impact"><span class="bar high"></span>Élevé</div></td>
+        <td>Élevé</td>
+        <td><span class="pri p2">P2</span></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><strong>Ajouter des signaux de fraîcheur (dates)</strong><br><span style="color:var(--text-dim);font-size:13px">Ajouter article:published_time et article:modified_time dans le &lt;head&gt;. Les AI et Google valorisent le contenu récent. Un mu-plugin peut injecter ces meta tags automatiquement.</span></td>
+        <td><div class="type-badges"><span class="t-seo">SEO</span><span class="t-geo">GEO</span></div></td>
+        <td><div class="impact"><span class="bar med"></span>Moyen</div></td>
+        <td>Faible</td>
+        <td><span class="pri p2">P2</span></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><strong>Ajouter un tableau comparatif produits</strong><br><span style="color:var(--text-dim);font-size:13px">Créer un tableau HTML comparant les produits (RME vs RTM vs G3+) avec caractéristiques. Les tableaux sont le format #1 pour les featured snippets comparatifs.</span></td>
+        <td><div class="type-badges"><span class="t-aeo">AEO</span></div></td>
+        <td><div class="impact"><span class="bar med"></span>Moyen</div></td>
+        <td>Moyen</td>
+        <td><span class="pri p2">P2</span></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><strong>Ajouter du contenu citable avec statistiques</strong><br><span style="color:var(--text-dim);font-size:13px">Inclure des faits vérifiables : nombre de villes déployées, % d'économies d'énergie, nombre de luminaires gérés. Les LLM citent préférentiellement les chiffres précis.</span></td>
+        <td><div class="type-badges"><span class="t-geo">GEO</span></div></td>
+        <td><div class="impact"><span class="bar med"></span>Moyen</div></td>
+        <td>Moyen</td>
+        <td><span class="pri p2">P2</span></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><strong>Investiguer les H2 dupliqués du carrousel</strong><br><span style="color:var(--text-dim);font-size:13px">Le carrousel The7 duplique les headings H2 dans le DOM (12 doublons). Changer les clones en &lt;div&gt; aria-hidden ou utiliser un attribut data-heading au lieu de vrais H2.</span></td>
+        <td><div class="type-badges"><span class="t-seo">SEO</span></div></td>
+        <td><div class="impact"><span class="bar med"></span>Moyen</div></td>
+        <td>Moyen</td>
+        <td><span class="pri p2">P2</span></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td><strong>Référencer le sitemap dans robots.txt</strong><br><span style="color:var(--text-dim);font-size:13px">Ajouter "Sitemap: https://www.dimonoff.com/sitemap_index.xml" au robots.txt. Simple mais aide les crawlers.</span></td>
+        <td><div class="type-badges"><span class="t-seo">SEO</span></div></td>
+        <td><div class="impact"><span class="bar low"></span>Faible</div></td>
+        <td>Faible</td>
+        <td><span class="pri p3">P3</span></td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td><strong>Convertir headings en format question</strong><br><span style="color:var(--text-dim);font-size:13px">Reformuler 3-4 headings en questions : "How to Turn Lighting Smart?" → OK, ajouter "What is SCMS?", "Why choose cooperative purchasing through Sourcewell?", etc.</span></td>
+        <td><div class="type-badges"><span class="t-aeo">AEO</span></div></td>
+        <td><div class="impact"><span class="bar low"></span>Faible</div></td>
+        <td>Faible</td>
+        <td><span class="pri p3">P3</span></td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td><strong>Ajouter lazy loading explicite aux images</strong><br><span style="color:var(--text-dim);font-size:13px">Les navigateurs modernes supportent loading="lazy" nativement. Un filtre WordPress peut l'ajouter automatiquement à toutes les images below-the-fold.</span></td>
+        <td><div class="type-badges"><span class="t-seo">SEO</span></div></td>
+        <td><div class="impact"><span class="bar low"></span>Faible</div></td>
+        <td>Faible</td>
+        <td><span class="pri p3">P3</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ========== PROJECTION ========== -->
+<section>
+  <h2>Projection après corrections</h2>
+  <p class="desc">Scores estimés si les recommandations P1 et P2 sont implémentées.</p>
+  <div class="scores">
+    <div class="score-card seo">
+      <div class="label">SEO</div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:10px 0">
+        <span style="font-size:28px;color:var(--text-dim);text-decoration:line-through">81</span>
+        <span style="font-size:18px;color:var(--text-dim)">→</span>
+        <span style="font-size:42px;font-weight:700;color:var(--accent)">93</span>
+      </div>
+      <div class="verdict">+12 pts (alt text, TTFB, H2 dupes, lazy loading)</div>
+    </div>
+    <div class="score-card aeo">
+      <div class="label">AEO</div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:10px 0">
+        <span style="font-size:28px;color:var(--text-dim);text-decoration:line-through">52</span>
+        <span style="font-size:18px;color:var(--text-dim)">→</span>
+        <span style="font-size:42px;font-weight:700;color:var(--yellow)">82</span>
+      </div>
+      <div class="verdict">+30 pts (FAQ schema, Q&A, tableau, Product schema)</div>
+    </div>
+    <div class="score-card geo">
+      <div class="label">GEO</div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:10px 0">
+        <span style="font-size:28px;color:var(--text-dim);text-decoration:line-through">69</span>
+        <span style="font-size:18px;color:var(--text-dim)">→</span>
+        <span style="font-size:42px;font-weight:700;color:var(--green)">89</span>
+      </div>
+      <div class="verdict">+20 pts (llms.txt, entity-first, stats, dates)</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="mono">dimonoff.com — audit généré le 26 mars 2026</div>
+  <div style="margin-top:6px">Page analysée : /solutions/smart-lighting-control/ (+ FR + ES)</div>
+</footer>
+
+</div>
+</body>
+</html>

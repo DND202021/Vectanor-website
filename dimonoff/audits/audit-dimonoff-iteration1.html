@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit SEO/AEO/GEO — dimonoff.com</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f7; color: #1a1a2e; line-height: 1.6; padding: 24px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { background: linear-gradient(135deg, #1a1a2e 0%, #2d3561 100%); color: #fff; padding: 32px; border-radius: 12px; margin-bottom: 24px; }
+        .header h1 { font-size: 28px; margin-bottom: 8px; }
+        .header .meta { opacity: 0.8; font-size: 14px; }
+        .score-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 24px; }
+        .score-card { background: #fff; border-radius: 12px; padding: 24px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: relative; overflow: hidden; }
+        .score-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+        .score-card h3 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 8px; }
+        .score-card .score { font-size: 48px; font-weight: 700; }
+        .score-card .max { font-size: 18px; color: #aaa; }
+        .section { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .section h2 { font-size: 20px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f0f0f0; }
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; padding: 10px 8px; background: #f8f9fa; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: #555; }
+        .tab-container { display: flex; gap: 4px; margin-bottom: 16px; }
+        .tab { padding: 8px 20px; border-radius: 6px 6px 0 0; cursor: pointer; font-weight: 600; font-size: 14px; border: 1px solid #ddd; border-bottom: none; background: #f8f9fa; }
+        .tab.active { background: #fff; border-bottom: 1px solid #fff; margin-bottom: -1px; z-index: 1; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .projected { background: #f0f7fc; border: 1px solid #4ea8de; border-radius: 8px; padding: 16px; margin-top: 16px; }
+        .footer { text-align: center; padding: 24px; color: #888; font-size: 13px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Audit SEO / AEO / GEO</h1>
+        <div class="meta">
+            <strong>dimonoff.com</strong> &mdash; Smart Lighting Control<br>
+            <a href="https://www.dimonoff.com/solutions/smart-lighting-control/" style="color:#8ec5fc" target="_blank">https://www.dimonoff.com/solutions/smart-lighting-control/</a><br>
+            Iteration 1 &mdash; 2026-03-26 &mdash; Score total: 184/300
+        </div>
+    </div>
+
+    <div class="score-cards">
+        <div class="score-card" style="border-top: 4px solid #f59e0b">
+            <h3>SEO</h3>
+            <div class="score" style="color:#f59e0b">69<span class="max">/100</span></div>
+            <div style="font-size:13px;color:#888;margin-top:4px">Search Engine Optimization</div>
+        </div>
+        <div class="score-card" style="border-top: 4px solid #ef4444">
+            <h3>AEO</h3>
+            <div class="score" style="color:#ef4444">46<span class="max">/100</span></div>
+            <div style="font-size:13px;color:#888;margin-top:4px">Answer Engine Optimization</div>
+        </div>
+        <div class="score-card" style="border-top: 4px solid #f59e0b">
+            <h3>GEO</h3>
+            <div class="score" style="color:#f59e0b">69<span class="max">/100</span></div>
+            <div style="font-size:13px;color:#888;margin-top:4px">Generative Engine Optimization</div>
+        </div>
+        <div class="score-card" style="border-top: 4px solid #f59e0b">
+            <h3>Total</h3>
+            <div class="score" style="color:#f59e0b">184<span class="max">/300</span></div>
+            <div style="font-size:13px;color:#888;margin-top:4px">Combined Score</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Detailed Audit</h2>
+        <div class="tab-container">
+            <div class="tab active" onclick="switchTab('seo')">SEO (69/100)</div>
+            <div class="tab" onclick="switchTab('aeo')">AEO (46/100)</div>
+            <div class="tab" onclick="switchTab('geo')">GEO (69/100)</div>
+        </div>
+        <div id="tab-seo" class="tab-content active">
+            <table>
+                <thead><tr><th style="width:30px"></th><th style="width:40px">ID</th><th>Signal</th><th style="width:80px;text-align:center">Score</th><th>Detail</th></tr></thead>
+                <tbody><tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#f59e0b">&#9888;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>S1</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Meta title</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">5/10</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">32 chars (target 50-60). 'Smart Street Lighting | Dimonoff' — trop court, manque de profondeur de mots-cles.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#22c55e">&#10003;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>S2</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Meta description</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">10/10</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">155 chars, inclut Sourcewell, SCMS, keyword principal. Excellente.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#22c55e">&#10003;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>S3</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">H1 tag</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">8/8</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">1x H1 'Smart Lighting Control Solution' — unique, contient le keyword principal.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#ef4444">&#10007;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>S4</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Heading hierarchy</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">2/8</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">12 H2 dupliques (les etudes de cas apparaissent 2 fois chacune dans le DOM). 32 H2 au total.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#f59e0b">&#9888;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>S5</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Image alt text</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">4/10</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">21/59 images avec alt text (35.6%). 38 images sans alt. Score proportionnel: 35.6% x 10 = 4.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#22c55e">&#10003;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>S6</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Internal links</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">6/6</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">328 liens internes avec ancres descriptives.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#22c55e">&#10003;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>S7</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">External links</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">4/4</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">32 liens externes avec attributs rel.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#22c55e">&#10003;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>S8</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Canonical URL</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">5/5</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">Self-referencing canonical correct.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#22c55e">&#10003;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>S9</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Hreflang tags</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">5/5</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">EN/FR/ES tous presents et correctement croises.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#ef4444">&#10007;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>S10</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">TTFB</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">2/10</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">4200ms (cible <800ms). Probleme serveur/cache. Range 3000-5000ms = 2pts.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#f59e0b">&#9888;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>S11</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">DOM complexity</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">3/5</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">2458 elements (range 1500-2500).</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#ef4444">&#10007;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>S12</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Resource loading</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">1/5</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">129 scripts (>100=0), 11 stylesheets (10-20=0.5), 0 lazy loading (0=0). Moyenne: 0.17 x 5 = 1.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#22c55e">&#10003;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>S13</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Sitemap in robots.txt</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">4/4</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">Sitemap declare dans robots.txt. Ameliore depuis le dernier audit.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#22c55e">&#10003;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>S14</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Mobile meta</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">5/5</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">Viewport meta present, design responsive.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#22c55e">&#10003;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>S15</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">HTTPS</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">5/5</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">Full HTTPS, 0 contenu mixte.</td>
+            </tr></tbody>
+            </table>
+        </div>
+        <div id="tab-aeo" class="tab-content">
+            <table>
+                <thead><tr><th style="width:30px"></th><th style="width:40px">ID</th><th>Signal</th><th style="width:80px;text-align:center">Score</th><th>Detail</th></tr></thead>
+                <tbody><tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#ef4444">&#10007;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>A1</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">FAQ Schema</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">0/15</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">Aucun FAQPage schema. Aucune section Q&A visible structuree.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#f59e0b">&#9888;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>A2</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">HowTo Schema</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">5/10</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">Heading 'How to Turn Lighting Smart?' avec contenu etape par etape visible, mais aucun schema HowTo.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#f59e0b">&#9888;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>A3</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Question headings</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">7/10</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">4 vrais headings en question: Who We Serve, Who We Are, Who We Partner With, How to Turn Lighting Smart. (2 faux positifs regex exclus: DOO, Documentation).</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#22c55e">&#10003;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>A4</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Definition paragraphs</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">10/10</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">9 paragraphes de type definition detectes. Bonne couverture des termes cles.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#ef4444">&#10007;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>A5</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Comparison tables</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">0/8</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">0 tables HTML sur la page. Le contenu comparatif (produits) pourrait beneficier d'un tableau.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#22c55e">&#10003;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>A6</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Structured lists</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">7/7</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">67 listes UL structurees. Bon usage pour features, benefices, specs.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#ef4444">&#10007;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>A7</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Product Schema</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">0/15</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">Aucun schema Product. Schema Offer present mais pas lie a un Product. SCMS, DOO Express, RME, RTM, G3+ devraient avoir chacun un Product schema.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#22c55e">&#10003;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>A8</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Breadcrumb Schema</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">5/5</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">BreadcrumbList schema present (Yoast) + breadcrumbs visibles sur la page.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#f59e0b">&#9888;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>A9</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Direct answer paragraphs</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">6/10</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">Contenu de reponse present apres les headings questions, mais longueur variable (certains >100 mots).</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#f59e0b">&#9888;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>A10</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Voice search readiness</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">6/10</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">Mix conversationnel/technique. Utilise 'you/your/we/our' dans certaines sections, mais ton globalement professionnel.</td>
+            </tr></tbody>
+            </table>
+        </div>
+        <div id="tab-geo" class="tab-content">
+            <table>
+                <thead><tr><th style="width:30px"></th><th style="width:40px">ID</th><th>Signal</th><th style="width:80px;text-align:center">Score</th><th>Detail</th></tr></thead>
+                <tbody><tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#f59e0b">&#9888;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>G1</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">llms.txt</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">4/12</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">Present mais seulement 5 pages listees (vs 16 avant). Manque: Smart Lighting Control, pages produits, Sourcewell. Significativement incomplet.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#f59e0b">&#9888;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>G2</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">AI crawler access</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">7/10</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">robots.txt autorise GPTBot et ClaudeBot. Bloque CCBot, Bytespider, anthropic-ai. La plupart des crawlers AI importants passent.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#f59e0b">&#9888;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>G3</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Entity-first paragraph</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">4/12</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">Dimonoff mentionne dans paras 2 et 3, mais pas en format entity-first ('Dimonoff is a...'). Le premier para parle d'un salon commercial.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#f59e0b">&#9888;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>G4</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Article dates</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">5/8</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">article:modified_time present (2026-03-26). Pas de article:published_time.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#22c55e">&#10003;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>G5</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">sameAs links</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">8/8</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">5 liens sameAs dans le schema Organization (LinkedIn, Twitter, etc.).</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#22c55e">&#10003;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>G6</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Citable statistics</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">10/10</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">8 statistiques citables detectees sur la page. Bon contenu factuel.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#22c55e">&#10003;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>G7</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Structured data richness</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">10/10</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">9+ types de schema: LocalBusiness, Corporation, WebPage, ImageObject, BreadcrumbList, WebSite, Organization, Person, Offer.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#f59e0b">&#9888;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>G8</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Freshness signals</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">5/8</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">modified_time du jour, mais aucune date visible 'Last updated' sur la page.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#f59e0b">&#9888;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>G9</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Author/source authority</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">4/7</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">Organisation Dimonoff attribuee via schema, mais pas d'auteur nomme ni de page 'about' liee.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#22c55e">&#10003;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>G10</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Unique value proposition</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">8/8</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">Plateforme SCMS proprietaire, etudes de cas specifiques, contrat Sourcewell exclusif. Contenu unique.</td>
+            </tr>
+<tr>
+                <td style="padding:8px;border-bottom:1px solid #eee"><span style="color:#f59e0b">&#9888;</span></td>
+                <td style="padding:8px;border-bottom:1px solid #eee"><strong>G11</strong></td>
+                <td style="padding:8px;border-bottom:1px solid #eee">Cross-language consistency</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">4/7</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;font-size:13px;color:#555">Sourcewell badge sur les 3 langues. Quelques ecarts de contenu FR vs EN. Schema equivalent.</td>
+            </tr></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Recommendations (13)</h2>
+        <table>
+            <thead><tr>
+                <th style="width:30px;text-align:center">#</th>
+                <th style="width:50px;text-align:center">Priority</th>
+                <th style="width:60px">Cat.</th>
+                <th>Recommendation</th>
+                <th style="width:140px;text-align:center">Impact</th>
+                <th style="width:80px;text-align:center">Status</th>
+            </tr></thead>
+            <tbody><tr>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">1</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">
+                <span style="background:#ef4444;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">P1</span>
+            </td>
+            <td style="padding:8px;border-bottom:1px solid #eee">AEO</td>
+            <td style="padding:8px;border-bottom:1px solid #eee"><strong>Ajouter FAQ Schema + contenu Q&A</strong><br><span style="font-size:13px;color:#555">Creer FAQPage schema avec 5+ paires Q&R. Questions: What is SCMS?, How does smart lighting work?, What is Sourcewell cooperative purchasing?, etc.</span></td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">AEO +15, GEO +3</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px">Pending</span></td>
+        </tr><tr>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">2</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">
+                <span style="background:#ef4444;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">P1</span>
+            </td>
+            <td style="padding:8px;border-bottom:1px solid #eee">AEO</td>
+            <td style="padding:8px;border-bottom:1px solid #eee"><strong>Ajouter Product Schema pour chaque produit</strong><br><span style="font-size:13px;color:#555">Schema Product pour SCMS, DOO Express, RME, RTM, G3+, CitySafe. Inclure name, description, brand, offers.</span></td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">AEO +15, GEO +2</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px">Pending</span></td>
+        </tr><tr>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">3</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">
+                <span style="background:#ef4444;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">P1</span>
+            </td>
+            <td style="padding:8px;border-bottom:1px solid #eee">GEO</td>
+            <td style="padding:8px;border-bottom:1px solid #eee"><strong>Enrichir llms.txt</strong><br><span style="font-size:13px;color:#555">Ajouter Smart Lighting Control, pages produits, Sourcewell, glossaire. Passer de 5 a 15+ pages.</span></td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">GEO +8</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px">Pending</span></td>
+        </tr><tr>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">4</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">
+                <span style="background:#ef4444;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">P1</span>
+            </td>
+            <td style="padding:8px;border-bottom:1px solid #eee">GEO</td>
+            <td style="padding:8px;border-bottom:1px solid #eee"><strong>Paragraphe entity-first</strong><br><span style="font-size:13px;color:#555">Reecrire le premier paragraphe visible: 'Dimonoff is a smart city IoT company that designs...' Format entity-first pour AI citability.</span></td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">AEO +2, GEO +8</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px">Pending</span></td>
+        </tr><tr>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">5</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">
+                <span style="background:#ef4444;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">P1</span>
+            </td>
+            <td style="padding:8px;border-bottom:1px solid #eee">SEO</td>
+            <td style="padding:8px;border-bottom:1px solid #eee"><strong>Optimiser le meta title</strong><br><span style="font-size:13px;color:#555">Allonger a 50-60 chars. Ex: 'Smart Lighting Control Solutions | SCMS Platform | Dimonoff' (55 chars).</span></td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">SEO +5</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px">Pending</span></td>
+        </tr><tr>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">6</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">
+                <span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">P2</span>
+            </td>
+            <td style="padding:8px;border-bottom:1px solid #eee">AEO</td>
+            <td style="padding:8px;border-bottom:1px solid #eee"><strong>Ajouter un tableau comparatif produits</strong><br><span style="font-size:13px;color:#555">Tableau HTML comparant SCMS, DOO Express, RME, RTM, G3+ (features, usage, connectivity).</span></td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">AEO +8, GEO +2</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px">Pending</span></td>
+        </tr><tr>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">7</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">
+                <span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">P2</span>
+            </td>
+            <td style="padding:8px;border-bottom:1px solid #eee">SEO</td>
+            <td style="padding:8px;border-bottom:1px solid #eee"><strong>Corriger alt text (38 images)</strong><br><span style="font-size:13px;color:#555">Ajouter alt text descriptif aux 38 images manquantes. Score passerait de 4 a 10.</span></td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">SEO +6</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px">Pending</span></td>
+        </tr><tr>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">8</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">
+                <span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">P2</span>
+            </td>
+            <td style="padding:8px;border-bottom:1px solid #eee">SEO</td>
+            <td style="padding:8px;border-bottom:1px solid #eee"><strong>Corriger H2 dupliques</strong><br><span style="font-size:13px;color:#555">12 H2 dupliques (etudes de cas en double dans le DOM). Nettoyer via Elementor pour eliminer les doublons.</span></td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">SEO +6, AEO +2</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px">Pending</span></td>
+        </tr><tr>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">9</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">
+                <span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">P2</span>
+            </td>
+            <td style="padding:8px;border-bottom:1px solid #eee">GEO</td>
+            <td style="padding:8px;border-bottom:1px solid #eee"><strong>Ajouter published_time + date visible</strong><br><span style="font-size:13px;color:#555">Ajouter article:published_time en meta. Afficher 'Derniere mise a jour' visible sur la page.</span></td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">GEO +3</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px">Pending</span></td>
+        </tr><tr>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">10</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">
+                <span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">P2</span>
+            </td>
+            <td style="padding:8px;border-bottom:1px solid #eee">SEO</td>
+            <td style="padding:8px;border-bottom:1px solid #eee"><strong>Optimiser TTFB</strong><br><span style="font-size:13px;color:#555">4200ms actuel (cible <800ms). Necessite optimisation serveur: cache, CDN, compression. Requiert intervention IT/hebergeur.</span></td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">SEO +8</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px">Pending</span></td>
+        </tr><tr>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">11</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">
+                <span style="background:#6b7280;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">P3</span>
+            </td>
+            <td style="padding:8px;border-bottom:1px solid #eee">AEO</td>
+            <td style="padding:8px;border-bottom:1px solid #eee"><strong>Ajouter HowTo Schema</strong><br><span style="font-size:13px;color:#555">Schematiser le contenu 'How to Turn Lighting Smart?' en HowTo JSON-LD avec etapes nommees.</span></td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">AEO +5, GEO +1</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px">Pending</span></td>
+        </tr><tr>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">12</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">
+                <span style="background:#6b7280;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">P3</span>
+            </td>
+            <td style="padding:8px;border-bottom:1px solid #eee">SEO</td>
+            <td style="padding:8px;border-bottom:1px solid #eee"><strong>Optimiser resource loading</strong><br><span style="font-size:13px;color:#555">129 scripts, 0 lazy loading. Reduire scripts, ajouter loading=lazy aux images below-the-fold. Requiert intervention theme/plugins.</span></td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">SEO +4</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px">Pending</span></td>
+        </tr><tr>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">13</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">
+                <span style="background:#6b7280;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">P3</span>
+            </td>
+            <td style="padding:8px;border-bottom:1px solid #eee">AEO</td>
+            <td style="padding:8px;border-bottom:1px solid #eee"><strong>Plus de question headings</strong><br><span style="font-size:13px;color:#555">Ajouter 1-2 headings en format question (What are the benefits of smart lighting?, Why choose Dimonoff?).</span></td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">AEO +3, GEO +1</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;text-align:center"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px">Pending</span></td>
+        </tr></tbody>
+        </table>
+
+        <div class="projected">
+            <strong>Projected scores after P1+P2 fixes:</strong>
+            SEO 94/100 &bull; AEO 88/100 &bull; GEO 95/100
+            &bull; Total 277/300
+        </div>
+    </div>
+
+    
+
+    <div class="footer">
+        Generated by SEO/AEO/GEO Audit Skill &mdash; 2026-03-26 19:10
+    </div>
+</div>
+
+<script>
+function switchTab(dim) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + dim).classList.add('active');
+    event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
