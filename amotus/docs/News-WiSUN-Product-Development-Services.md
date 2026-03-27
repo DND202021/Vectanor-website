@@ -213,9 +213,8 @@ Groupe Vectanor is a Quebec City-based technology group comprising Dimonoff (sma
 
 #### Media Contact
 
-**Naomih Dalpe**
-Director of Business Development
-ndalpe@dimonoff.com
+**Jean-Francois Laplante**
+jlaplante@amotus.com
 
 ---
 
@@ -307,9 +306,8 @@ Le Groupe Vectanor est un groupe technologique base a Quebec comprenant Dimonoff
 
 #### Contact media
 
-**Naomih Dalpe**
-Directrice du developpement des affaires
-ndalpe@dimonoff.com
+**Jean-Francois Laplante**
+jlaplante@amotus.com
 
 ---
 
