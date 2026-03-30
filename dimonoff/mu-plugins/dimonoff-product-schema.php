@@ -21,11 +21,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return void
  */
 function dimonoff_product_schema() {
-    if ( ! is_singular() ) {
+    if ( is_admin() ) {
         return;
     }
 
-    $current_url = get_permalink();
+    $current_url = home_url( add_query_arg( array() ) );
+    if ( empty( $current_url ) ) {
+        $current_url = get_permalink();
+    }
     if ( empty( $current_url ) ) {
         return;
     }

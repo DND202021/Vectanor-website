@@ -71,6 +71,16 @@
 - **Contrat**: #041525-DIMN (valide jusqu'au 2029-07-22)
 - **Pages**: Smart Lighting Control EN/FR/ES + schema JSON-LD
 
+### Article Wi-SUN Alliance Membership (EN draft)
+- **Date**: 2026-03-30
+- **Post ID**: 399478
+- **Slug**: `dimonoff-joins-wi-sun-alliance-contributing-member`
+- **Status**: DRAFT (ne pas publier avant confirmation de la date)
+- **Langue**: EN (Polylang), version FR a creer separement
+- **Categories**: Smart City, Street Lighting Control
+- **Contenu source**: `docs/News-WiSUN-Alliance-Membership.md`
+- **A faire**: creer version FR, ajouter image hero (logos Dimonoff + Wi-SUN), publier quand pret
+
 ### Landing Page Smart Wireless Nodes (RME/RTM/LNLV)
 - **Date**: 2026-03-30
 - **Pages cibles**: /solutions/smart-lighting-control/wireless-nodes/ (EN), /fr/.../noeuds-sans-fil/ (FR)
@@ -117,6 +127,7 @@
 - **WAF HostGator**: Bloque `$_SERVER['REQUEST_URI']` dans les requetes PUT
 - **Elementor cache**: `files_manager->clear_cache()` est le seul moyen fiable de purger le cache de rendu
 - **Hummingbird**: Casse les compteurs Elementor (lazy handler chain)
+- **is_singular() retourne false sur pages Elementor**: Utiliser `is_admin()` comme garde + `home_url( add_query_arg( array() ) )` pour URL au lieu de `get_permalink()`. Le product-schema existant avait aussi ce bug (jamais active sur le front-end)
 
 ## Produits references
 
