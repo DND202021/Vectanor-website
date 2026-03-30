@@ -71,7 +71,17 @@
 - **Contrat**: #041525-DIMN (valide jusqu'au 2029-07-22)
 - **Pages**: Smart Lighting Control EN/FR/ES + schema JSON-LD
 
-## mu-plugins deployes (21 actifs)
+### Landing Page Smart Wireless Nodes (RME/RTM/LNLV)
+- **Date**: 2026-03-30
+- **Pages cibles**: /solutions/smart-lighting-control/wireless-nodes/ (EN), /fr/.../noeuds-sans-fil/ (FR)
+- **Audience**: Utility decision-makers, municipal procurement, public works directors
+- **Contenu**: ~800 mots EN + ~800 mots FR, spec tables RME/RTM/LNLV, proof points (Montreal 132K+, Laval 37K, FQM 145K)
+- **SEO**: 10 keywords cibles, ProductGroup + FAQPage JSON-LD, meta tags EN/FR
+- **Deploye**: 2 mu-plugins (FAQ schema + ProductGroup schema) — URL-based matching
+- **Statut**: Contenu pret dans `docs/Landing-Page-Smart-Wireless-Nodes.md`, pages WordPress a creer
+- **Details**: voir `docs/Landing-Page-Smart-Wireless-Nodes.md`
+
+## mu-plugins deployes (23 actifs)
 
 | Fichier | Taille | Role |
 |---------|--------|------|
@@ -96,6 +106,8 @@
 | dimonoff-seo-descs.php | 1,131 B | Meta descriptions custom (chr(60/62) WAF bypass) |
 | dimonoff-301-redirects.php | 1,381 B | Pattern-based 301 redirects pour anciennes URLs |
 | dimonoff-a11y-fixes.php | 1,236 B | WCAG AA contrast + aria-labels pour inputs |
+| dimonoff-nodes-faq-schema.php | 9,600 B | FAQPage schema sur /wireless-nodes/ EN/FR (6 Q&A) |
+| dimonoff-nodes-productgroup-schema.php | 5,268 B | ProductGroup schema RME/RTM/LNLV sur /wireless-nodes/ |
 
 > Note: 5 mu-plugins sont dans le repo (faq-schema, product-schema, glossary-schema, crosslinks, font-preload). Les 16 autres sont sur le serveur dimonoff.com uniquement — a extraire via cPanel File Manager et ajouter dans un commit ulterieur.
 
