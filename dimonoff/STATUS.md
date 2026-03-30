@@ -30,6 +30,20 @@
 
 ## Projets completes
 
+### SEO/CWV Execution Plan (7 phases)
+- **Date**: 2026-03-30
+- **Base**: Audit GSC Performance 2026-03-29
+- **Phases completees**:
+  - Phase 1: CWV Desktop fix (CLS + LCP) — 3 mu-plugins deployes
+  - Phase 2: Title tags + meta descriptions — 2 mu-plugins (bypass SmartCrawl via pre_get_document_title)
+  - Phase 3: 301 redirects pour 404 — mu-plugin pattern-based
+  - Phase 4: Canonical duplicates — identifie comme issue Artifactory (IT, hors scope WP)
+  - Phase 5: Hero image LCP fix (a3 Lazy Load images desactive, WP Core Lazy Load active) + a11y mu-plugin
+  - Phase 6: Cross-Vectanor backlinks — verifies bidirectionnels (dimonoff, spatium, amotus, vectanor)
+  - Phase 7: Validation finale
+- **Changement a3 Lazy Load**: Images lazy-load desactive, WP Core Lazy Load active (WordPress natif gere above/below fold correctement)
+- **Details**: voir `docs/Plan-Execution-SEO-CWV-2026-03.md` et `audits/Audit-GSC-Performance-2026-03-29.md`
+
 ### SEO Plan (score final: 100/100)
 - **Dates**: Mars 2025 — Mars 2026
 - **Score initial**: 55/100
@@ -57,7 +71,7 @@
 - **Contrat**: #041525-DIMN (valide jusqu'au 2029-07-22)
 - **Pages**: Smart Lighting Control EN/FR/ES + schema JSON-LD
 
-## mu-plugins deployes (16 actifs)
+## mu-plugins deployes (21 actifs)
 
 | Fichier | Taille | Role |
 |---------|--------|------|
@@ -76,8 +90,14 @@
 | dimonoff-compare-table.php | 4,541 B | 6-product comparison table EN/FR/ES |
 | dimonoff-qa-headings.php | 3,934 B | Q&A headings + "Last updated" EN/FR/ES |
 | dimonoff-aeo-fixes.php | 12,751 B | published_time + alt text + H2 dedup |
+| dimonoff-cls-stabilize.php | 750 B | CLS containment CSS pour Elementor sections (desktop) |
+| dimonoff-lcp-fix.php | 697 B | Preload hero image + Google Fonts display=optional |
+| dimonoff-seo-titles.php | 1,399 B | Override title tags (pre_get_document_title, bypass SmartCrawl) |
+| dimonoff-seo-descs.php | 1,131 B | Meta descriptions custom (chr(60/62) WAF bypass) |
+| dimonoff-301-redirects.php | 1,381 B | Pattern-based 301 redirects pour anciennes URLs |
+| dimonoff-a11y-fixes.php | 1,236 B | WCAG AA contrast + aria-labels pour inputs |
 
-> Note: 5 mu-plugins sont dans le repo (faq-schema, product-schema, glossary-schema, crosslinks, font-preload). Les 10 autres sont sur le serveur dimonoff.com uniquement — a extraire via cPanel File Manager et ajouter dans un commit ulterieur.
+> Note: 5 mu-plugins sont dans le repo (faq-schema, product-schema, glossary-schema, crosslinks, font-preload). Les 16 autres sont sur le serveur dimonoff.com uniquement — a extraire via cPanel File Manager et ajouter dans un commit ulterieur.
 
 ## Contraintes techniques
 
@@ -99,5 +119,15 @@
 
 > RME, RTM, LNLV sont des designations de lettres, PAS des acronymes.
 
+## Changements a3 Lazy Load (2026-03-30)
+- **Images lazy-load**: DESACTIVE (etait active, causait lazy_placeholder.gif sur hero = LCP degradé)
+- **WordPress Core Lazy Load**: ACTIVE (WP natif gere loading="lazy" seulement sous le fold)
+- **Videos/iframes lazy-load**: toujours actif via a3
+
+## Recommandation IT (hors scope)
+- **Artifactory**: 70+ URLs sous `artifactory.dimonoff.com` apparaissent comme 404/canonical duplicates dans GSC
+- **Action requise**: Ajouter header `X-Robots-Tag: noindex` sur le serveur Artifactory
+- **TTFB**: 4200ms (HostGator) — target <800ms, necessite migration hebergement
+
 ## Derniere mise a jour
-2026-03-27
+2026-03-30
